@@ -3,6 +3,7 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -33,7 +34,7 @@ public class Usuario implements java.io.Serializable {
 	private String usrIdentificacion;
 	private String usrNick;
 	private String usrPassword;
-	private Serializable usrFechaCreacion;
+	private Timestamp usrFechaCreacion;
 	private Date usrFechaCaducidad;
 	private Date usrFechaCadPass;
 	private BigDecimal usrEstado;
@@ -50,7 +51,7 @@ public class Usuario implements java.io.Serializable {
 	}
 
 	public Usuario(int usrId, Persona persona, String usrIdentificacion, String usrNick, String usrPassword,
-			Serializable usrFechaCreacion, Date usrFechaCaducidad, Date usrFechaCadPass, BigDecimal usrEstado,
+			Timestamp usrFechaCreacion, Date usrFechaCaducidad, Date usrFechaCadPass, BigDecimal usrEstado,
 			BigDecimal usrEstSesion, BigDecimal usrActiveDirectory, Set<UsuarioRol> usuarioRols,
 			Set<ControlPago> controlPagos) {
 		this.usrId = usrId;
@@ -117,11 +118,11 @@ public class Usuario implements java.io.Serializable {
 	}
 
 	@Column(name = "USR_FECHA_CREACION")
-	public Serializable getUsrFechaCreacion() {
+	public Timestamp  getUsrFechaCreacion() {
 		return this.usrFechaCreacion;
 	}
 
-	public void setUsrFechaCreacion(Serializable usrFechaCreacion) {
+	public void setUsrFechaCreacion(Timestamp  usrFechaCreacion) {
 		this.usrFechaCreacion = usrFechaCreacion;
 	}
 

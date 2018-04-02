@@ -3,6 +3,8 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -29,7 +31,7 @@ public class Tramite implements java.io.Serializable {
 	private Puesto puesto;
 	private String trmObservacion;
 	private BigDecimal trmEstado;
-	private Serializable trmFecha;
+	private Timestamp trmFecha;
 	private String trmUsuario;
 	private String trmArchivo;
 	private Set<Candidato> candidatos = new HashSet<Candidato>(0);
@@ -41,7 +43,7 @@ public class Tramite implements java.io.Serializable {
 		this.trmId = trmId;
 	}
 
-	public Tramite(int trmId, Puesto puesto, String trmObservacion, BigDecimal trmEstado, Serializable trmFecha,
+	public Tramite(int trmId, Puesto puesto, String trmObservacion, BigDecimal trmEstado, Timestamp trmFecha,
 			String trmUsuario, String trmArchivo, Set<Candidato> candidatos) {
 		this.trmId = trmId;
 		this.puesto = puesto;
@@ -93,11 +95,11 @@ public class Tramite implements java.io.Serializable {
 	}
 
 	@Column(name = "TRM_FECHA")
-	public Serializable getTrmFecha() {
+	public Timestamp getTrmFecha() {
 		return this.trmFecha;
 	}
 
-	public void setTrmFecha(Serializable trmFecha) {
+	public void setTrmFecha(Timestamp trmFecha) {
 		this.trmFecha = trmFecha;
 	}
 

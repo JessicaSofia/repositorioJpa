@@ -30,7 +30,7 @@ public class Descuento implements java.io.Serializable {
 	private BigDecimal dscCategoria;
 	private BigDecimal dscMonto;
 	private BigDecimal dscPorcentaje;
-	private String dscCodigoInternoNomina;
+	private Character  dscCodigoInternoNomina;
 	private BigDecimal dscPrioridad;
 	private BigDecimal dscVigenciaPeriodo;
 	private Date dscTmpFechaInicio;
@@ -46,7 +46,7 @@ public class Descuento implements java.io.Serializable {
 	}
 
 	public Descuento(int dscId, String dscDescripcion, BigDecimal dscCategoria, BigDecimal dscMonto,
-			BigDecimal dscPorcentaje, String dscCodigoInternoNomina, BigDecimal dscPrioridad,
+			BigDecimal dscPorcentaje, Character dscCodigoInternoNomina, BigDecimal dscPrioridad,
 			BigDecimal dscVigenciaPeriodo, Date dscTmpFechaInicio, Date dscTmpFechaFin, BigDecimal dscEstado,
 			Set<AcrDsc> acrDscs) {
 		this.dscId = dscId;
@@ -111,11 +111,11 @@ public class Descuento implements java.io.Serializable {
 	}
 
 	@Column(name = "DSC_CODIGO_INTERNO_NOMINA", length = 3)
-	public String getDscCodigoInternoNomina() {
+	public Character getDscCodigoInternoNomina() {
 		return this.dscCodigoInternoNomina;
 	}
 
-	public void setDscCodigoInternoNomina(String dscCodigoInternoNomina) {
+	public void setDscCodigoInternoNomina(Character dscCodigoInternoNomina) {
 		this.dscCodigoInternoNomina = dscCodigoInternoNomina;
 	}
 

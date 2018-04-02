@@ -3,6 +3,7 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -31,7 +32,7 @@ public class Acreedor implements java.io.Serializable {
 	private BigDecimal acrTipoCuenta;
 	private String acrEmail;
 	private BigDecimal acrTipo;
-	private Serializable acrFechaCreacion;
+	private Timestamp acrFechaCreacion;
 	private Set<AcrDsc> acrDscs = new HashSet<AcrDsc>(0);
 
 	public Acreedor() {
@@ -43,7 +44,7 @@ public class Acreedor implements java.io.Serializable {
 
 	public Acreedor(int acrId, String acrNombre, String acrRepresentante, String acrIdentificacion,
 			String acrNumeroCuenta, BigDecimal acrTipoCuenta, String acrEmail, BigDecimal acrTipo,
-			Serializable acrFechaCreacion, Set<AcrDsc> acrDscs) {
+			Timestamp  acrFechaCreacion, Set<AcrDsc> acrDscs) {
 		this.acrId = acrId;
 		this.acrNombre = acrNombre;
 		this.acrRepresentante = acrRepresentante;
@@ -131,11 +132,11 @@ public class Acreedor implements java.io.Serializable {
 	}
 
 	@Column(name = "ACR_FECHA_CREACION")
-	public Serializable getAcrFechaCreacion() {
+	public Timestamp getAcrFechaCreacion() {
 		return this.acrFechaCreacion;
 	}
 
-	public void setAcrFechaCreacion(Serializable acrFechaCreacion) {
+	public void setAcrFechaCreacion(Timestamp acrFechaCreacion) {
 		this.acrFechaCreacion = acrFechaCreacion;
 	}
 

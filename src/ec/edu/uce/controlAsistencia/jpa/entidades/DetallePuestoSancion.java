@@ -3,6 +3,9 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.sql.Time;
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -26,7 +29,7 @@ public class DetallePuestoSancion implements java.io.Serializable {
 	private CategoriaFalta categoriaFalta;
 	private DetallePuesto detallePuesto;
 	private Sancion sancion;
-	private Serializable dtpssnFechaEmision;
+	private Timestamp dtpssnFechaEmision;
 	private BigDecimal dtpssnMes;
 	private BigDecimal dtpssnAno;
 	private BigDecimal dtpssnDias;
@@ -46,7 +49,7 @@ public class DetallePuestoSancion implements java.io.Serializable {
 	}
 
 	public DetallePuestoSancion(int dtpssnId, CategoriaFalta categoriaFalta, DetallePuesto detallePuesto,
-			Sancion sancion, Serializable dtpssnFechaEmision, BigDecimal dtpssnMes, BigDecimal dtpssnAno,
+			Sancion sancion, Timestamp dtpssnFechaEmision, BigDecimal dtpssnMes, BigDecimal dtpssnAno,
 			BigDecimal dtpssnDias, BigDecimal dtpssnFrecuencia, BigDecimal dtpssnNumaccion, String dtpssnObservacion,
 			BigDecimal dtpssnValor, String dtpssnMotivoInsub, BigDecimal dtpssnEstado, BigDecimal dtpssnMinutos) {
 		this.dtpssnId = dtpssnId;
@@ -108,11 +111,11 @@ public class DetallePuestoSancion implements java.io.Serializable {
 	}
 
 	@Column(name = "DTPSSN_FECHA_EMISION")
-	public Serializable getDtpssnFechaEmision() {
+	public Timestamp  getDtpssnFechaEmision() {
 		return this.dtpssnFechaEmision;
 	}
 
-	public void setDtpssnFechaEmision(Serializable dtpssnFechaEmision) {
+	public void setDtpssnFechaEmision(Timestamp dtpssnFechaEmision) {
 		this.dtpssnFechaEmision = dtpssnFechaEmision;
 	}
 

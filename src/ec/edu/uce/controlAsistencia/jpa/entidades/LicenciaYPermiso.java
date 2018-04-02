@@ -3,6 +3,7 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,7 +30,7 @@ public class LicenciaYPermiso implements java.io.Serializable {
 	private DetallePuesto detallePuesto;
 	private TipoLicencia tipoLicencia;
 	private BigDecimal lcprNumLicencia;
-	private Serializable lcprFechaEmision;
+	private Timestamp lcprFechaEmision;
 	private BigDecimal lcprNumDias;
 	private Date lcprFechaInicio;
 	private Date lcprFechaFin;
@@ -51,7 +52,7 @@ public class LicenciaYPermiso implements java.io.Serializable {
 	}
 
 	public LicenciaYPermiso(int lcprId, DetallePuesto detallePuesto, TipoLicencia tipoLicencia,
-			BigDecimal lcprNumLicencia, Serializable lcprFechaEmision, BigDecimal lcprNumDias, Date lcprFechaInicio,
+			BigDecimal lcprNumLicencia, Timestamp lcprFechaEmision, BigDecimal lcprNumDias, Date lcprFechaInicio,
 			Date lcprFechaFin, Date lcprNumHoras, Date lcprHoraInicio, Date lcprHoraFin, String lcprExplicacion,
 			String lcprObservacion, String lcprCopia, BigDecimal lcprCargoVacaciones, BigDecimal tplcEstado,
 			String lcprObservacionEstado) {
@@ -115,11 +116,11 @@ public class LicenciaYPermiso implements java.io.Serializable {
 	}
 
 	@Column(name = "LCPR_FECHA_EMISION")
-	public Serializable getLcprFechaEmision() {
+	public Timestamp getLcprFechaEmision() {
 		return this.lcprFechaEmision;
 	}
 
-	public void setLcprFechaEmision(Serializable lcprFechaEmision) {
+	public void setLcprFechaEmision(Timestamp lcprFechaEmision) {
 		this.lcprFechaEmision = lcprFechaEmision;
 	}
 

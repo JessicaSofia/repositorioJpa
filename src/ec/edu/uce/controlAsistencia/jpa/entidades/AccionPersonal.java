@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "ACCION_PERSONAL", schema = "BDTALENTOHUMANO")
-public class AccionPersonal implements java.io.Serializable {
+public class AccionPersonal implements java.io.Serializable {                                 
 
 	/**
 	 * 
@@ -91,7 +91,7 @@ public class AccionPersonal implements java.io.Serializable {
 		this.acprNumeroOficio = acprNumeroOficio;
 	}
 
-	@Column(name = "ACPR_RESOLUCION", length = 512)
+	@Column(name = "ACPR_RESOLUCION",  length = 512)
 	public String getAcprResolucion() {
 		return this.acprResolucion;
 	}
@@ -100,7 +100,7 @@ public class AccionPersonal implements java.io.Serializable {
 		this.acprResolucion = acprResolucion;
 	}
 
-	@Column(name = "ACPR_AUTORIZACION", length = 512)
+	@Column(name = "ACPR_AUTORIZACION" , length = 512)
 	public String getAcprAutorizacion() {
 		return this.acprAutorizacion;
 	}

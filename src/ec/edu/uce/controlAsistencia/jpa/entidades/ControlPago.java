@@ -3,6 +3,7 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -27,7 +28,7 @@ public class ControlPago implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	private int cntPagId;
 	private Usuario usuario;
-	private Serializable cntPagFecha;
+	private Timestamp cntPagFecha;
 	private BigDecimal cntPagTransaccion;
 	private BigDecimal cntPagMes;
 	private BigDecimal cntPagAnio;
@@ -40,7 +41,7 @@ public class ControlPago implements java.io.Serializable {
 		this.cntPagId = cntPagId;
 	}
 
-	public ControlPago(int cntPagId, Usuario usuario, Serializable cntPagFecha, BigDecimal cntPagTransaccion,
+	public ControlPago(int cntPagId, Usuario usuario, Timestamp cntPagFecha, BigDecimal cntPagTransaccion,
 			BigDecimal cntPagMes, BigDecimal cntPagAnio, Set<RolPago> rolPagos) {
 		this.cntPagId = cntPagId;
 		this.usuario = usuario;
@@ -73,11 +74,11 @@ public class ControlPago implements java.io.Serializable {
 	}
 
 	@Column(name = "CNT_PAG_FECHA")
-	public Serializable getCntPagFecha() {
+	public Timestamp getCntPagFecha() {
 		return this.cntPagFecha;
 	}
 
-	public void setCntPagFecha(Serializable cntPagFecha) {
+	public void setCntPagFecha(Timestamp cntPagFecha) {
 		this.cntPagFecha = cntPagFecha;
 	}
 

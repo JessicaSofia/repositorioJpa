@@ -3,6 +3,8 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,7 +30,7 @@ public class Vacacion implements java.io.Serializable {
 	private int vccId;
 	private DetallePuesto detallePuesto;
 	private BigDecimal vccNumAutorizacion;
-	private Serializable vccFechaEmision;
+	private Timestamp vccFechaEmision;
 	private BigDecimal vccNumDias;
 	private Date vccFechaInicio;
 	private Date vccFechaFin;
@@ -44,7 +46,7 @@ public class Vacacion implements java.io.Serializable {
 		this.vccId = vccId;
 	}
 
-	public Vacacion(int vccId, DetallePuesto detallePuesto, BigDecimal vccNumAutorizacion, Serializable vccFechaEmision,
+	public Vacacion(int vccId, DetallePuesto detallePuesto, BigDecimal vccNumAutorizacion, Timestamp vccFechaEmision,
 			BigDecimal vccNumDias, Date vccFechaInicio, Date vccFechaFin, String vccObservacion, String vccCopia,
 			BigDecimal vccEstado, String vccObservacionEstado) {
 		this.vccId = vccId;
@@ -91,11 +93,11 @@ public class Vacacion implements java.io.Serializable {
 	}
 
 	@Column(name = "VCC_FECHA_EMISION")
-	public Serializable getVccFechaEmision() {
+	public Timestamp getVccFechaEmision() {
 		return this.vccFechaEmision;
 	}
 
-	public void setVccFechaEmision(Serializable vccFechaEmision) {
+	public void setVccFechaEmision(Timestamp vccFechaEmision) {
 		this.vccFechaEmision = vccFechaEmision;
 	}
 
