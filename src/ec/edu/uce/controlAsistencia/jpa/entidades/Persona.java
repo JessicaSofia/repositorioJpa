@@ -221,4 +221,12 @@ public class Persona implements java.io.Serializable {
 		this.usuarios = usuarios;
 	}
 
+	@Override
+	public String toString() {
+		return "Persona [prsPrimerApellido=" + prsPrimerApellido + ", prsSegundoApellido=" + prsSegundoApellido
+				+ ", prsNombres=" + prsNombres + "]";
+	}
+	
+	
+
 }

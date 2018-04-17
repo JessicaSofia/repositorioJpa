@@ -1,7 +1,7 @@
 package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
-import java.io.Serializable;
+
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.HashSet;
