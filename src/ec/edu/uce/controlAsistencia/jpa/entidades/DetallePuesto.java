@@ -2,7 +2,8 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
 import java.math.BigDecimal;
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -31,12 +32,12 @@ public class DetallePuesto implements java.io.Serializable {
 	private Puesto puesto;
 	private RelacionLaboral relacionLaboral;
 	private BigDecimal dtpsEstado;
-	private Set<Distributivo> distributivos = new HashSet<Distributivo>(0);
-	private Set<AccionPersonal> accionPersonals = new HashSet<AccionPersonal>(0);
-	private Set<Vacacion> vacacions = new HashSet<Vacacion>(0);
-	private Set<DetallePuestoSancion> detallePuestoSancions = new HashSet<DetallePuestoSancion>(0);
-	private Set<LicenciaYPermiso> licenciaYPermisos = new HashSet<LicenciaYPermiso>(0);
-	private Set<SaldoVacacion> saldoVacacions = new HashSet<SaldoVacacion>(0);
+	private List<Distributivo> distributivos = new ArrayList<Distributivo>(0);
+	private List<AccionPersonal> accionPersonals = new ArrayList<AccionPersonal>(0);
+	private List<Vacacion> vacacions = new ArrayList<Vacacion>(0);
+	private List<DetallePuestoSancion> detallePuestoSancions = new ArrayList<DetallePuestoSancion>(0);
+	private List<LicenciaYPermiso> licenciaYPermisos = new ArrayList<LicenciaYPermiso>(0);
+	private List<SaldoVacacion> saldoVacacions = new ArrayList<SaldoVacacion>(0);
 
 	public DetallePuesto() {
 	}
@@ -46,10 +47,10 @@ public class DetallePuesto implements java.io.Serializable {
 	}
 
 	public DetallePuesto(int dtpsId, Contrato contrato, Dependencia dependencia, FichaEmpleado fichaEmpleado,
-			Puesto puesto, RelacionLaboral relacionLaboral, BigDecimal dtpsEstado, Set<Distributivo> distributivos,
-			Set<AccionPersonal> accionPersonals, Set<Vacacion> vacacions,
-			Set<DetallePuestoSancion> detallePuestoSancions, Set<LicenciaYPermiso> licenciaYPermisos,
-			Set<SaldoVacacion> saldoVacacions) {
+			Puesto puesto, RelacionLaboral relacionLaboral, BigDecimal dtpsEstado, List<Distributivo> distributivos,
+			 List<AccionPersonal> accionPersonals, List<Vacacion> vacacions,
+			 List<DetallePuestoSancion> detallePuestoSancions, List<LicenciaYPermiso> licenciaYPermisos,
+			 List<SaldoVacacion> saldoVacacions) {
 		this.dtpsId = dtpsId;
 		this.contrato = contrato;
 		this.dependencia = dependencia;
@@ -136,56 +137,56 @@ public class DetallePuesto implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
-	public Set<Distributivo> getDistributivos() {
+	public List<Distributivo> getDistributivos() {
 		return this.distributivos;
 	}
 
-	public void setDistributivos(Set<Distributivo> distributivos) {
+	public void setDistributivos( List<Distributivo> distributivos) {
 		this.distributivos = distributivos;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
-	public Set<AccionPersonal> getAccionPersonals() {
+	public List<AccionPersonal> getAccionPersonals() {
 		return this.accionPersonals;
 	}
 
-	public void setAccionPersonals(Set<AccionPersonal> accionPersonals) {
+	public void setAccionPersonals( List<AccionPersonal> accionPersonals) {
 		this.accionPersonals = accionPersonals;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
-	public Set<Vacacion> getVacacions() {
+	public List<Vacacion> getVacacions() {
 		return this.vacacions;
 	}
 
-	public void setVacacions(Set<Vacacion> vacacions) {
+	public void setVacacions( List<Vacacion> vacacions) {
 		this.vacacions = vacacions;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
-	public Set<DetallePuestoSancion> getDetallePuestoSancions() {
+	public List<DetallePuestoSancion> getDetallePuestoSancions() {
 		return this.detallePuestoSancions;
 	}
 
-	public void setDetallePuestoSancions(Set<DetallePuestoSancion> detallePuestoSancions) {
+	public void setDetallePuestoSancions( List<DetallePuestoSancion> detallePuestoSancions) {
 		this.detallePuestoSancions = detallePuestoSancions;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
-	public Set<LicenciaYPermiso> getLicenciaYPermisos() {
+	public List<LicenciaYPermiso> getLicenciaYPermisos() {
 		return this.licenciaYPermisos;
 	}
 
-	public void setLicenciaYPermisos(Set<LicenciaYPermiso> licenciaYPermisos) {
+	public void setLicenciaYPermisos( List<LicenciaYPermiso> licenciaYPermisos) {
 		this.licenciaYPermisos = licenciaYPermisos;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
-	public Set<SaldoVacacion> getSaldoVacacions() {
+	public List<SaldoVacacion> getSaldoVacacions() {
 		return this.saldoVacacions;
 	}
 
-	public void setSaldoVacacions(Set<SaldoVacacion> saldoVacacions) {
+	public void setSaldoVacacions( List<SaldoVacacion> saldoVacacions) {
 		this.saldoVacacions = saldoVacacions;
 	}
 

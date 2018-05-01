@@ -1,7 +1,7 @@
 package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
-import java.math.BigDecimal;
+
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,12 +26,12 @@ public class SaldoVacacion implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	private int slvcId;
 	private DetallePuesto detallePuesto;
-	private BigDecimal slvcTotalDias;
-	private BigDecimal slvcDiasRegistrados;
-	private BigDecimal slvcDiasRestantes;
+	private Integer slvcTotalDias;
+	private Integer slvcDiasRegistrados;
+	private Integer slvcDiasRestantes;
 	private Date slvcTotalHoras;
-	private BigDecimal slvcDiasAnticipados;
-	private BigDecimal slvcPeriodo;
+	private Integer slvcDiasAnticipados;
+	private Integer slvcPeriodo;
 
 	public SaldoVacacion() {
 	}
@@ -40,9 +40,9 @@ public class SaldoVacacion implements java.io.Serializable {
 		this.slvcId = slvcId;
 	}
 
-	public SaldoVacacion(int slvcId, DetallePuesto detallePuesto, BigDecimal slvcTotalDias,
-			BigDecimal slvcDiasRegistrados, BigDecimal slvcDiasRestantes, Date slvcTotalHoras,
-			BigDecimal slvcDiasAnticipados, BigDecimal slvcPeriodo) {
+	public SaldoVacacion(int slvcId, DetallePuesto detallePuesto, Integer slvcTotalDias,
+			Integer slvcDiasRegistrados, Integer slvcDiasRestantes, Date slvcTotalHoras,
+			Integer slvcDiasAnticipados, Integer slvcPeriodo) {
 		this.slvcId = slvcId;
 		this.detallePuesto = detallePuesto;
 		this.slvcTotalDias = slvcTotalDias;
@@ -75,29 +75,29 @@ public class SaldoVacacion implements java.io.Serializable {
 	}
 
 	@Column(name = "SLVC_TOTAL_DIAS", precision = 22, scale = 0)
-	public BigDecimal getSlvcTotalDias() {
+	public Integer getSlvcTotalDias() {
 		return this.slvcTotalDias;
 	}
 
-	public void setSlvcTotalDias(BigDecimal slvcTotalDias) {
+	public void setSlvcTotalDias(Integer slvcTotalDias) {
 		this.slvcTotalDias = slvcTotalDias;
 	}
 
 	@Column(name = "SLVC_DIAS_REGISTRADOS", precision = 22, scale = 0)
-	public BigDecimal getSlvcDiasRegistrados() {
+	public Integer getSlvcDiasRegistrados() {
 		return this.slvcDiasRegistrados;
 	}
 
-	public void setSlvcDiasRegistrados(BigDecimal slvcDiasRegistrados) {
+	public void setSlvcDiasRegistrados(Integer slvcDiasRegistrados) {
 		this.slvcDiasRegistrados = slvcDiasRegistrados;
 	}
 
 	@Column(name = "SLVC_DIAS_RESTANTES", precision = 22, scale = 0)
-	public BigDecimal getSlvcDiasRestantes() {
+	public Integer getSlvcDiasRestantes() {
 		return this.slvcDiasRestantes;
 	}
 
-	public void setSlvcDiasRestantes(BigDecimal slvcDiasRestantes) {
+	public void setSlvcDiasRestantes(Integer slvcDiasRestantes) {
 		this.slvcDiasRestantes = slvcDiasRestantes;
 	}
 
@@ -112,21 +112,26 @@ public class SaldoVacacion implements java.io.Serializable {
 	}
 
 	@Column(name = "SLVC_DIAS_ANTICIPADOS", precision = 22, scale = 0)
-	public BigDecimal getSlvcDiasAnticipados() {
+	public Integer getSlvcDiasAnticipados() {
 		return this.slvcDiasAnticipados;
 	}
 
-	public void setSlvcDiasAnticipados(BigDecimal slvcDiasAnticipados) {
+	public void setSlvcDiasAnticipados(Integer slvcDiasAnticipados) {
 		this.slvcDiasAnticipados = slvcDiasAnticipados;
 	}
 
 	@Column(name = "SLVC__PERIODO", precision = 22, scale = 0)
-	public BigDecimal getSlvcPeriodo() {
+	public Integer getSlvcPeriodo() {
 		return this.slvcPeriodo;
 	}
 
-	public void setSlvcPeriodo(BigDecimal slvcPeriodo) {
+	public void setSlvcPeriodo(Integer slvcPeriodo) {
 		this.slvcPeriodo = slvcPeriodo;
+	}
+
+	@Override
+	public String toString() {
+		return ""+slvcTotalDias+" Dias "+slvcTotalHoras +" HH:MM";
 	}
 
 }
