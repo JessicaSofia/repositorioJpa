@@ -1,7 +1,7 @@
 package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
-import java.math.BigDecimal;
+
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -27,7 +27,7 @@ public class AcrDsc implements java.io.Serializable {
 	private int acdsId;
 	private Acreedor acreedor;
 	private Descuento descuento;
-	private BigDecimal acdsEstado;
+	private int acdsEstado;
 	private String acdsObservacion;
 	private Set<HistorialDescuento> historialDescuentos = new HashSet<HistorialDescuento>(0);
 
@@ -38,7 +38,7 @@ public class AcrDsc implements java.io.Serializable {
 		this.acdsId = acdsId;
 	}
 
-	public AcrDsc(int acdsId, Acreedor acreedor, Descuento descuento, BigDecimal acdsEstado, String acdsObservacion,
+	public AcrDsc(int acdsId, Acreedor acreedor, Descuento descuento, int acdsEstado, String acdsObservacion,
 			Set<HistorialDescuento> historialDescuentos) {
 		this.acdsId = acdsId;
 		this.acreedor = acreedor;
@@ -80,11 +80,11 @@ public class AcrDsc implements java.io.Serializable {
 	}
 
 	@Column(name = "ACDS_ESTADO", precision = 22, scale = 0)
-	public BigDecimal getAcdsEstado() {
+	public int getAcdsEstado() {
 		return this.acdsEstado;
 	}
 
-	public void setAcdsEstado(BigDecimal acdsEstado) {
+	public void setAcdsEstado(int acdsEstado) {
 		this.acdsEstado = acdsEstado;
 	}
 

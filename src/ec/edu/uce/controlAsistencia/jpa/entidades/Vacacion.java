@@ -1,9 +1,7 @@
 package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.sql.Time;
+
 import java.sql.Timestamp;
 import java.util.Date;
 import javax.persistence.Column;
@@ -29,14 +27,14 @@ public class Vacacion implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	private int vccId;
 	private DetallePuesto detallePuesto;
-	private BigDecimal vccNumAutorizacion;
+	private int vccNumAutorizacion;
 	private Timestamp vccFechaEmision;
-	private BigDecimal vccNumDias;
+	private int vccNumDias;
 	private Date vccFechaInicio;
 	private Date vccFechaFin;
 	private String vccObservacion;
 	private String vccCopia;
-	private BigDecimal vccEstado;
+	private int vccEstado;
 	private String vccObservacionEstado;
 
 	public Vacacion() {
@@ -46,9 +44,9 @@ public class Vacacion implements java.io.Serializable {
 		this.vccId = vccId;
 	}
 
-	public Vacacion(int vccId, DetallePuesto detallePuesto, BigDecimal vccNumAutorizacion, Timestamp vccFechaEmision,
-			BigDecimal vccNumDias, Date vccFechaInicio, Date vccFechaFin, String vccObservacion, String vccCopia,
-			BigDecimal vccEstado, String vccObservacionEstado) {
+	public Vacacion(int vccId, DetallePuesto detallePuesto, int vccNumAutorizacion, Timestamp vccFechaEmision,
+			int vccNumDias, Date vccFechaInicio, Date vccFechaFin, String vccObservacion, String vccCopia,
+			int vccEstado, String vccObservacionEstado) {
 		this.vccId = vccId;
 		this.detallePuesto = detallePuesto;
 		this.vccNumAutorizacion = vccNumAutorizacion;
@@ -84,11 +82,11 @@ public class Vacacion implements java.io.Serializable {
 	}
 
 	@Column(name = "VCC_NUM_AUTORIZACION", precision = 22, scale = 0)
-	public BigDecimal getVccNumAutorizacion() {
+	public int getVccNumAutorizacion() {
 		return this.vccNumAutorizacion;
 	}
 
-	public void setVccNumAutorizacion(BigDecimal vccNumAutorizacion) {
+	public void setVccNumAutorizacion(int vccNumAutorizacion) {
 		this.vccNumAutorizacion = vccNumAutorizacion;
 	}
 
@@ -102,11 +100,11 @@ public class Vacacion implements java.io.Serializable {
 	}
 
 	@Column(name = "VCC_NUM_DIAS", precision = 22, scale = 0)
-	public BigDecimal getVccNumDias() {
+	public int getVccNumDias() {
 		return this.vccNumDias;
 	}
 
-	public void setVccNumDias(BigDecimal vccNumDias) {
+	public void setVccNumDias(int  vccNumDias) {
 		this.vccNumDias = vccNumDias;
 	}
 
@@ -149,11 +147,11 @@ public class Vacacion implements java.io.Serializable {
 	}
 
 	@Column(name = "VCC_ESTADO", precision = 22, scale = 0)
-	public BigDecimal getVccEstado() {
+	public int getVccEstado() {
 		return this.vccEstado;
 	}
 
-	public void setVccEstado(BigDecimal vccEstado) {
+	public void setVccEstado(int vccEstado) {
 		this.vccEstado = vccEstado;
 	}
 

@@ -2,8 +2,10 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
 import java.math.BigDecimal;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -37,15 +39,15 @@ public class Puesto implements java.io.Serializable {
 	private BigDecimal pstTiempoExperiencia;
 	private String pstDescripcionExperiencia;
 	private String pstInterfaz;
-	private Set<FuncionPuesto> funcionPuestos = new HashSet<FuncionPuesto>(0);
-	private Set<ActividadPuesto> actividadPuestos = new HashSet<ActividadPuesto>(0);
-	private Set<CompetenciaPuesto> competenciaPuestos = new HashSet<CompetenciaPuesto>(0);
-	private Set<Tramite> tramites = new HashSet<Tramite>(0);
-	private Set<InstruccionPuesto> instruccionPuestos = new HashSet<InstruccionPuesto>(0);
-	private Set<DestrezaPuesto> destrezaPuestos = new HashSet<DestrezaPuesto>(0);
-	private Set<DetallePuesto> detallePuestos = new HashSet<DetallePuesto>(0);
-	private Set<PuestoAreaConocimiento> puestoAreaConocimientos = new HashSet<PuestoAreaConocimiento>(0);
-	private Set<ConocimientoPuesto> conocimientoPuestos = new HashSet<ConocimientoPuesto>(0);
+	private List<FuncionPuesto> funcionPuestos = new ArrayList<>();
+	private List<ActividadPuesto> actividadPuestos =  new ArrayList<>();
+	private List<CompetenciaPuesto> competenciaPuestos =  new ArrayList<>();
+	private List<Tramite> tramites =  new ArrayList<>(); 
+	private List<InstruccionPuesto> instruccionPuestos = new ArrayList<>();
+	private List<DestrezaPuesto> destrezaPuestos =  new ArrayList<>(); 
+	private List<DetallePuesto> detallePuestos =  new ArrayList<>();
+	private List<PuestoAreaConocimiento> puestoAreaConocimientos =  new ArrayList<>();
+	private List<ConocimientoPuesto> conocimientoPuestos =  new ArrayList<>();
 
 	public Puesto() {
 	}
@@ -57,11 +59,11 @@ public class Puesto implements java.io.Serializable {
 	public Puesto(int pstId, GrupoOcupacional grupoOcupacional, Serie serie, String pstDenominacion,
 			BigDecimal pstEstado, BigDecimal pstAmbito, BigDecimal pstNivel, String pstMision,
 			String pstResponsabilidad, BigDecimal pstInstruccion, BigDecimal pstTiempoExperiencia,
-			String pstDescripcionExperiencia, String pstInterfaz, Set<FuncionPuesto> funcionPuestos,
-			Set<ActividadPuesto> actividadPuestos, Set<CompetenciaPuesto> competenciaPuestos, Set<Tramite> tramites,
-			Set<InstruccionPuesto> instruccionPuestos, Set<DestrezaPuesto> destrezaPuestos,
-			Set<DetallePuesto> detallePuestos, Set<PuestoAreaConocimiento> puestoAreaConocimientos,
-			Set<ConocimientoPuesto> conocimientoPuestos) {
+			String pstDescripcionExperiencia, String pstInterfaz, List<FuncionPuesto> funcionPuestos,
+			List<ActividadPuesto> actividadPuestos, List<CompetenciaPuesto> competenciaPuestos, List<Tramite> tramites,
+			List<InstruccionPuesto> instruccionPuestos, List<DestrezaPuesto> destrezaPuestos,
+			List<DetallePuesto> detallePuestos, List<PuestoAreaConocimiento> puestoAreaConocimientos,
+			List<ConocimientoPuesto> conocimientoPuestos) {
 		this.pstId = pstId;
 		this.grupoOcupacional = grupoOcupacional;
 		this.serie = serie;
@@ -208,83 +210,83 @@ public class Puesto implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "puesto")
-	public Set<FuncionPuesto> getFuncionPuestos() {
+	public List<FuncionPuesto> getFuncionPuestos() {
 		return this.funcionPuestos;
 	}
 
-	public void setFuncionPuestos(Set<FuncionPuesto> funcionPuestos) {
+	public void setFuncionPuestos(List<FuncionPuesto> funcionPuestos) {
 		this.funcionPuestos = funcionPuestos;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "puesto")
-	public Set<ActividadPuesto> getActividadPuestos() {
+	public List<ActividadPuesto> getActividadPuestos() {
 		return this.actividadPuestos;
 	}
 
-	public void setActividadPuestos(Set<ActividadPuesto> actividadPuestos) {
+	public void setActividadPuestos(List<ActividadPuesto> actividadPuestos) {
 		this.actividadPuestos = actividadPuestos;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "puesto")
-	public Set<CompetenciaPuesto> getCompetenciaPuestos() {
+	public List<CompetenciaPuesto> getCompetenciaPuestos() {
 		return this.competenciaPuestos;
 	}
 
-	public void setCompetenciaPuestos(Set<CompetenciaPuesto> competenciaPuestos) {
+	public void setCompetenciaPuestos(List<CompetenciaPuesto> competenciaPuestos) {
 		this.competenciaPuestos = competenciaPuestos;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "puesto")
-	public Set<Tramite> getTramites() {
+	public List<Tramite> getTramites() {
 		return this.tramites;
 	}
 
-	public void setTramites(Set<Tramite> tramites) {
+	public void setTramites(List<Tramite> tramites) {
 		this.tramites = tramites;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "puesto")
-	public Set<InstruccionPuesto> getInstruccionPuestos() {
+	public List<InstruccionPuesto> getInstruccionPuestos() {
 		return this.instruccionPuestos;
 	}
 
-	public void setInstruccionPuestos(Set<InstruccionPuesto> instruccionPuestos) {
+	public void setInstruccionPuestos(List<InstruccionPuesto> instruccionPuestos) {
 		this.instruccionPuestos = instruccionPuestos;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "puesto")
-	public Set<DestrezaPuesto> getDestrezaPuestos() {
+	public List<DestrezaPuesto> getDestrezaPuestos() {
 		return this.destrezaPuestos;
 	}
 
-	public void setDestrezaPuestos(Set<DestrezaPuesto> destrezaPuestos) {
+	public void setDestrezaPuestos(List<DestrezaPuesto> destrezaPuestos) {
 		this.destrezaPuestos = destrezaPuestos;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "puesto")
-	public Set<DetallePuesto> getDetallePuestos() {
+	public List<DetallePuesto> getDetallePuestos() {
 		return this.detallePuestos;
 	}
 
-	public void setDetallePuestos(Set<DetallePuesto> detallePuestos) {
+	public void setDetallePuestos(List<DetallePuesto> detallePuestos) {
 		this.detallePuestos = detallePuestos;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "puesto")
-	public Set<PuestoAreaConocimiento> getPuestoAreaConocimientos() {
+	public List<PuestoAreaConocimiento> getPuestoAreaConocimientos() {
 		return this.puestoAreaConocimientos;
 	}
 
-	public void setPuestoAreaConocimientos(Set<PuestoAreaConocimiento> puestoAreaConocimientos) {
+	public void setPuestoAreaConocimientos(List<PuestoAreaConocimiento> puestoAreaConocimientos) {
 		this.puestoAreaConocimientos = puestoAreaConocimientos;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "puesto")
-	public Set<ConocimientoPuesto> getConocimientoPuestos() {
+	public List<ConocimientoPuesto> getConocimientoPuestos() {
 		return this.conocimientoPuestos;
 	}
 
-	public void setConocimientoPuestos(Set<ConocimientoPuesto> conocimientoPuestos) {
+	public void setConocimientoPuestos(List<ConocimientoPuesto> conocimientoPuestos) {
 		this.conocimientoPuestos = conocimientoPuestos;
 	}
 

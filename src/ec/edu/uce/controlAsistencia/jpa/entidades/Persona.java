@@ -2,8 +2,10 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -41,8 +43,8 @@ public class Persona implements java.io.Serializable {
 	private String prsMailInstitucional;
 	private String prsTelefono;
 	private Date prsFechaNacimiento;
-	private Set<FichaEmpleado> fichaEmpleados = new HashSet<FichaEmpleado>(0);
-	private Set<Usuario> usuarios = new HashSet<Usuario>(0);
+	private List<FichaEmpleado> fichaEmpleados = new ArrayList<FichaEmpleado>();
+	private List<Usuario> usuarios = new ArrayList<Usuario>();
 
 	public Persona() {
 	}
@@ -54,7 +56,7 @@ public class Persona implements java.io.Serializable {
 	public Persona(int prsId, Etnia etnia, BigDecimal prsTipoIdentificacion, BigDecimal prsTipoIdentificacionSniese,
 			String prsIdentificacion, String prsPrimerApellido, String prsSegundoApellido, String prsNombres,
 			BigDecimal prsSexo, BigDecimal prsSexoSniese, String prsMailPersonal, String prsMailInstitucional,
-			String prsTelefono, Date prsFechaNacimiento, Set<FichaEmpleado> fichaEmpleados, Set<Usuario> usuarios) {
+			String prsTelefono, Date prsFechaNacimiento, List<FichaEmpleado> fichaEmpleados, List<Usuario> usuarios) {
 		this.prsId = prsId;
 		this.etnia = etnia;
 		this.prsTipoIdentificacion = prsTipoIdentificacion;
@@ -112,7 +114,7 @@ public class Persona implements java.io.Serializable {
 		this.prsTipoIdentificacionSniese = prsTipoIdentificacionSniese;
 	}
 
-	@Column(name = "PRS_IDENTIFICACION", length = 13)
+	@Column(name = "PRS_IDENTIFICACION", length = 13  )
 	public String getPrsIdentificacion() {
 		return this.prsIdentificacion;
 	}
@@ -204,27 +206,26 @@ public class Persona implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "persona")
-	public Set<FichaEmpleado> getFichaEmpleados() {
+	public List<FichaEmpleado> getFichaEmpleados() {
 		return this.fichaEmpleados;
 	}
 
-	public void setFichaEmpleados(Set<FichaEmpleado> fichaEmpleados) {
+	public void setFichaEmpleados(List<FichaEmpleado> fichaEmpleados) {
 		this.fichaEmpleados = fichaEmpleados;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "persona")
-	public Set<Usuario> getUsuarios() {
+	public List<Usuario> getUsuarios() {
 		return this.usuarios;
 	}
 
-	public void setUsuarios(Set<Usuario> usuarios) {
+	public void setUsuarios(List<Usuario> usuarios) {
 		this.usuarios = usuarios;
 	}
 
 	@Override
 	public String toString() {
-		return "Persona [prsPrimerApellido=" + prsPrimerApellido + ", prsSegundoApellido=" + prsSegundoApellido
-				+ ", prsNombres=" + prsNombres + "]";
+		return "" + prsPrimerApellido + " " + prsSegundoApellido+ "";
 	}
 	
 	

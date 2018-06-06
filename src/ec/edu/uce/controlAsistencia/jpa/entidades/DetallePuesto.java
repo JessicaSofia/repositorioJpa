@@ -4,7 +4,6 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -77,7 +76,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.dtpsId = dtpsId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "CNT_ID")
 	public Contrato getContrato() {
 		return this.contrato;
@@ -87,7 +86,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.contrato = contrato;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "DPN_ID")
 	public Dependencia getDependencia() {
 		return this.dependencia;
@@ -97,7 +96,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.dependencia = dependencia;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "FCEM_ID")
 	public FichaEmpleado getFichaEmpleado() {
 		return this.fichaEmpleado;
@@ -107,7 +106,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.fichaEmpleado = fichaEmpleado;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "PST_ID")
 	public Puesto getPuesto() {
 		return this.puesto;
@@ -117,7 +116,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.puesto = puesto;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "RLLB_ID")
 	public RelacionLaboral getRelacionLaboral() {
 		return this.relacionLaboral;
@@ -136,7 +135,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.dtpsEstado = dtpsEstado;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "detallePuesto")
 	public List<Distributivo> getDistributivos() {
 		return this.distributivos;
 	}
@@ -145,7 +144,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.distributivos = distributivos;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "detallePuesto")
 	public List<AccionPersonal> getAccionPersonals() {
 		return this.accionPersonals;
 	}
@@ -154,7 +153,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.accionPersonals = accionPersonals;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "detallePuesto")
 	public List<Vacacion> getVacacions() {
 		return this.vacacions;
 	}
@@ -163,7 +162,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.vacacions = vacacions;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "detallePuesto")
 	public List<DetallePuestoSancion> getDetallePuestoSancions() {
 		return this.detallePuestoSancions;
 	}
@@ -172,7 +171,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.detallePuestoSancions = detallePuestoSancions;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "detallePuesto")
 	public List<LicenciaYPermiso> getLicenciaYPermisos() {
 		return this.licenciaYPermisos;
 	}
@@ -181,7 +180,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.licenciaYPermisos = licenciaYPermisos;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "detallePuesto")
 	public List<SaldoVacacion> getSaldoVacacions() {
 		return this.saldoVacacions;
 	}
@@ -189,5 +188,16 @@ public class DetallePuesto implements java.io.Serializable {
 	public void setSaldoVacacions( List<SaldoVacacion> saldoVacacions) {
 		this.saldoVacacions = saldoVacacions;
 	}
+
+	@Override
+	public String toString() {
+		return "DetallePuesto [dtpsId=" + dtpsId + ", contrato=" + contrato + ", dependencia=" + dependencia
+				+ ", fichaEmpleado=" + fichaEmpleado + ", puesto=" + puesto + ", relacionLaboral=" + relacionLaboral
+				+ ", dtpsEstado=" + dtpsEstado + ", distributivos=" + distributivos + ", accionPersonals="
+				+ accionPersonals + ", vacacions=" + vacacions + ", detallePuestoSancions=" + detallePuestoSancions
+				+ ", licenciaYPermisos=" + licenciaYPermisos + ", saldoVacacions=" + saldoVacacions + "]";
+	}
+	
+	
 
 }

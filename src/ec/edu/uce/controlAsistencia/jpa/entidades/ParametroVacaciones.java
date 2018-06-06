@@ -2,13 +2,14 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
 import java.math.BigDecimal;
-import java.util.HashSet;
-import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -27,7 +28,7 @@ public class ParametroVacaciones implements java.io.Serializable {
 	private BigDecimal prvcVariacionAnos;
 	private BigDecimal prvcVariacionDias;
 	private BigDecimal prvCEstado;
-	private Set<Regimen> regimens = new HashSet<Regimen>(0);
+	private Regimen regimen;
 
 	public ParametroVacaciones() {
 	}
@@ -37,17 +38,17 @@ public class ParametroVacaciones implements java.io.Serializable {
 	}
 
 	public ParametroVacaciones(int prvcId, BigDecimal numdias, BigDecimal prvcVariacionAnos,
-			BigDecimal prvcVariacionDias, BigDecimal prvCEstado, Set<Regimen> regimens) {
+			BigDecimal prvcVariacionDias, BigDecimal prvCEstado, Regimen regimen) {
 		this.prvcId = prvcId;
 		this.numdias = numdias;
 		this.prvcVariacionAnos = prvcVariacionAnos;
 		this.prvcVariacionDias = prvcVariacionDias;
 		this.prvCEstado = prvCEstado;
-		this.regimens = regimens;
+		this.regimen = regimen;
 	}
 
 	@Id
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	@Column(name = "PRVC_ID", unique = true, nullable = false, precision = 6, scale = 0)
 	public int getPrvcId() {
 		return this.prvcId;
@@ -93,13 +94,14 @@ public class ParametroVacaciones implements java.io.Serializable {
 		this.prvCEstado = prvCEstado;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "parametroVacaciones")
-	public Set<Regimen> getRegimens() {
-		return this.regimens;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "RGM_ID") 
+	public Regimen getRegimen() {
+		return this.regimen;
 	}
 
-	public void setRegimens(Set<Regimen> regimens) {
-		this.regimens = regimens;
+	public void setRegimen (Regimen regimen) {
+		this.regimen = regimen;
 	}
 
 }

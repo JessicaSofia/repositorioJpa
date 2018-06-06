@@ -11,6 +11,7 @@ value="org.hibernate.dialect.Oracle10gDialect"/>
 <property name="hibernate.format_sql" value="true"/>
 <property name="jboss.entity.manager.factory.jndi.name"
 value="java:/talentoHumanoEntityManagerFactory"/>
+
 </properties>
 	</persistence-unit>
 </persistence>

@@ -2,7 +2,9 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,8 +30,8 @@ public class Dependencia implements java.io.Serializable {
 	private Dependencia dependencia;
 	private String dpnDescripcion;
 	private BigDecimal dpnTipo;
-	private Set<Dependencia> dependencias = new HashSet<Dependencia>(0);
-	private Set<DetallePuesto> detallePuestos = new HashSet<DetallePuesto>(0);
+	private List<Dependencia> dependencias = new ArrayList<>();
+	private List<DetallePuesto> detallePuestos = new ArrayList<>();
 
 	public Dependencia() {
 	}
@@ -39,7 +41,7 @@ public class Dependencia implements java.io.Serializable {
 	}
 
 	public Dependencia(int dpnId, Dependencia dependencia, String dpnDescripcion, BigDecimal dpnTipo,
-			Set<Dependencia> dependencias, Set<DetallePuesto> detallePuestos) {
+			List<Dependencia> dependencias, List<DetallePuesto> detallePuestos) {
 		this.dpnId = dpnId;
 		this.dependencia = dependencia;
 		this.dpnDescripcion = dpnDescripcion;
@@ -88,20 +90,20 @@ public class Dependencia implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "dependencia")
-	public Set<Dependencia> getDependencias() {
+	public List<Dependencia> getDependencias() {
 		return this.dependencias;
 	}
 
-	public void setDependencias(Set<Dependencia> dependencias) {
+	public void setDependencias(List<Dependencia> dependencias) {
 		this.dependencias = dependencias;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "dependencia")
-	public Set<DetallePuesto> getDetallePuestos() {
+	public List<DetallePuesto> getDetallePuestos() {
 		return this.detallePuestos;
 	}
 
-	public void setDetallePuestos(Set<DetallePuesto> detallePuestos) {
+	public void setDetallePuestos(List<DetallePuesto> detallePuestos) {
 		this.detallePuestos = detallePuestos;
 	}
 

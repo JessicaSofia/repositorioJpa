@@ -1,15 +1,15 @@
-package ec.edu.uce.controlAsistencia.jpa.entidades;
+  package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
 import java.math.BigDecimal;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -25,11 +25,11 @@ public class Regimen implements java.io.Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private int rgmId;
-	private ParametroVacaciones parametroVacaciones;
+	private List<ParametroVacaciones> parametroVacaciones =new ArrayList<ParametroVacaciones>();
 	private String rgmDescripcion;
 	private String rgmCodigo;
 	private BigDecimal rgmEstado;
-	private Set<GrupoOcupacional> grupoOcupacionals = new HashSet<GrupoOcupacional>(0);
+	private List<GrupoOcupacional> grupoOcupacionals = new ArrayList<GrupoOcupacional>();
 
 	public Regimen() {
 	}
@@ -38,8 +38,8 @@ public class Regimen implements java.io.Serializable {
 		this.rgmId = rgmId;
 	}
 
-	public Regimen(int rgmId, ParametroVacaciones parametroVacaciones, String rgmDescripcion, String rgmCodigo,
-			BigDecimal rgmEstado, Set<GrupoOcupacional> grupoOcupacionals) {
+	public Regimen(int rgmId, List<ParametroVacaciones> parametroVacaciones, String rgmDescripcion, String rgmCodigo,
+			BigDecimal rgmEstado, List<GrupoOcupacional> grupoOcupacionals) {
 		this.rgmId = rgmId;
 		this.parametroVacaciones = parametroVacaciones;
 		this.rgmDescripcion = rgmDescripcion;
@@ -49,7 +49,7 @@ public class Regimen implements java.io.Serializable {
 	}
 
 	@Id
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "RGM_ID", unique = true, nullable = false, precision = 6, scale = 0)
 	public int getRgmId() {
 		return this.rgmId;
@@ -59,13 +59,13 @@ public class Regimen implements java.io.Serializable {
 		this.rgmId = rgmId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "PRVC_ID")
-	public ParametroVacaciones getParametroVacaciones() {
+	  
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "regimen")
+	public List<ParametroVacaciones> getParametroVacaciones() {
 		return this.parametroVacaciones;
 	}
-
-	public void setParametroVacaciones(ParametroVacaciones parametroVacaciones) {
+	
+	public void setParametroVacaciones(List<ParametroVacaciones> parametroVacaciones) {
 		this.parametroVacaciones = parametroVacaciones;
 	}
 
@@ -97,11 +97,11 @@ public class Regimen implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "regimen")
-	public Set<GrupoOcupacional> getGrupoOcupacionals() {
+	public List<GrupoOcupacional> getGrupoOcupacionals() {
 		return this.grupoOcupacionals;
 	}
 
-	public void setGrupoOcupacionals(Set<GrupoOcupacional> grupoOcupacionals) {
+	public void setGrupoOcupacionals(List<GrupoOcupacional> grupoOcupacionals) {
 		this.grupoOcupacionals = grupoOcupacionals;
 	}
 

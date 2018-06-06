@@ -122,4 +122,11 @@ public class Contrato implements java.io.Serializable {
 		this.detallePuestos = detallePuestos;
 	}
 
+	@Override
+	public String toString() {
+		return "Contrato [cntId=" + cntId + ", candidato=" + candidato + ", tipoContrato=" + tipoContrato
+				+ ", cntFechaInicio=" + cntFechaInicio + ", cntFechaFin=" + cntFechaFin + ", cntEstado=" + cntEstado
+				+ ", detallePuestos=" + detallePuestos + "]";
+	}
+
 }
