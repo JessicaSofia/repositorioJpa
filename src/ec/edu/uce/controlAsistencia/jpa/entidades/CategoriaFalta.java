@@ -136,7 +136,7 @@ public class CategoriaFalta implements java.io.Serializable {
 		this.ctgflPorcentajeBase = ctgflPorcentajeBase;
 	}
 
-	@Column(name = "CTGFLL_PORCENTAJE_VARIABLE", precision = 22, scale = 0)
+	@Column(name = "CTGFL_PORCENTAJE_VARIABLE", precision = 22, scale = 0)
 	public BigDecimal getCtgfllPorcentajeVariable() {
 		return this.ctgfllPorcentajeVariable;
 	}

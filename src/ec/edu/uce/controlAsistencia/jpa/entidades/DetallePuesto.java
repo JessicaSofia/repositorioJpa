@@ -106,7 +106,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.fichaEmpleado = fichaEmpleado;
 	}
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "PST_ID")
 	public Puesto getPuesto() {
 		return this.puesto;
@@ -116,7 +116,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.puesto = puesto;
 	}
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "RLLB_ID")
 	public RelacionLaboral getRelacionLaboral() {
 		return this.relacionLaboral;
@@ -135,7 +135,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.dtpsEstado = dtpsEstado;
 	}
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "detallePuesto")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
 	public List<Distributivo> getDistributivos() {
 		return this.distributivos;
 	}
@@ -144,7 +144,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.distributivos = distributivos;
 	}
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "detallePuesto")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
 	public List<AccionPersonal> getAccionPersonals() {
 		return this.accionPersonals;
 	}
@@ -153,7 +153,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.accionPersonals = accionPersonals;
 	}
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "detallePuesto")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
 	public List<Vacacion> getVacacions() {
 		return this.vacacions;
 	}
@@ -162,7 +162,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.vacacions = vacacions;
 	}
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "detallePuesto")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
 	public List<DetallePuestoSancion> getDetallePuestoSancions() {
 		return this.detallePuestoSancions;
 	}
@@ -171,7 +171,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.detallePuestoSancions = detallePuestoSancions;
 	}
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "detallePuesto")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
 	public List<LicenciaYPermiso> getLicenciaYPermisos() {
 		return this.licenciaYPermisos;
 	}
@@ -180,7 +180,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.licenciaYPermisos = licenciaYPermisos;
 	}
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "detallePuesto")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
 	public List<SaldoVacacion> getSaldoVacacions() {
 		return this.saldoVacacions;
 	}
