@@ -131,7 +131,7 @@ public class SaldoVacacion implements java.io.Serializable {
 
 	@Override
 	public String toString() {
-		return ""+slvcTotalDias+" Dias"+slvcTotalHoras +" HH:MM";
+		return ""+slvcDiasRestantes+" Dias "+slvcTotalHoras +" HH:MM";
 	}
 
 }

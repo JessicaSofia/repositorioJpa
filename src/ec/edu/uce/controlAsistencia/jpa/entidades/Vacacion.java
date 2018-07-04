@@ -4,12 +4,17 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 
 import java.sql.Timestamp;
 import java.util.Date;
+
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -61,11 +66,12 @@ public class Vacacion implements java.io.Serializable {
 	}
 
 	@Id
-
+	@SequenceGenerator( name="seq", sequenceName = "S_VACACION", initialValue = 1, allocationSize = 999999)
+	@GeneratedValue(generator ="seq")
 	@Column(name = "VCC_ID", unique = true, nullable = false, precision = 6, scale = 0)
 	public int getVccId() {
 		return this.vccId;
-	}
+	} 
 
 	public void setVccId(int vccId) {
 		this.vccId = vccId;
@@ -111,7 +117,7 @@ public class Vacacion implements java.io.Serializable {
 	@Temporal(TemporalType.DATE)
 	@Column(name = "VCC_FECHA_INICIO", length = 7)
 	public Date getVccFechaInicio() {
-		return this.vccFechaInicio;
+		return this.vccFechaInicio;                     
 	}
 
 	public void setVccFechaInicio(Date vccFechaInicio) {
