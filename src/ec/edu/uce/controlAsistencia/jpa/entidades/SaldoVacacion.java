@@ -29,7 +29,7 @@ public class SaldoVacacion implements java.io.Serializable {
 	private Integer slvcTotalDias;
 	private Integer slvcDiasRegistrados;
 	private Integer slvcDiasRestantes;
-	private Date slvcTotalHoras;
+	private String slvcTotalHoras;
 	private Integer slvcDiasAnticipados;
 	private Integer slvcPeriodo;
 
@@ -41,7 +41,7 @@ public class SaldoVacacion implements java.io.Serializable {
 	}
 
 	public SaldoVacacion(int slvcId, DetallePuesto detallePuesto, Integer slvcTotalDias,
-			Integer slvcDiasRegistrados, Integer slvcDiasRestantes, Date slvcTotalHoras,
+			Integer slvcDiasRegistrados, Integer slvcDiasRestantes, String slvcTotalHoras,
 			Integer slvcDiasAnticipados, Integer slvcPeriodo) {
 		this.slvcId = slvcId;
 		this.detallePuesto = detallePuesto;
@@ -101,13 +101,13 @@ public class SaldoVacacion implements java.io.Serializable {
 		this.slvcDiasRestantes = slvcDiasRestantes;
 	}
 
-	@Temporal(TemporalType.DATE)
-	@Column(name = "SLVC_TOTAL_HORAS", length = 7)
-	public Date getSlvcTotalHoras() {
+	
+	@Column(name = "SLVC_TOTAL_HORAS", length = 5)
+	public String getSlvcTotalHoras() {
 		return this.slvcTotalHoras;
 	}
 
-	public void setSlvcTotalHoras(Date slvcTotalHoras) {
+	public void setSlvcTotalHoras(String slvcTotalHoras) {
 		this.slvcTotalHoras = slvcTotalHoras;
 	}
 
