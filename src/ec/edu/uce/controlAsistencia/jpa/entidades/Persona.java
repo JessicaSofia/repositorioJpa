@@ -114,7 +114,7 @@ public class Persona implements java.io.Serializable {
 		this.prsTipoIdentificacionSniese = prsTipoIdentificacionSniese;
 	}
 
-	@Column(name = "PRS_IDENTIFICACION", length = 13  )
+	@Column(name = "PRS_IDENTIFICACION", length = 13, nullable = false )
 	public String getPrsIdentificacion() {
 		return this.prsIdentificacion;
 	}
