@@ -2,6 +2,7 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
 
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,6 +33,7 @@ public class SaldoVacacion implements java.io.Serializable {
 	private String slvcTotalHoras;
 	private Integer slvcDiasAnticipados;
 	private Integer slvcPeriodo;
+	private BigDecimal slvcEstado;
 
 	public SaldoVacacion() {
 	}
@@ -124,9 +126,20 @@ public class SaldoVacacion implements java.io.Serializable {
 	public Integer getSlvcPeriodo() {
 		return this.slvcPeriodo;
 	}
+	
+	
 
 	public void setSlvcPeriodo(Integer slvcPeriodo) {
 		this.slvcPeriodo = slvcPeriodo;
+	}
+
+	@Column(name = "SLVC_ESTADO", precision = 22, scale = 0)
+	public BigDecimal getSlvcEstado() {
+		return slvcEstado;
+	}
+
+	public void setSlvcEstado(BigDecimal slvcEstado) {
+		this.slvcEstado = slvcEstado;
 	}
 
 	@Override
