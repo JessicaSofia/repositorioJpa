@@ -66,7 +66,7 @@ public class Vacacion implements java.io.Serializable {
 	}
 
 	@Id
-	@SequenceGenerator( name="seq", sequenceName = "S_VACACION", initialValue = 1, allocationSize = 999999)
+	@SequenceGenerator( name="seq", sequenceName = "S_VACACION", initialValue = 1)
 	@GeneratedValue(generator ="seq")
 	@Column(name = "VCC_ID", unique = true, nullable = false, precision = 6, scale = 0)
 	public int getVccId() {
