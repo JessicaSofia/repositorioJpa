@@ -2,14 +2,17 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -29,7 +32,7 @@ public class ParametroVacaciones implements java.io.Serializable {
 	private String  prvcValor;
 	private String prvcDescripcion; 
 	private BigDecimal prvCEstado;
-	private Regimen regimen;
+	private List<ParametroVacacionRegimen> parametroVacacionesRegimens=  new ArrayList<>();
 
 	public ParametroVacaciones() {
 	}
@@ -38,13 +41,13 @@ public class ParametroVacaciones implements java.io.Serializable {
 		this.prvcId = prvcId;
 	}
 
-	public ParametroVacaciones(int prvcId,String prvcNombres, String  prvcValor, String prvcDescripcion, BigDecimal prvCEstado, Regimen regimen) {
+	public ParametroVacaciones(int prvcId,String prvcNombres, String  prvcValor, String prvcDescripcion, BigDecimal prvCEstado) {
 		this.prvcId = prvcId;
 		this.prvcNombres = prvcNombres;
 		this.prvcValor = prvcValor;
 		this.prvcDescripcion = prvcDescripcion;
 		this.prvCEstado = prvCEstado;
-		this.regimen = regimen;
+		
 	}
 
 	@Id
@@ -95,14 +98,13 @@ public class ParametroVacaciones implements java.io.Serializable {
 		this.prvCEstado = prvCEstado;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "RGM_ID") 
-	public Regimen getRegimen() {
-		return this.regimen;
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "parametroVacaciones")
+	public List<ParametroVacacionRegimen> getParametroVacaciones() {
+		return parametroVacacionesRegimens;
 	}
 
-	public void setRegimen (Regimen regimen) {
-		this.regimen = regimen;
+	public void setParametroVacaciones(List<ParametroVacacionRegimen> parametroVacacionesRegimens) {
+		this.parametroVacacionesRegimens = parametroVacacionesRegimens;
 	}
 
 }

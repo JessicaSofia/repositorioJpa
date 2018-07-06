@@ -40,7 +40,7 @@ public class DetallePuestoSancion implements java.io.Serializable {
 	private String dtpssnMotivoInsub;
 	private BigDecimal dtpssnEstado;
 	private BigDecimal dtpssnMinutos;
-
+	
 	public DetallePuestoSancion() {
 	}
 
