@@ -3,6 +3,7 @@
 	<persistence-unit name="ec.edu.uce.controlAsistencia.jpa">
 	<provider>org.hibernate.ejb.HibernatePersistence</provider>
 <jta-data-source>java:/talentoHumanoDS</jta-data-source>
+<class>ec.edu.uce.controlAsistencia.jpa.entidades.ParametroVacacionRegimen</class>
 <properties>
 <property name="hibernate.dialect"
 value="org.hibernate.dialect.Oracle10gDialect"/>

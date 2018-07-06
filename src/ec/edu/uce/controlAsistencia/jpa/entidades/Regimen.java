@@ -25,11 +25,12 @@ public class Regimen implements java.io.Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private int rgmId;
-	private List<ParametroVacaciones> parametroVacaciones =new ArrayList<ParametroVacaciones>();
 	private String rgmDescripcion;
 	private String rgmCodigo;
 	private BigDecimal rgmEstado;
 	private List<GrupoOcupacional> grupoOcupacionals = new ArrayList<GrupoOcupacional>();
+	private List<ParametroVacacionRegimen> parametroVacacionesRegimens=  new ArrayList<>();
+
 
 	public Regimen() {
 	}
@@ -38,10 +39,9 @@ public class Regimen implements java.io.Serializable {
 		this.rgmId = rgmId;
 	}
 
-	public Regimen(int rgmId, List<ParametroVacaciones> parametroVacaciones, String rgmDescripcion, String rgmCodigo,
+	public Regimen(int rgmId, String rgmDescripcion, String rgmCodigo,
 			BigDecimal rgmEstado, List<GrupoOcupacional> grupoOcupacionals) {
 		this.rgmId = rgmId;
-		this.parametroVacaciones = parametroVacaciones;
 		this.rgmDescripcion = rgmDescripcion;
 		this.rgmCodigo = rgmCodigo;
 		this.rgmEstado = rgmEstado;
@@ -60,15 +60,6 @@ public class Regimen implements java.io.Serializable {
 	}
 
 	  
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "regimen")
-	public List<ParametroVacaciones> getParametroVacaciones() {
-		return this.parametroVacaciones;
-	}
-	
-	public void setParametroVacaciones(List<ParametroVacaciones> parametroVacaciones) {
-		this.parametroVacaciones = parametroVacaciones;
-	}
-
 	@Column(name = "RGM_DESCRIPCION", length = 256)
 	public String getRgmDescripcion() {
 		return this.rgmDescripcion;
@@ -103,6 +94,15 @@ public class Regimen implements java.io.Serializable {
 
 	public void setGrupoOcupacionals(List<GrupoOcupacional> grupoOcupacionals) {
 		this.grupoOcupacionals = grupoOcupacionals;
+	}
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "parametroVacaciones")
+	public List<ParametroVacacionRegimen> getParametroVacaciones() {
+		return parametroVacacionesRegimens;
+	}
+
+	public void setParametroVacaciones(List<ParametroVacacionRegimen> parametroVacacionesRegimens) {
+		this.parametroVacacionesRegimens = parametroVacacionesRegimens;
 	}
 
 }

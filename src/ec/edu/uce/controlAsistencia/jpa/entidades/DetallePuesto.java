@@ -38,6 +38,7 @@ public class DetallePuesto implements java.io.Serializable {
 	private List<LicenciaYPermiso> licenciaYPermisos = new ArrayList<LicenciaYPermiso>(0);
 	private List<SaldoVacacion> saldoVacacions = new ArrayList<SaldoVacacion>(0);
 
+ 
 	public DetallePuesto() {
 	}
 
@@ -188,6 +189,9 @@ public class DetallePuesto implements java.io.Serializable {
 	public void setSaldoVacacions( List<SaldoVacacion> saldoVacacions) {
 		this.saldoVacacions = saldoVacacions;
 	}
+	
+	
+	
 
 	@Override
 	public String toString() {

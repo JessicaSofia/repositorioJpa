@@ -65,4 +65,5 @@
   <table-filter match-schema="BDTALENTOHUMANO" match-name="USUARIO"/>
   <table-filter match-schema="BDTALENTOHUMANO" match-name="USUARIO_ROL"/>
   <table-filter match-schema="BDTALENTOHUMANO" match-name="VACACION"/>
+  <table-filter match-schema="BDTALENTOHUMANO" match-name="PARAMETRO_VACACION_REGIMEN"/>
 </hibernate-reverse-engineering>
