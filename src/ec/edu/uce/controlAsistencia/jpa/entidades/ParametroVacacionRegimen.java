@@ -20,14 +20,14 @@ public class ParametroVacacionRegimen implements Serializable {
 	@Column(name="PRVCRG_ID")
 	private long prvcrgId;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "PRVC_ID")
 	private ParametroVacaciones parametroVacaciones;
 
 	@Column(name="PRVCRG_VALOR")
 	private String prvcrgValor;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "RGM_ID")
 	private Regimen regimen;
 

@@ -33,7 +33,7 @@ public class SaldoVacacion implements java.io.Serializable {
 	private String slvcTotalHoras;
 	private Integer slvcDiasAnticipados;
 	private Integer slvcPeriodo;
-	private BigDecimal slvcEstado;
+	private Integer slvcEstado;
 
 	public SaldoVacacion() {
 	}
@@ -134,11 +134,11 @@ public class SaldoVacacion implements java.io.Serializable {
 	}
 
 	@Column(name = "SLVC_ESTADO", precision = 22, scale = 0)
-	public BigDecimal getSlvcEstado() {
+	public Integer getSlvcEstado() {
 		return slvcEstado;
 	}
 
-	public void setSlvcEstado(BigDecimal slvcEstado) {
+	public void setSlvcEstado(Integer slvcEstado) {
 		this.slvcEstado = slvcEstado;
 	}
 
