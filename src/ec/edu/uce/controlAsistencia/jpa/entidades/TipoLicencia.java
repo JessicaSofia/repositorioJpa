@@ -25,7 +25,7 @@ public class TipoLicencia implements java.io.Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private BigDecimal tplcId;
+	private int tplcId;
 	private String tplcNombre;
 	private String tplcDescripcion;
 	private BigDecimal tplcEstado;
@@ -34,11 +34,11 @@ public class TipoLicencia implements java.io.Serializable {
 	public TipoLicencia() {
 	}
 
-	public TipoLicencia(BigDecimal tplcId) {
+	public TipoLicencia(int tplcId) {
 		this.tplcId = tplcId;
 	}
 
-	public TipoLicencia(BigDecimal tplcId, String tplcNombre, String tplcDescripcion, BigDecimal tplcEstado,
+	public TipoLicencia(int tplcId, String tplcNombre, String tplcDescripcion, BigDecimal tplcEstado,
 			Set<LicenciaYPermiso> licenciaYPermisos) {
 		this.tplcId = tplcId;
 		this.tplcNombre = tplcNombre;
@@ -51,11 +51,11 @@ public class TipoLicencia implements java.io.Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TipoLicIdGenerator")
     @SequenceGenerator(name = "TipoLicIdGenerator", initialValue = 1, allocationSize = 1, sequenceName = "S_TIPO_LICENCIA")
 	@Column(name = "TPLC_ID", unique = true, nullable = false, precision = 22, scale = 0)
-	public BigDecimal getTplcId() {
+	public int  getTplcId() {
 		return this.tplcId;
 	}
 
-	public void setTplcId(BigDecimal tplcId) {
+	public void setTplcId(int tplcId) {
 		this.tplcId = tplcId;
 	}
 

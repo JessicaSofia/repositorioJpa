@@ -32,9 +32,9 @@ public class LicenciaYPermiso implements java.io.Serializable {
 	private int lcprId;
 	private DetallePuesto detallePuesto;
 	private TipoLicencia tipoLicencia;
-	private BigDecimal lcprNumLicencia;
+	private int lcprNumLicencia;
 	private Timestamp lcprFechaEmision;
-	private BigDecimal lcprNumDias;
+	private int lcprNumDias;
 	private Date lcprFechaInicio;
 	private Date lcprFechaFin;
 	private Date lcprNumHoras;
@@ -43,8 +43,8 @@ public class LicenciaYPermiso implements java.io.Serializable {
 	private String lcprExplicacion;
 	private String lcprObservacion;
 	private String lcprCopia;
-	private BigDecimal lcprCargoVacaciones;
-	private BigDecimal tplcEstado;
+	private int lcprCargoVacaciones;
+	private int tplcEstado;
 	private String lcprObservacionEstado;
 
 	public LicenciaYPermiso() {
@@ -55,9 +55,9 @@ public class LicenciaYPermiso implements java.io.Serializable {
 	}
 
 	public LicenciaYPermiso(int lcprId, DetallePuesto detallePuesto, TipoLicencia tipoLicencia,
-			BigDecimal lcprNumLicencia, Timestamp lcprFechaEmision, BigDecimal lcprNumDias, Date lcprFechaInicio,
+			int lcprNumLicencia, Timestamp lcprFechaEmision, int lcprNumDias, Date lcprFechaInicio,
 			Date lcprFechaFin, Date lcprNumHoras, Date lcprHoraInicio, Date lcprHoraFin, String lcprExplicacion,
-			String lcprObservacion, String lcprCopia, BigDecimal lcprCargoVacaciones, BigDecimal tplcEstado,
+			String lcprObservacion, String lcprCopia, int lcprCargoVacaciones, int tplcEstado,
 			String lcprObservacionEstado) {
 		this.lcprId = lcprId;
 		this.detallePuesto = detallePuesto;
@@ -100,7 +100,7 @@ public class LicenciaYPermiso implements java.io.Serializable {
 		this.detallePuesto = detallePuesto;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "TPLC_ID")
 	public TipoLicencia getTipoLicencia() {
 		return this.tipoLicencia;
@@ -111,11 +111,11 @@ public class LicenciaYPermiso implements java.io.Serializable {
 	}
 
 	@Column(name = "LCPR_NUM_LICENCIA", precision = 22, scale = 0)
-	public BigDecimal getLcprNumLicencia() {
+	public int getLcprNumLicencia() {
 		return this.lcprNumLicencia;
 	}
 
-	public void setLcprNumLicencia(BigDecimal lcprNumLicencia) {
+	public void setLcprNumLicencia(int lcprNumLicencia) {
 		this.lcprNumLicencia = lcprNumLicencia;
 	}
 
@@ -129,11 +129,11 @@ public class LicenciaYPermiso implements java.io.Serializable {
 	}
 
 	@Column(name = "LCPR_NUM_DIAS", precision = 22, scale = 0)
-	public BigDecimal getLcprNumDias() {
+	public int getLcprNumDias() {
 		return this.lcprNumDias;
 	}
 
-	public void setLcprNumDias(BigDecimal lcprNumDias) {
+	public void setLcprNumDias(int lcprNumDias) {
 		this.lcprNumDias = lcprNumDias;
 	}
 
@@ -215,20 +215,20 @@ public class LicenciaYPermiso implements java.io.Serializable {
 	}
 
 	@Column(name = "LCPR_CARGO_VACACIONES", precision = 22, scale = 0)
-	public BigDecimal getLcprCargoVacaciones() {
+	public int getLcprCargoVacaciones() {
 		return this.lcprCargoVacaciones;
 	}
 
-	public void setLcprCargoVacaciones(BigDecimal lcprCargoVacaciones) {
+	public void setLcprCargoVacaciones(int lcprCargoVacaciones) {
 		this.lcprCargoVacaciones = lcprCargoVacaciones;
 	}
 
 	@Column(name = "TPLC_ESTADO", precision = 22, scale = 0)
-	public BigDecimal getTplcEstado() {
+	public int getTplcEstado() {
 		return this.tplcEstado;
 	}
 
-	public void setTplcEstado(BigDecimal tplcEstado) {
+	public void setTplcEstado(int tplcEstado) {
 		this.tplcEstado = tplcEstado;
 	}
 
