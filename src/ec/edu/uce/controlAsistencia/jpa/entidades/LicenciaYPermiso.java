@@ -37,9 +37,9 @@ public class LicenciaYPermiso implements java.io.Serializable {
 	private int lcprNumDias;
 	private Date lcprFechaInicio;
 	private Date lcprFechaFin;
-	private Date lcprNumHoras;
-	private Date lcprHoraInicio;
-	private Date lcprHoraFin;
+	private String lcprNumHoras;
+	private String lcprHoraInicio;
+	private String lcprHoraFin;
 	private String lcprExplicacion;
 	private String lcprObservacion;
 	private String lcprCopia;
@@ -56,7 +56,7 @@ public class LicenciaYPermiso implements java.io.Serializable {
 
 	public LicenciaYPermiso(int lcprId, DetallePuesto detallePuesto, TipoLicencia tipoLicencia,
 			int lcprNumLicencia, Timestamp lcprFechaEmision, int lcprNumDias, Date lcprFechaInicio,
-			Date lcprFechaFin, Date lcprNumHoras, Date lcprHoraInicio, Date lcprHoraFin, String lcprExplicacion,
+			Date lcprFechaFin, String lcprNumHoras, String lcprHoraInicio, String lcprHoraFin, String lcprExplicacion,
 			String lcprObservacion, String lcprCopia, int lcprCargoVacaciones, int tplcEstado,
 			String lcprObservacionEstado) {
 		this.lcprId = lcprId;
@@ -157,33 +157,30 @@ public class LicenciaYPermiso implements java.io.Serializable {
 		this.lcprFechaFin = lcprFechaFin;
 	}
 
-	@Temporal(TemporalType.DATE)
-	@Column(name = "LCPR_NUM_HORAS", length = 7)
-	public Date getLcprNumHoras() {
+	@Column(name = "LCPR_NUM_HORAS", length = 5)
+	public String getLcprNumHoras() {
 		return this.lcprNumHoras;
 	}
 
-	public void setLcprNumHoras(Date lcprNumHoras) {
+	public void setLcprNumHoras(String lcprNumHoras) {
 		this.lcprNumHoras = lcprNumHoras;
 	}
 
-	@Temporal(TemporalType.DATE)
-	@Column(name = "LCPR_HORA_INICIO", length = 7)
-	public Date getLcprHoraInicio() {
+	@Column(name = "LCPR_HORA_INICIO", length = 5)
+	public String getLcprHoraInicio() {
 		return this.lcprHoraInicio;
 	}
 
-	public void setLcprHoraInicio(Date lcprHoraInicio) {
+	public void setLcprHoraInicio(String lcprHoraInicio) {
 		this.lcprHoraInicio = lcprHoraInicio;
 	}
 
-	@Temporal(TemporalType.DATE)
-	@Column(name = "LCPR_HORA_FIN", length = 7)
-	public Date getLcprHoraFin() {
+	@Column(name = "LCPR_HORA_FIN", length = 5)
+	public String getLcprHoraFin() {
 		return this.lcprHoraFin;
 	}
 
-	public void setLcprHoraFin(Date lcprHoraFin) {
+	public void setLcprHoraFin(String lcprHoraFin) {
 		this.lcprHoraFin = lcprHoraFin;
 	}
 
