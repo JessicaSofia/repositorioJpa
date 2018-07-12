@@ -34,6 +34,7 @@ public class SaldoVacacion implements java.io.Serializable {
 	private Integer slvcDiasAnticipados;
 	private Integer slvcPeriodo;
 	private Integer slvcEstado;
+	private Integer slvcNumFinSemana;
 
 	public SaldoVacacion() {
 	}
@@ -66,7 +67,7 @@ public class SaldoVacacion implements java.io.Serializable {
 		this.slvcId = slvcId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "DTPS_ID")
 	public DetallePuesto getDetallePuesto() {
 		return this.detallePuesto;
@@ -140,6 +141,16 @@ public class SaldoVacacion implements java.io.Serializable {
 
 	public void setSlvcEstado(Integer slvcEstado) {
 		this.slvcEstado = slvcEstado;
+	}
+
+
+	@Column(name = "SLVC_NUMFINSEMANA", precision = 22, scale = 0)
+	public Integer getSlvcNumFinSemana() {
+		return slvcNumFinSemana;
+	}
+
+	public void setSlvcNumFinSemana(Integer slvcNumFinSemana) {
+		this.slvcNumFinSemana = slvcNumFinSemana;
 	}
 
 	@Override
