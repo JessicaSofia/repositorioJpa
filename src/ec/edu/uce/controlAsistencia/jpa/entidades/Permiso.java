@@ -2,7 +2,6 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Date;
 import java.sql.Timestamp;
 
@@ -17,16 +16,16 @@ public class Permiso implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="PERMISO_PRMID_GENERATOR", sequenceName="GENPERMISO")
+	@SequenceGenerator(name="PERMISO_PRMID_GENERATOR", sequenceName="S_PERMISO")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PERMISO_PRMID_GENERATOR")
 	@Column(name="PRM_ID")
-	private long prmId;
+	private int prmId;
 
 	@Column(name="DTPS_ID")
-	private BigDecimal dtpsId;
+	private DetallePuesto dtpsId;
 
 	@Column(name="PRM_CARGO_VACACION")
-	private BigDecimal prmCargoVacacion;
+	private int prmCargoVacacion;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name="PRM_FECHA_PERMISO")
@@ -39,38 +38,38 @@ public class Permiso implements Serializable {
 	private String prmHoraInicio;
 
 	@Column(name="PRM_JUSTIFICACION")
-	private BigDecimal prmJustificacion;
+	private int prmJustificacion;
 
 	@Column(name="PRM_NUM_DIAS")
-	private BigDecimal prmNumDias;
+	private int prmNumDias;
 
 	@Column(name="PRM_NUM_HORAS")
-	private BigDecimal prmNumHoras;
+	private int prmNumHoras;
 
 	public Permiso() {
 	}
 
-	public long getPrmId() {
+	public int getPrmId() {
 		return this.prmId;
 	}
 
-	public void setPrmId(long prmId) {
+	public void setPrmId(int prmId) {
 		this.prmId = prmId;
 	}
 
-	public BigDecimal getDtpsId() {
+	public DetallePuesto getDtpsId() {
 		return this.dtpsId;
 	}
 
-	public void setDtpsId(BigDecimal dtpsId) {
+	public void setDtpsId(DetallePuesto dtpsId) {
 		this.dtpsId = dtpsId;
 	}
 
-	public BigDecimal getPrmCargoVacacion() {
+	public int getPrmCargoVacacion() {
 		return this.prmCargoVacacion;
 	}
 
-	public void setPrmCargoVacacion(BigDecimal prmCargoVacacion) {
+	public void setPrmCargoVacacion(int prmCargoVacacion) {
 		this.prmCargoVacacion = prmCargoVacacion;
 	}
 
@@ -98,27 +97,27 @@ public class Permiso implements Serializable {
 		this.prmHoraInicio = prmHoraInicio;
 	}
 
-	public BigDecimal getPrmJustificacion() {
+	public int getPrmJustificacion() {
 		return this.prmJustificacion;
 	}
 
-	public void setPrmJustificacion(BigDecimal prmJustificacion) {
+	public void setPrmJustificacion(int prmJustificacion) {
 		this.prmJustificacion = prmJustificacion;
 	}
 
-	public BigDecimal getPrmNumDias() {
+	public int getPrmNumDias() {
 		return this.prmNumDias;
 	}
 
-	public void setPrmNumDias(BigDecimal prmNumDias) {
+	public void setPrmNumDias(int prmNumDias) {
 		this.prmNumDias = prmNumDias;
 	}
 
-	public BigDecimal getPrmNumHoras() {
+	public int getPrmNumHoras() {
 		return this.prmNumHoras;
 	}
 
-	public void setPrmNumHoras(BigDecimal prmNumHoras) {
+	public void setPrmNumHoras(int prmNumHoras) {
 		this.prmNumHoras = prmNumHoras;
 	}
 
