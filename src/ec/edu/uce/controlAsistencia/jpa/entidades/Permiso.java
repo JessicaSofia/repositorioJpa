@@ -21,8 +21,10 @@ public class Permiso implements Serializable {
 	@Column(name="PRM_ID")
 	private int prmId;
 
-	@Column(name="DTPS_ID")
-	private DetallePuesto dtpsId;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "DTPS_ID")
+	private DetallePuesto detallePuesto;
 
 	@Column(name="PRM_CARGO_VACACION")
 	private int prmCargoVacacion;
@@ -57,12 +59,13 @@ public class Permiso implements Serializable {
 		this.prmId = prmId;
 	}
 
-	public DetallePuesto getDtpsId() {
-		return this.dtpsId;
+	
+	public DetallePuesto getDetallePuesto() {
+		return detallePuesto;
 	}
 
-	public void setDtpsId(DetallePuesto dtpsId) {
-		this.dtpsId = dtpsId;
+	public void setDetallePuesto(DetallePuesto detallePuesto) {
+		this.detallePuesto = detallePuesto;
 	}
 
 	public int getPrmCargoVacacion() {
