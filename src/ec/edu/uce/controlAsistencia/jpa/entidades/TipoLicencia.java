@@ -29,7 +29,7 @@ public class TipoLicencia implements java.io.Serializable {
 	private String tplcNombre;
 	private String tplcDescripcion;
 	private BigDecimal tplcEstado;
-	private Set<LicenciaYPermiso> licenciaYPermisos = new HashSet<LicenciaYPermiso>(0);
+	private Set<Licencia> licenciaYPermisos = new HashSet<Licencia>(0);
 
 	public TipoLicencia() {
 	}
@@ -39,7 +39,7 @@ public class TipoLicencia implements java.io.Serializable {
 	}
 
 	public TipoLicencia(int tplcId, String tplcNombre, String tplcDescripcion, BigDecimal tplcEstado,
-			Set<LicenciaYPermiso> licenciaYPermisos) {
+			Set<Licencia> licenciaYPermisos) {
 		this.tplcId = tplcId;
 		this.tplcNombre = tplcNombre;
 		this.tplcDescripcion = tplcDescripcion;
@@ -87,11 +87,11 @@ public class TipoLicencia implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tipoLicencia")
-	public Set<LicenciaYPermiso> getLicenciaYPermisos() {
+	public Set<Licencia> getLicenciaYPermisos() {
 		return this.licenciaYPermisos;
 	}
 
-	public void setLicenciaYPermisos(Set<LicenciaYPermiso> licenciaYPermisos) {
+	public void setLicenciaYPermisos(Set<Licencia> licenciaYPermisos) {
 		this.licenciaYPermisos = licenciaYPermisos;
 	}
 

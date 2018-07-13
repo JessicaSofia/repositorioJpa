@@ -35,7 +35,7 @@ public class DetallePuesto implements java.io.Serializable {
 	private List<AccionPersonal> accionPersonals = new ArrayList<AccionPersonal>(0);
 	private List<Vacacion> vacacions = new ArrayList<Vacacion>(0);
 	private List<DetallePuestoSancion> detallePuestoSancions = new ArrayList<DetallePuestoSancion>(0);
-	private List<LicenciaYPermiso> licenciaYPermisos = new ArrayList<LicenciaYPermiso>(0);
+	private List<Licencia> licenciaYPermisos = new ArrayList<Licencia>(0);
 	private List<SaldoVacacion> saldoVacacions = new ArrayList<SaldoVacacion>(0);
 
  
@@ -49,7 +49,7 @@ public class DetallePuesto implements java.io.Serializable {
 	public DetallePuesto(int dtpsId, Contrato contrato, Dependencia dependencia, FichaEmpleado fichaEmpleado,
 			Puesto puesto, RelacionLaboral relacionLaboral, BigDecimal dtpsEstado, List<Distributivo> distributivos,
 			 List<AccionPersonal> accionPersonals, List<Vacacion> vacacions,
-			 List<DetallePuestoSancion> detallePuestoSancions, List<LicenciaYPermiso> licenciaYPermisos,
+			 List<DetallePuestoSancion> detallePuestoSancions, List<Licencia> licenciaYPermisos,
 			 List<SaldoVacacion> saldoVacacions) {
 		this.dtpsId = dtpsId;
 		this.contrato = contrato;
@@ -173,11 +173,11 @@ public class DetallePuesto implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "detallePuesto")
-	public List<LicenciaYPermiso> getLicenciaYPermisos() {
+	public List<Licencia> getLicenciaYPermisos() {
 		return this.licenciaYPermisos;
 	}
 
-	public void setLicenciaYPermisos( List<LicenciaYPermiso> licenciaYPermisos) {
+	public void setLicenciaYPermisos( List<Licencia> licenciaYPermisos) {
 		this.licenciaYPermisos = licenciaYPermisos;
 	}
 
