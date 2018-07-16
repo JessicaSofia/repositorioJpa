@@ -28,7 +28,10 @@ public class TipoLicencia implements java.io.Serializable {
 	private int tplcId;
 	private String tplcNombre;
 	private String tplcDescripcion;
-	private BigDecimal tplcEstado;
+	private int tplcEstado;
+	private int tplcPadre;
+	private int tplcMaxDias;
+	private int tplcMinDias;
 	private Set<Licencia> licenciaYPermisos = new HashSet<Licencia>(0);
 
 	public TipoLicencia() {
@@ -38,12 +41,15 @@ public class TipoLicencia implements java.io.Serializable {
 		this.tplcId = tplcId;
 	}
 
-	public TipoLicencia(int tplcId, String tplcNombre, String tplcDescripcion, BigDecimal tplcEstado,
+	public TipoLicencia(int tplcId, String tplcNombre, String tplcDescripcion, int tplcEstado, int tplcPadre, int tplcMaxDias, int tplcMinDias,
 			Set<Licencia> licenciaYPermisos) {
 		this.tplcId = tplcId;
 		this.tplcNombre = tplcNombre;
 		this.tplcDescripcion = tplcDescripcion;
 		this.tplcEstado = tplcEstado;
+		this.tplcPadre = tplcPadre;
+		this.tplcMaxDias = tplcMaxDias;
+		this.tplcMinDias = tplcMinDias;
 		this.licenciaYPermisos = licenciaYPermisos;
 	}
 
@@ -78,12 +84,38 @@ public class TipoLicencia implements java.io.Serializable {
 	}
 
 	@Column(name = "TPLC_ESTADO", precision = 22, scale = 0)
-	public BigDecimal getTplcEstado() {
+	public int getTplcEstado() {
 		return this.tplcEstado;
 	}
 
-	public void setTplcEstado(BigDecimal tplcEstado) {
+	public void setTplcEstado(int tplcEstado) {
 		this.tplcEstado = tplcEstado;
+	}
+	
+	
+	@Column(name = "TPLC_PADRE", precision = 22, scale = 0)
+	public int getTplcPadre() {
+		return tplcPadre;
+	}
+
+	public void setTplcPadre(int tplcPadre) {
+		this.tplcPadre = tplcPadre;
+	}
+	@Column(name = "TPLC_MAX_DIAS", precision = 22, scale = 0)
+	public int getTplcMaxDias() {
+		return tplcMaxDias;
+	}
+
+	public void setTplcMaxDias(int tplcMaxDias) {
+		this.tplcMaxDias = tplcMaxDias;
+	}
+	@Column(name = "TPLC_MIN_DIAS", precision = 22, scale = 0)
+	public int getTplcMinDias() {
+		return tplcMinDias;
+	}
+
+	public void setTplcMinDias(int tplcMinDias) {
+		this.tplcMinDias = tplcMinDias;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tipoLicencia")
