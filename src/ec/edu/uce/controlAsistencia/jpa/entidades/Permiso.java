@@ -28,7 +28,7 @@ public class Permiso implements Serializable {
 
 	@Column(name="PRM_CARGO_VACACION")
 	private int prmCargoVacacion;
-
+ 
 	@Temporal(TemporalType.DATE)
 	@Column(name="PRM_FECHA_PERMISO")
 	private Date prmFechaPermiso;

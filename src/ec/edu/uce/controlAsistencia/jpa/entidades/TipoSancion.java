@@ -2,7 +2,9 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,7 +28,8 @@ public class TipoSancion implements java.io.Serializable {
 	private String tpsnNomBre;
 	private String tpsnDescripcion;
 	private BigDecimal tpsnEstado;
-	private Set<Sancion> sancions = new HashSet<Sancion>(0);
+	private List<Sancion> sancions = new ArrayList<>();
+	private List<CategoriaFalta> categoriaFaltas = new ArrayList<>();
 
 	public TipoSancion() {
 	}
@@ -36,7 +39,7 @@ public class TipoSancion implements java.io.Serializable {
 	}
 
 	public TipoSancion(int tpsnId, String tpsnNomBre, String tpsnDescripcion, BigDecimal tpsnEstado,
-			Set<Sancion> sancions) {
+			List<Sancion> sancions) {
 		this.tpsnId = tpsnId;
 		this.tpsnNomBre = tpsnNomBre;
 		this.tpsnDescripcion = tpsnDescripcion;
@@ -83,12 +86,22 @@ public class TipoSancion implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tipoSancion")
-	public Set<Sancion> getSancions() {
+	public List<Sancion> getSancions() {
 		return this.sancions;
 	}
 
-	public void setSancions(Set<Sancion> sancions) {
+	public void setSancions(List<Sancion> sancions) {
 		this.sancions = sancions;
+	}
+	
+
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "tipoSancion")
+	public List<CategoriaFalta> getCategoriaFaltas() {
+		return this.categoriaFaltas;
+	}
+
+	public void setCategoriaFaltas(List<CategoriaFalta> categoriaFaltas) {
+		this.categoriaFaltas = categoriaFaltas;
 	}
 
 }

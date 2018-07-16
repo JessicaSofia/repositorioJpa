@@ -1,9 +1,7 @@
 package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.sql.Time;
+
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -30,16 +28,17 @@ public class DetallePuestoSancion implements java.io.Serializable {
 	private DetallePuesto detallePuesto;
 	private Sancion sancion;
 	private Timestamp dtpssnFechaEmision;
-	private BigDecimal dtpssnMes;
-	private BigDecimal dtpssnAno;
-	private BigDecimal dtpssnDias;
-	private BigDecimal dtpssnFrecuencia;
-	private BigDecimal dtpssnNumaccion;
+	private int dtpssnMes;
+	private int dtpssnAno;
+	private String dtpssnDias;
+	private int dtpssnFrecuencia;
+	private int dtpssnNumaccion;
 	private String dtpssnObservacion;
-	private BigDecimal dtpssnValor;
+	private int dtpssnValor;
 	private String dtpssnMotivoInsub;
-	private BigDecimal dtpssnEstado;
-	private BigDecimal dtpssnMinutos;
+	private int dtpssnEstado;
+	private int dtpssnMinutos;
+	private int dtpssnDescontar;
 	
 	public DetallePuestoSancion() {
 	}
@@ -49,9 +48,9 @@ public class DetallePuestoSancion implements java.io.Serializable {
 	}
 
 	public DetallePuestoSancion(int dtpssnId, CategoriaFalta categoriaFalta, DetallePuesto detallePuesto,
-			Sancion sancion, Timestamp dtpssnFechaEmision, BigDecimal dtpssnMes, BigDecimal dtpssnAno,
-			BigDecimal dtpssnDias, BigDecimal dtpssnFrecuencia, BigDecimal dtpssnNumaccion, String dtpssnObservacion,
-			BigDecimal dtpssnValor, String dtpssnMotivoInsub, BigDecimal dtpssnEstado, BigDecimal dtpssnMinutos) {
+			Sancion sancion, Timestamp dtpssnFechaEmision, int dtpssnMes, int dtpssnAno,
+			String dtpssnDias, int dtpssnFrecuencia, int dtpssnNumaccion, String dtpssnObservacion,
+			int dtpssnValor, String dtpssnMotivoInsub, int dtpssnEstado, int dtpssnMinutos) {
 		this.dtpssnId = dtpssnId;
 		this.categoriaFalta = categoriaFalta;
 		this.detallePuesto = detallePuesto;
@@ -120,47 +119,47 @@ public class DetallePuestoSancion implements java.io.Serializable {
 	}
 
 	@Column(name = "DTPSSN_MES", precision = 22, scale = 0)
-	public BigDecimal getDtpssnMes() {
+	public int getDtpssnMes() {
 		return this.dtpssnMes;
 	}
 
-	public void setDtpssnMes(BigDecimal dtpssnMes) {
+	public void setDtpssnMes(int dtpssnMes) {
 		this.dtpssnMes = dtpssnMes;
 	}
 
 	@Column(name = "DTPSSN_ANO", precision = 22, scale = 0)
-	public BigDecimal getDtpssnAno() {
+	public int getDtpssnAno() {
 		return this.dtpssnAno;
 	}
 
-	public void setDtpssnAno(BigDecimal dtpssnAno) {
+	public void setDtpssnAno(int dtpssnAno) {
 		this.dtpssnAno = dtpssnAno;
 	}
 
-	@Column(name = "DTPSSN_DIAS", precision = 22, scale = 0)
-	public BigDecimal getDtpssnDias() {
+	@Column(name = "DTPSSN_DIAS", length = 50)
+	public String getDtpssnDias() {
 		return this.dtpssnDias;
 	}
 
-	public void setDtpssnDias(BigDecimal dtpssnDias) {
+	public void setDtpssnDias(String dtpssnDias) {
 		this.dtpssnDias = dtpssnDias;
 	}
 
 	@Column(name = "DTPSSN_FRECUENCIA", precision = 22, scale = 0)
-	public BigDecimal getDtpssnFrecuencia() {
+	public int getDtpssnFrecuencia() {
 		return this.dtpssnFrecuencia;
 	}
 
-	public void setDtpssnFrecuencia(BigDecimal dtpssnFrecuencia) {
+	public void setDtpssnFrecuencia(int dtpssnFrecuencia) {
 		this.dtpssnFrecuencia = dtpssnFrecuencia;
 	}
 
 	@Column(name = "DTPSSN_NUMACCION", precision = 22, scale = 0)
-	public BigDecimal getDtpssnNumaccion() {
+	public int getDtpssnNumaccion() {
 		return this.dtpssnNumaccion;
 	}
 
-	public void setDtpssnNumaccion(BigDecimal dtpssnNumaccion) {
+	public void setDtpssnNumaccion(int dtpssnNumaccion) {
 		this.dtpssnNumaccion = dtpssnNumaccion;
 	}
 
@@ -174,11 +173,11 @@ public class DetallePuestoSancion implements java.io.Serializable {
 	}
 
 	@Column(name = "DTPSSN_VALOR", precision = 22, scale = 0)
-	public BigDecimal getDtpssnValor() {
+	public int getDtpssnValor() {
 		return this.dtpssnValor;
 	}
 
-	public void setDtpssnValor(BigDecimal dtpssnValor) {
+	public void setDtpssnValor(int dtpssnValor) {
 		this.dtpssnValor = dtpssnValor;
 	}
 
@@ -192,21 +191,32 @@ public class DetallePuestoSancion implements java.io.Serializable {
 	}
 
 	@Column(name = "DTPSSN_ESTADO", precision = 22, scale = 0)
-	public BigDecimal getDtpssnEstado() {
+	public int getDtpssnEstado() {
 		return this.dtpssnEstado;
 	}
 
-	public void setDtpssnEstado(BigDecimal dtpssnEstado) {
+	public void setDtpssnEstado(int dtpssnEstado) {
 		this.dtpssnEstado = dtpssnEstado;
 	}
 
 	@Column(name = "DTPSSN_MINUTOS", precision = 22, scale = 0)
-	public BigDecimal getDtpssnMinutos() {
+	public int getDtpssnMinutos() {
 		return this.dtpssnMinutos;
 	}
 
-	public void setDtpssnMinutos(BigDecimal dtpssnMinutos) {
+	public void setDtpssnMinutos(int dtpssnMinutos) {
 		this.dtpssnMinutos = dtpssnMinutos;
 	}
+
+	@Column(name = "DTPSSN_DESCONTAR")
+	public int getDtpssnDescontar() {
+		return dtpssnDescontar;
+	}
+
+	public void setDtpssnDescontar(int dtpssnDescontar) {
+		this.dtpssnDescontar = dtpssnDescontar;
+	}
+	
+	
 
 }

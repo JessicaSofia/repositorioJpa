@@ -2,7 +2,9 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,8 +28,8 @@ public class Categoria implements java.io.Serializable {
 	private String ctgDescripcion;
 	private String ctgCodigoNomina;
 	private BigDecimal ctgEstado;
-	private Set<CategoriaFalta> categoriaFaltas = new HashSet<CategoriaFalta>(0);
-	private Set<FichaEmpleado> fichaEmpleados = new HashSet<FichaEmpleado>(0);
+	private List<CategoriaFalta> categoriaFaltas = new ArrayList<>();
+	private List<FichaEmpleado> fichaEmpleados = new ArrayList<>();
 
 	public Categoria() {
 	}
@@ -37,7 +39,7 @@ public class Categoria implements java.io.Serializable {
 	}
 
 	public Categoria(int ctgId, String ctgDescripcion, String ctgCodigoNomina, BigDecimal ctgEstado,
-			Set<CategoriaFalta> categoriaFaltas, Set<FichaEmpleado> fichaEmpleados) {
+			List<CategoriaFalta> categoriaFaltas, List<FichaEmpleado> fichaEmpleados) {
 		this.ctgId = ctgId;
 		this.ctgDescripcion = ctgDescripcion;
 		this.ctgCodigoNomina = ctgCodigoNomina;
@@ -85,20 +87,20 @@ public class Categoria implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria")
-	public Set<CategoriaFalta> getCategoriaFaltas() {
+	public List<CategoriaFalta> getCategoriaFaltas() {
 		return this.categoriaFaltas;
 	}
 
-	public void setCategoriaFaltas(Set<CategoriaFalta> categoriaFaltas) {
+	public void setCategoriaFaltas(List<CategoriaFalta> categoriaFaltas) {
 		this.categoriaFaltas = categoriaFaltas;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria")
-	public Set<FichaEmpleado> getFichaEmpleados() {
+	public List<FichaEmpleado> getFichaEmpleados() {
 		return this.fichaEmpleados;
 	}
 
-	public void setFichaEmpleados(Set<FichaEmpleado> fichaEmpleados) {
+	public void setFichaEmpleados(List<FichaEmpleado> fichaEmpleados) {
 		this.fichaEmpleados = fichaEmpleados;
 	}
 

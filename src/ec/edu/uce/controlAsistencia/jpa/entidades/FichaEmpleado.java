@@ -59,7 +59,7 @@ public class FichaEmpleado implements java.io.Serializable {
 		this.fcemId = fcemId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "CTG_ID")
 	public Categoria getCategoria() {
 		return this.categoria;

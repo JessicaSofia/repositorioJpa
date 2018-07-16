@@ -2,8 +2,8 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
 import java.math.BigDecimal;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -31,11 +31,10 @@ public class CategoriaFalta implements java.io.Serializable {
 	private BigDecimal ctgflMinuntosMin;
 	private BigDecimal ctgflMinutosMax;
 	private String ctgflObservacion;
-	private BigDecimal ctgflPorcentajeBase;
-	private BigDecimal ctgfllPorcentajeVariable;
+	private float ctgflPorcentajeBase;
+	private TipoSancion tipoSancion;
 	private BigDecimal ctgflEstado;
-	private Set<DetallePuestoSancion> detallePuestoSancions = new HashSet<DetallePuestoSancion>(0);
-
+	private List<DetallePuestoSancion> detallePuestoSancions = new ArrayList<>();
 	public CategoriaFalta() {
 	}
 
@@ -45,8 +44,8 @@ public class CategoriaFalta implements java.io.Serializable {
 
 	public CategoriaFalta(int ctgflId, Categoria categoria, Falta falta, BigDecimal ctgflFrecuenciaMax,
 			BigDecimal ctgflMinuntosMin, BigDecimal ctgflMinutosMax, String ctgflObservacion,
-			BigDecimal ctgflPorcentajeBase, BigDecimal ctgfllPorcentajeVariable, BigDecimal ctgflEstado,
-			Set<DetallePuestoSancion> detallePuestoSancions) {
+			float ctgflPorcentajeBase, BigDecimal ctgflEstado,
+			List<DetallePuestoSancion> detallePuestoSancions) {
 		this.ctgflId = ctgflId;
 		this.categoria = categoria;
 		this.falta = falta;
@@ -55,13 +54,11 @@ public class CategoriaFalta implements java.io.Serializable {
 		this.ctgflMinutosMax = ctgflMinutosMax;
 		this.ctgflObservacion = ctgflObservacion;
 		this.ctgflPorcentajeBase = ctgflPorcentajeBase;
-		this.ctgfllPorcentajeVariable = ctgfllPorcentajeVariable;
 		this.ctgflEstado = ctgflEstado;
 		this.detallePuestoSancions = detallePuestoSancions;
 	}
 
 	@Id
-
 	@Column(name = "CTGFL_ID", unique = true, nullable = false, precision = 6, scale = 0)
 	public int getCtgflId() {
 		return this.ctgflId;
@@ -127,23 +124,15 @@ public class CategoriaFalta implements java.io.Serializable {
 		this.ctgflObservacion = ctgflObservacion;
 	}
 
-	@Column(name = "CTGFL_PORCENTAJE__BASE", precision = 22, scale = 0)
-	public BigDecimal getCtgflPorcentajeBase() {
+	@Column(name = "CTGFL_PORCENTAJE__BASE")
+	public float getCtgflPorcentajeBase() {
 		return this.ctgflPorcentajeBase;
 	}
 
-	public void setCtgflPorcentajeBase(BigDecimal ctgflPorcentajeBase) {
+	public void setCtgflPorcentajeBase(float ctgflPorcentajeBase) {
 		this.ctgflPorcentajeBase = ctgflPorcentajeBase;
 	}
 
-	@Column(name = "CTGFL_PORCENTAJE_VARIABLE", precision = 22, scale = 0)
-	public BigDecimal getCtgfllPorcentajeVariable() {
-		return this.ctgfllPorcentajeVariable;
-	}
-
-	public void setCtgfllPorcentajeVariable(BigDecimal ctgfllPorcentajeVariable) {
-		this.ctgfllPorcentajeVariable = ctgfllPorcentajeVariable;
-	}
 
 	@Column(name = "CTGFL_ESTADO", precision = 22, scale = 0)
 	public BigDecimal getCtgflEstado() {
@@ -154,13 +143,25 @@ public class CategoriaFalta implements java.io.Serializable {
 		this.ctgflEstado = ctgflEstado;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoriaFalta")
-	public Set<DetallePuestoSancion> getDetallePuestoSancions() {
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "categoriaFalta")
+	public List<DetallePuestoSancion> getDetallePuestoSancions() {
 		return this.detallePuestoSancions;
 	}
 
-	public void setDetallePuestoSancions(Set<DetallePuestoSancion> detallePuestoSancions) {
+	public void setDetallePuestoSancions(List<DetallePuestoSancion> detallePuestoSancions) {
 		this.detallePuestoSancions = detallePuestoSancions;
 	}
+
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "TPSN_ID")
+	public TipoSancion getTipoSancion() {
+		return tipoSancion;
+	}
+
+	public void setTipoSancion(TipoSancion tipoSancion) {
+		this.tipoSancion = tipoSancion;
+	}
+	
 
 }
