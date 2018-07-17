@@ -7,9 +7,12 @@ import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
@@ -34,7 +37,7 @@ public class DetallePuestoSancion implements java.io.Serializable {
 	private int dtpssnFrecuencia;
 	private int dtpssnNumaccion;
 	private String dtpssnObservacion;
-	private int dtpssnValor;
+	private float dtpssnValor;
 	private String dtpssnMotivoInsub;
 	private int dtpssnEstado;
 	private int dtpssnMinutos;
@@ -68,8 +71,10 @@ public class DetallePuestoSancion implements java.io.Serializable {
 		this.dtpssnMinutos = dtpssnMinutos;
 	}
 
-	@Id
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "DtSancionGenerator")
+    @SequenceGenerator(name = "DtSancionGenerator", initialValue = 1, allocationSize = 1, sequenceName = "S_DETALLE_PUESTO_SANCION")
 	@Column(name = "DTPSSN_ID", unique = true, nullable = false, precision = 6, scale = 0)
 	public int getDtpssnId() {
 		return this.dtpssnId;
@@ -173,11 +178,11 @@ public class DetallePuestoSancion implements java.io.Serializable {
 	}
 
 	@Column(name = "DTPSSN_VALOR", precision = 22, scale = 0)
-	public int getDtpssnValor() {
+	public float getDtpssnValor() {
 		return this.dtpssnValor;
 	}
 
-	public void setDtpssnValor(int dtpssnValor) {
+	public void setDtpssnValor(float dtpssnValor) {
 		this.dtpssnValor = dtpssnValor;
 	}
 

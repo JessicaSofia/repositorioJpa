@@ -1,7 +1,6 @@
 package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
-import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -28,8 +27,8 @@ public class Sancion implements java.io.Serializable {
 	private TipoSancion tipoSancion;
 	private String snNombre;
 	private String snDescripcion;
-	private BigDecimal snNivel;
-	private BigDecimal snEstado;
+	private int snNivel;
+	private int snEstado;
 	private Set<DetallePuestoSancion> detallePuestoSancions = new HashSet<DetallePuestoSancion>(0);
 
 	public Sancion() {
@@ -39,8 +38,8 @@ public class Sancion implements java.io.Serializable {
 		this.snId = snId;
 	}
 
-	public Sancion(int snId, TipoSancion tipoSancion, String snNombre, String snDescripcion, BigDecimal snNivel,
-			BigDecimal snEstado, Set<DetallePuestoSancion> detallePuestoSancions) {
+	public Sancion(int snId, TipoSancion tipoSancion, String snNombre, String snDescripcion, int snNivel,
+			int snEstado, Set<DetallePuestoSancion> detallePuestoSancions) {
 		this.snId = snId;
 		this.tipoSancion = tipoSancion;
 		this.snNombre = snNombre;
@@ -90,20 +89,20 @@ public class Sancion implements java.io.Serializable {
 	}
 
 	@Column(name = "SN_NIVEL", precision = 22, scale = 0)
-	public BigDecimal getSnNivel() {
+	public int getSnNivel() {
 		return this.snNivel;
 	}
 
-	public void setSnNivel(BigDecimal snNivel) {
+	public void setSnNivel(int snNivel) {
 		this.snNivel = snNivel;
 	}
 
 	@Column(name = "SN_ESTADO", precision = 22, scale = 0)
-	public BigDecimal getSnEstado() {
+	public int getSnEstado() {
 		return this.snEstado;
 	}
 
-	public void setSnEstado(BigDecimal snEstado) {
+	public void setSnEstado(int snEstado) {
 		this.snEstado = snEstado;
 	}
 

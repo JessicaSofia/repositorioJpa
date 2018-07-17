@@ -1,7 +1,6 @@
 package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
@@ -27,13 +26,13 @@ public class CategoriaFalta implements java.io.Serializable {
 	private int ctgflId;
 	private Categoria categoria;
 	private Falta falta;
-	private BigDecimal ctgflFrecuenciaMax;
-	private BigDecimal ctgflMinuntosMin;
-	private BigDecimal ctgflMinutosMax;
+	private int ctgflFrecuenciaMax;
+	private int ctgflMinuntosMin;
+	private int ctgflMinutosMax;
 	private String ctgflObservacion;
 	private float ctgflPorcentajeBase;
 	private TipoSancion tipoSancion;
-	private BigDecimal ctgflEstado;
+	private int ctgflEstado;
 	private List<DetallePuestoSancion> detallePuestoSancions = new ArrayList<>();
 	public CategoriaFalta() {
 	}
@@ -42,9 +41,9 @@ public class CategoriaFalta implements java.io.Serializable {
 		this.ctgflId = ctgflId;
 	}
 
-	public CategoriaFalta(int ctgflId, Categoria categoria, Falta falta, BigDecimal ctgflFrecuenciaMax,
-			BigDecimal ctgflMinuntosMin, BigDecimal ctgflMinutosMax, String ctgflObservacion,
-			float ctgflPorcentajeBase, BigDecimal ctgflEstado,
+	public CategoriaFalta(int ctgflId, Categoria categoria, Falta falta, int ctgflFrecuenciaMax,
+			int ctgflMinuntosMin, int ctgflMinutosMax, String ctgflObservacion,
+			float ctgflPorcentajeBase, int ctgflEstado,
 			List<DetallePuestoSancion> detallePuestoSancions) {
 		this.ctgflId = ctgflId;
 		this.categoria = categoria;
@@ -89,29 +88,29 @@ public class CategoriaFalta implements java.io.Serializable {
 	}
 
 	@Column(name = "CTGFL_FRECUENCIA_MAX", precision = 22, scale = 0)
-	public BigDecimal getCtgflFrecuenciaMax() {
+	public int  getCtgflFrecuenciaMax() {
 		return this.ctgflFrecuenciaMax;
 	}
 
-	public void setCtgflFrecuenciaMax(BigDecimal ctgflFrecuenciaMax) {
+	public void setCtgflFrecuenciaMax(int ctgflFrecuenciaMax) {
 		this.ctgflFrecuenciaMax = ctgflFrecuenciaMax;
 	}
 
 	@Column(name = "CTGFL_MINUNTOS_MIN", precision = 22, scale = 0)
-	public BigDecimal getCtgflMinuntosMin() {
+	public int getCtgflMinuntosMin() {
 		return this.ctgflMinuntosMin;
 	}
 
-	public void setCtgflMinuntosMin(BigDecimal ctgflMinuntosMin) {
+	public void setCtgflMinuntosMin(int ctgflMinuntosMin) {
 		this.ctgflMinuntosMin = ctgflMinuntosMin;
 	}
 
 	@Column(name = "CTGFL_MINUTOS_MAX", precision = 22, scale = 0)
-	public BigDecimal getCtgflMinutosMax() {
+	public int getCtgflMinutosMax() {
 		return this.ctgflMinutosMax;
 	}
 
-	public void setCtgflMinutosMax(BigDecimal ctgflMinutosMax) {
+	public void setCtgflMinutosMax(int ctgflMinutosMax) {
 		this.ctgflMinutosMax = ctgflMinutosMax;
 	}
 
@@ -135,11 +134,11 @@ public class CategoriaFalta implements java.io.Serializable {
 
 
 	@Column(name = "CTGFL_ESTADO", precision = 22, scale = 0)
-	public BigDecimal getCtgflEstado() {
+	public int getCtgflEstado() {
 		return this.ctgflEstado;
 	}
 
-	public void setCtgflEstado(BigDecimal ctgflEstado) {
+	public void setCtgflEstado(int ctgflEstado) {
 		this.ctgflEstado = ctgflEstado;
 	}
 
