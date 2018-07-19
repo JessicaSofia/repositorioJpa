@@ -77,7 +77,7 @@ public class CategoriaFalta implements java.io.Serializable {
 		this.categoria = categoria;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "FL_ID")
 	public Falta getFalta() {
 		return this.falta;
