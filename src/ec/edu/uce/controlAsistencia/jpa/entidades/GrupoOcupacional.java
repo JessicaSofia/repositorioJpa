@@ -59,7 +59,7 @@ public class GrupoOcupacional implements java.io.Serializable {
 		this.grocId = grocId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "RGM_ID")
 	public Regimen getRegimen() {
 		return this.regimen;

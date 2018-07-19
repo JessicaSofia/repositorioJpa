@@ -99,7 +99,7 @@ public class Puesto implements java.io.Serializable {
 		this.pstId = pstId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "GROC_ID")
 	public GrupoOcupacional getGrupoOcupacional() {
 		return this.grupoOcupacional;

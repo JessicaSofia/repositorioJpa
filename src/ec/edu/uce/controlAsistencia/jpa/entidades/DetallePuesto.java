@@ -107,7 +107,7 @@ public class DetallePuesto implements java.io.Serializable {
 		this.fichaEmpleado = fichaEmpleado;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "PST_ID")
 	public Puesto getPuesto() {
 		return this.puesto;

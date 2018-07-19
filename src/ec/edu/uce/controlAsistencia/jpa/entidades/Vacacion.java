@@ -77,7 +77,7 @@ public class Vacacion implements java.io.Serializable {
 		this.vccId = vccId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "DTPS_ID")
 	public DetallePuesto getDetallePuesto() {
 		return this.detallePuesto;

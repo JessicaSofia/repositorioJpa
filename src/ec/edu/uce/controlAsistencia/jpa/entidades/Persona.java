@@ -228,6 +228,9 @@ public class Persona implements java.io.Serializable {
 		return "" + prsPrimerApellido + " " + prsSegundoApellido+ "";
 	}
 	
+	public String nombresCompetos() {
+		return  prsNombres+" " + prsPrimerApellido+" "+ prsSegundoApellido+ "";
+	}
 	
 
 }
