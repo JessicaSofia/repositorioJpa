@@ -48,6 +48,9 @@ public class Permiso implements Serializable {
 	@Column(name="PRM_NUM_HORAS")
 	private int prmNumHoras;
 
+	@Column(name="PRM_DESCRIPCION_MOTIVO")
+	private String prmDescripcionMotivo;
+	
 	public Permiso() {
 	}
 
@@ -123,5 +126,14 @@ public class Permiso implements Serializable {
 	public void setPrmNumHoras(int prmNumHoras) {
 		this.prmNumHoras = prmNumHoras;
 	}
+
+	public String getPrmDescripcionMotivo() {
+		return prmDescripcionMotivo;
+	}
+
+	public void setPrmDescripcionMotivo(String prmDescripcionMotivo) {
+		this.prmDescripcionMotivo = prmDescripcionMotivo;
+	}
+	
 
 }
