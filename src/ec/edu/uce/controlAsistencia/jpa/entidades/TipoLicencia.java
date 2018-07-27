@@ -10,6 +10,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -29,9 +31,11 @@ public class TipoLicencia implements java.io.Serializable {
 	private String tplcNombre;
 	private String tplcDescripcion;
 	private int tplcEstado;
-	private int tplcPadre;
 	private int tplcMaxDias;
 	private int tplcMinDias;
+	private Regimen regimen;
+	private TipoLicencia tipoLicencia;
+	
 	private Set<Licencia> licenciaYPermisos = new HashSet<Licencia>(0);
 
 	public TipoLicencia() {
@@ -42,14 +46,15 @@ public class TipoLicencia implements java.io.Serializable {
 	}
 
 	public TipoLicencia(int tplcId, String tplcNombre, String tplcDescripcion, int tplcEstado, int tplcPadre, int tplcMaxDias, int tplcMinDias,
-			Set<Licencia> licenciaYPermisos) {
+			Regimen regimen, TipoLicencia tipoLicencia,	Set<Licencia> licenciaYPermisos) {
 		this.tplcId = tplcId;
 		this.tplcNombre = tplcNombre;
 		this.tplcDescripcion = tplcDescripcion;
 		this.tplcEstado = tplcEstado;
-		this.tplcPadre = tplcPadre;
 		this.tplcMaxDias = tplcMaxDias;
 		this.tplcMinDias = tplcMinDias;
+		this.regimen = regimen;
+		this.tipoLicencia = tipoLicencia;
 		this.licenciaYPermisos = licenciaYPermisos;
 	}
 
@@ -64,6 +69,8 @@ public class TipoLicencia implements java.io.Serializable {
 	public void setTplcId(int tplcId) {
 		this.tplcId = tplcId;
 	}
+	
+	
 
 	@Column(name = "TPLC_NOMBRE", length = 256)
 	public String getTplcNombre() {
@@ -93,14 +100,6 @@ public class TipoLicencia implements java.io.Serializable {
 	}
 	
 	
-	@Column(name = "TPLC_PADRE", precision = 22, scale = 0)
-	public int getTplcPadre() {
-		return tplcPadre;
-	}
-
-	public void setTplcPadre(int tplcPadre) {
-		this.tplcPadre = tplcPadre;
-	}
 	@Column(name = "TPLC_MAX_DIAS", precision = 22, scale = 0)
 	public int getTplcMaxDias() {
 		return tplcMaxDias;
@@ -116,6 +115,26 @@ public class TipoLicencia implements java.io.Serializable {
 
 	public void setTplcMinDias(int tplcMinDias) {
 		this.tplcMinDias = tplcMinDias;
+	}
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "RGM_ID")
+	public Regimen getRegimen() {
+		return regimen;
+	}
+
+	public void setRegimen(Regimen regimen) {
+		this.regimen = regimen;
+	}
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "TPL_TPLC_ID")
+	public TipoLicencia getTipoLicencia() {
+		return tipoLicencia;
+	}
+
+	public void setTipoLicencia(TipoLicencia tipoLicencia) {
+		this.tipoLicencia = tipoLicencia;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tipoLicencia")
