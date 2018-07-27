@@ -1,7 +1,9 @@
 package ec.edu.uce.controlAsistencia.jpa.entidades;
 // Generated 07-mar-2018 22:35:26 by Hibernate Tools 4.3.5.Final
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,7 +31,9 @@ public class Sancion implements java.io.Serializable {
 	private String snDescripcion;
 	private int snNivel;
 	private int snEstado;
+	private int snDescuento;
 	private Set<DetallePuestoSancion> detallePuestoSancions = new HashSet<DetallePuestoSancion>(0);
+	private List<CategoriaFalta> categoriaFaltas = new ArrayList<>();
 
 	public Sancion() {
 	}
@@ -113,6 +117,24 @@ public class Sancion implements java.io.Serializable {
 
 	public void setDetallePuestoSancions(Set<DetallePuestoSancion> detallePuestoSancions) {
 		this.detallePuestoSancions = detallePuestoSancions;
+	}
+	@Column(name = "SN_DESCUENTO", precision = 22, scale = 0)
+	public int getSnDescuento() {
+		return snDescuento;
+	}
+
+	public void setSnDescuento(int snDescuento) {
+		this.snDescuento = snDescuento;
+	}
+	
+	
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "sancion")
+	public List<CategoriaFalta> getCategoriaFaltas() {
+		return this.categoriaFaltas;
+	}
+
+	public void setCategoriaFaltas(List<CategoriaFalta> categoriaFaltas) {
+		this.categoriaFaltas = categoriaFaltas;
 	}
 
 }

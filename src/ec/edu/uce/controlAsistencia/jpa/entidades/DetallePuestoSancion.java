@@ -94,7 +94,7 @@ public class DetallePuestoSancion implements java.io.Serializable {
 		this.categoriaFalta = categoriaFalta;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "DTPS_ID")
 	public DetallePuesto getDetallePuesto() {
 		return this.detallePuesto;

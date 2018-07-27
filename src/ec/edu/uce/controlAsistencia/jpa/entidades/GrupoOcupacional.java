@@ -28,7 +28,7 @@ public class GrupoOcupacional implements java.io.Serializable {
 	private Regimen regimen;
 	private String grocDescripcion;
 	private BigDecimal grocGrado;
-	private BigDecimal grocRmu;
+	private int grocRmu;
 	private Set<Puesto> puestos = new HashSet<Puesto>(0);
 
 	public GrupoOcupacional() {
@@ -39,7 +39,7 @@ public class GrupoOcupacional implements java.io.Serializable {
 	}
 
 	public GrupoOcupacional(int grocId, Regimen regimen, String grocDescripcion, BigDecimal grocGrado,
-			BigDecimal grocRmu, Set<Puesto> puestos) {
+			int grocRmu, Set<Puesto> puestos) {
 		this.grocId = grocId;
 		this.regimen = regimen;
 		this.grocDescripcion = grocDescripcion;
@@ -88,11 +88,11 @@ public class GrupoOcupacional implements java.io.Serializable {
 	}
 
 	@Column(name = "GROC_RMU", precision = 6)
-	public BigDecimal getGrocRmu() {
+	public int getGrocRmu() {
 		return this.grocRmu;
 	}
 
-	public void setGrocRmu(BigDecimal grocRmu) {
+	public void setGrocRmu(int grocRmu) {
 		this.grocRmu = grocRmu;
 	}
 

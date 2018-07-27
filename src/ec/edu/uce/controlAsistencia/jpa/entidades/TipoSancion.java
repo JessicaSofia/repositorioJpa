@@ -29,7 +29,7 @@ public class TipoSancion implements java.io.Serializable {
 	private String tpsnDescripcion;
 	private BigDecimal tpsnEstado;
 	private List<Sancion> sancions = new ArrayList<>();
-	private List<CategoriaFalta> categoriaFaltas = new ArrayList<>();
+
 
 	public TipoSancion() {
 	}
@@ -95,13 +95,5 @@ public class TipoSancion implements java.io.Serializable {
 	}
 	
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "tipoSancion")
-	public List<CategoriaFalta> getCategoriaFaltas() {
-		return this.categoriaFaltas;
-	}
-
-	public void setCategoriaFaltas(List<CategoriaFalta> categoriaFaltas) {
-		this.categoriaFaltas = categoriaFaltas;
-	}
 
 }

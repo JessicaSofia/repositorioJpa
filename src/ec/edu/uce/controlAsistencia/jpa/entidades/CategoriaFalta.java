@@ -31,7 +31,7 @@ public class CategoriaFalta implements java.io.Serializable {
 	private int ctgflMinutosMax;
 	private String ctgflObservacion;
 	private float ctgflPorcentajeBase;
-	private TipoSancion tipoSancion;
+	private Sancion Sancion;
 	private int ctgflEstado;
 	private List<DetallePuestoSancion> detallePuestoSancions = new ArrayList<>();
 	public CategoriaFalta() {
@@ -153,13 +153,13 @@ public class CategoriaFalta implements java.io.Serializable {
 
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "TPSN_ID")
-	public TipoSancion getTipoSancion() {
-		return tipoSancion;
+	@JoinColumn(name = "SN_ID")
+	public Sancion getSancion() {
+		return Sancion;
 	}
 
-	public void setTipoSancion(TipoSancion tipoSancion) {
-		this.tipoSancion = tipoSancion;
+	public void setSancion(Sancion Sancion) {
+		this.Sancion = Sancion;
 	}
 	
 
