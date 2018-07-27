@@ -42,11 +42,9 @@ public class Permiso implements Serializable {
 	@Column(name="PRM_JUSTIFICACION")
 	private int prmJustificacion;
 
-	@Column(name="PRM_NUM_DIAS")
-	private int prmNumDias;
-
+	
 	@Column(name="PRM_NUM_HORAS")
-	private int prmNumHoras;
+	private String prmNumHoras;
 
 	@Column(name="PRM_DESCRIPCION_MOTIVO")
 	private String prmDescripcionMotivo;
@@ -111,19 +109,11 @@ public class Permiso implements Serializable {
 		this.prmJustificacion = prmJustificacion;
 	}
 
-	public int getPrmNumDias() {
-		return this.prmNumDias;
+	public String getPrmNumHoras() {
+		return prmNumHoras;
 	}
 
-	public void setPrmNumDias(int prmNumDias) {
-		this.prmNumDias = prmNumDias;
-	}
-
-	public int getPrmNumHoras() {
-		return this.prmNumHoras;
-	}
-
-	public void setPrmNumHoras(int prmNumHoras) {
+	public void setPrmNumHoras(String prmNumHoras) {
 		this.prmNumHoras = prmNumHoras;
 	}
 
