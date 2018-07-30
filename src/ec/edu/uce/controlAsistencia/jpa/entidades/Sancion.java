@@ -64,7 +64,7 @@ public class Sancion implements java.io.Serializable {
 		this.snId = snId;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "TPSN_ID")
 	public TipoSancion getTipoSancion() {
 		return this.tipoSancion;

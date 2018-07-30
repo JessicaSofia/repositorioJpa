@@ -27,6 +27,7 @@ public class CategoriaFalta implements java.io.Serializable {
 	private Categoria categoria;
 	private Falta falta;
 	private int ctgflFrecuenciaMax;
+	private int ctgflFrecuenciaMin;
 	private int ctgflMinuntosMin;
 	private int ctgflMinutosMax;
 	private String ctgflObservacion;
@@ -161,6 +162,16 @@ public class CategoriaFalta implements java.io.Serializable {
 	public void setSancion(Sancion Sancion) {
 		this.Sancion = Sancion;
 	}
+
+	@Column(name = "CTGFL_FRECUENCIA_MIN")
+	public int getCtgflFrecuenciaMin() {
+		return ctgflFrecuenciaMin;
+	}
+
+	public void setCtgflFrecuenciaMin(int ctgflFrecuenciaMin) {
+		this.ctgflFrecuenciaMin = ctgflFrecuenciaMin;
+	}
+	
 	
 
 }
