@@ -32,6 +32,7 @@ public class Sancion implements java.io.Serializable {
 	private int snNivel;
 	private int snEstado;
 	private int snDescuento;
+	private int snPorcentaje;
 	private Set<DetallePuestoSancion> detallePuestoSancions = new HashSet<DetallePuestoSancion>(0);
 	private List<CategoriaFalta> categoriaFaltas = new ArrayList<>();
 
@@ -136,5 +137,14 @@ public class Sancion implements java.io.Serializable {
 	public void setCategoriaFaltas(List<CategoriaFalta> categoriaFaltas) {
 		this.categoriaFaltas = categoriaFaltas;
 	}
+	@Column(name = "SN_PORCENTAJE")
+	public int getSnPorcentaje() {
+		return snPorcentaje;
+	}
 
+	public void setSnPorcentaje(int snPorcentaje) {
+		this.snPorcentaje = snPorcentaje;
+	}
+	
+	
 }
