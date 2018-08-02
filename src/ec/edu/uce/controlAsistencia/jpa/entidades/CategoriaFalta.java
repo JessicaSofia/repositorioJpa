@@ -18,6 +18,7 @@ public class CategoriaFalta implements Serializable {
 	private int ctgflId;
 	private int ctgflEstado;
 	private int ctgflFrecuenciaMax;
+	private int ctgflFrecuenciaMin;
 	private int ctgflMinuntosMin;
 	private int ctgflMinutosMax;
 	private String ctgflObservacion;
@@ -63,6 +64,17 @@ public class CategoriaFalta implements Serializable {
 		this.ctgflFrecuenciaMax = ctgflFrecuenciaMax;
 	}
 
+	@Column(name="CTGFL_FRECUENCIA_MIN")
+	public int getCtgflFrecuenciaMin() {
+		return ctgflFrecuenciaMin;
+	}
+
+
+	public void setCtgflFrecuenciaMin(int ctgflFrecuenciaMin) {
+		this.ctgflFrecuenciaMin = ctgflFrecuenciaMin;
+	}
+
+
 
 	@Column(name="CTGFL_MINUNTOS_MIN")
 	public int getCtgflMinuntosMin() {
@@ -82,6 +94,8 @@ public class CategoriaFalta implements Serializable {
 	public void setCtgflMinutosMax(int ctgflMinutosMax) {
 		this.ctgflMinutosMax = ctgflMinutosMax;
 	}
+
+	
 
 
 	@Column(name="CTGFL_OBSERVACION")

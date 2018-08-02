@@ -18,6 +18,7 @@ public class Sancion implements Serializable {
 	private String snDescripcion;
 	private int snDescuento;
 	private int snEstado;
+	private int snPorcentaje;
 	private int snNivel;
 	private List<CategoriaFalta> categoriaFaltas;
 	private List<DetallePuestoSancion> detallePuestoSancions;
@@ -77,6 +78,16 @@ public class Sancion implements Serializable {
 
 	public void setSnEstado(int snEstado) {
 		this.snEstado = snEstado;
+	}
+
+	
+	@Column(name="SN_PORCENTAJE")
+	public int getSnPorcentaje() {
+		return snPorcentaje;
+	}
+
+	public void setSnPorcentaje(int snPorcentaje) {
+		this.snPorcentaje = snPorcentaje;
 	}
 
 
