@@ -2,6 +2,7 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.sql.Timestamp;
 
@@ -14,69 +15,55 @@ import java.sql.Timestamp;
 @NamedQuery(name="Permiso.findAll", query="SELECT p FROM Permiso p")
 public class Permiso implements Serializable {
 	private static final long serialVersionUID = 1L;
-
-	@Id
-	@SequenceGenerator(name="PERMISO_PRMID_GENERATOR", sequenceName="S_PERMISO")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PERMISO_PRMID_GENERATOR")
-	@Column(name="PRM_ID")
-	private int prmId;
-
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "DTPS_ID")
+	private long prmId;
+	private BigDecimal prmCargoVacacion;
+	private String prmDescripcionMotivo;
+	private Date prmFechaPermiso;
+	private Timestamp prmFechaRegistro;
+	private String prmHoraInicio;
+	private BigDecimal prmJustificacion;
+	private String prmNumHoras;
 	private DetallePuesto detallePuesto;
 
-	@Column(name="PRM_CARGO_VACACION")
-	private int prmCargoVacacion;
- 
-	@Temporal(TemporalType.DATE)
-	@Column(name="PRM_FECHA_PERMISO")
-	private Date prmFechaPermiso;
-
-	@Column(name="PRM_FECHA_REGISTRO")
-	private Timestamp prmFechaRegistro;
-
-	@Column(name="PRM_HORA_INICIO")
-	private String prmHoraInicio;
-
-	@Column(name="PRM_JUSTIFICACION")
-	private int prmJustificacion;
-
-	
-	@Column(name="PRM_NUM_HORAS")
-	private String prmNumHoras;
-
-	@Column(name="PRM_DESCRIPCION_MOTIVO")
-	private String prmDescripcionMotivo;
-	
 	public Permiso() {
 	}
 
-	public int getPrmId() {
+
+	@Id
+	@SequenceGenerator(name="PERMISO_PRMID_GENERATOR", sequenceName="S_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PERMISO_PRMID_GENERATOR")
+	@Column(name="PRM_ID")
+	public long getPrmId() {
 		return this.prmId;
 	}
 
-	public void setPrmId(int prmId) {
+	public void setPrmId(long prmId) {
 		this.prmId = prmId;
 	}
 
-	
-	public DetallePuesto getDetallePuesto() {
-		return detallePuesto;
-	}
 
-	public void setDetallePuesto(DetallePuesto detallePuesto) {
-		this.detallePuesto = detallePuesto;
-	}
-
-	public int getPrmCargoVacacion() {
+	@Column(name="PRM_CARGO_VACACION")
+	public BigDecimal getPrmCargoVacacion() {
 		return this.prmCargoVacacion;
 	}
 
-	public void setPrmCargoVacacion(int prmCargoVacacion) {
+	public void setPrmCargoVacacion(BigDecimal prmCargoVacacion) {
 		this.prmCargoVacacion = prmCargoVacacion;
 	}
 
+
+	@Column(name="PRM_DESCRIPCION_MOTIVO")
+	public String getPrmDescripcionMotivo() {
+		return this.prmDescripcionMotivo;
+	}
+
+	public void setPrmDescripcionMotivo(String prmDescripcionMotivo) {
+		this.prmDescripcionMotivo = prmDescripcionMotivo;
+	}
+
+
+	@Temporal(TemporalType.DATE)
+	@Column(name="PRM_FECHA_PERMISO")
 	public Date getPrmFechaPermiso() {
 		return this.prmFechaPermiso;
 	}
@@ -85,6 +72,8 @@ public class Permiso implements Serializable {
 		this.prmFechaPermiso = prmFechaPermiso;
 	}
 
+
+	@Column(name="PRM_FECHA_REGISTRO")
 	public Timestamp getPrmFechaRegistro() {
 		return this.prmFechaRegistro;
 	}
@@ -93,6 +82,8 @@ public class Permiso implements Serializable {
 		this.prmFechaRegistro = prmFechaRegistro;
 	}
 
+
+	@Column(name="PRM_HORA_INICIO")
 	public String getPrmHoraInicio() {
 		return this.prmHoraInicio;
 	}
@@ -101,29 +92,36 @@ public class Permiso implements Serializable {
 		this.prmHoraInicio = prmHoraInicio;
 	}
 
-	public int getPrmJustificacion() {
+
+	@Column(name="PRM_JUSTIFICACION")
+	public BigDecimal getPrmJustificacion() {
 		return this.prmJustificacion;
 	}
 
-	public void setPrmJustificacion(int prmJustificacion) {
+	public void setPrmJustificacion(BigDecimal prmJustificacion) {
 		this.prmJustificacion = prmJustificacion;
 	}
 
+
+	@Column(name="PRM_NUM_HORAS")
 	public String getPrmNumHoras() {
-		return prmNumHoras;
+		return this.prmNumHoras;
 	}
 
 	public void setPrmNumHoras(String prmNumHoras) {
 		this.prmNumHoras = prmNumHoras;
 	}
 
-	public String getPrmDescripcionMotivo() {
-		return prmDescripcionMotivo;
+
+	//bi-directional many-to-one association to DetallePuesto
+	@ManyToOne
+	@JoinColumn(name="DTPS_ID")
+	public DetallePuesto getDetallePuesto() {
+		return this.detallePuesto;
 	}
 
-	public void setPrmDescripcionMotivo(String prmDescripcionMotivo) {
-		this.prmDescripcionMotivo = prmDescripcionMotivo;
+	public void setDetallePuesto(DetallePuesto detallePuesto) {
+		this.detallePuesto = detallePuesto;
 	}
-	
 
 }
