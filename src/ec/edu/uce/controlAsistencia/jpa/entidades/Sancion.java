@@ -29,7 +29,7 @@ public class Sancion implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="SANCION_SNID_GENERATOR", sequenceName="S_GENERATOR")
+	@SequenceGenerator(name="SANCION_SNID_GENERATOR", sequenceName="S_SANCION")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SANCION_SNID_GENERATOR")
 	@Column(name="SN_ID")
 	public long getSnId() {
