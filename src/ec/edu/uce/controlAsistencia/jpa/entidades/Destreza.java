@@ -22,7 +22,6 @@ public class Destreza implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="DESTREZA_DSTID_GENERATOR", sequenceName="S_GENERATOR")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="DST_ID")
 	public long getDstId() {

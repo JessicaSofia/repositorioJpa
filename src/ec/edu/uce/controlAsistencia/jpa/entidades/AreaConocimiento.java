@@ -28,8 +28,7 @@ public class AreaConocimiento implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="AREA_CONOCIMIENTO_ARCNID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="AREA_CONOCIMIENTO_ARCNID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ARCN_ID")
 	public long getArcnId() {
 		return this.arcnId;
