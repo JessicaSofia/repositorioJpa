@@ -23,8 +23,6 @@ public class Etnia implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="ETNIA_ETNID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ETNIA_ETNID_GENERATOR")
 	@Column(name="ETN_ID")
 	public long getEtnId() {
 		return this.etnId;
@@ -56,7 +54,7 @@ public class Etnia implements Serializable {
 
 
 	//bi-directional many-to-one association to Persona
-	@OneToMany(mappedBy="etnia", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="etnia", fetch=FetchType.LAZY)
 	public List<Persona> getPersonas() {
 		return this.personas;
 	}

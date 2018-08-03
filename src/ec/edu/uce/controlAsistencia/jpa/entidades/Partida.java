@@ -43,7 +43,7 @@ public class Partida implements Serializable {
 
 
 	//bi-directional many-to-one association to Distributivo
-	@OneToMany(mappedBy="partida", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="partida", fetch=FetchType.LAZY)
 	public List<Distributivo> getDistributivos() {
 		return this.distributivos;
 	}
@@ -52,18 +52,5 @@ public class Partida implements Serializable {
 		this.distributivos = distributivos;
 	}
 
-	public Distributivo addDistributivo(Distributivo distributivo) {
-		getDistributivos().add(distributivo);
-		distributivo.setPartida(this);
-
-		return distributivo;
-	}
-
-	public Distributivo removeDistributivo(Distributivo distributivo) {
-		getDistributivos().remove(distributivo);
-		distributivo.setPartida(null);
-
-		return distributivo;
-	}
 
 }

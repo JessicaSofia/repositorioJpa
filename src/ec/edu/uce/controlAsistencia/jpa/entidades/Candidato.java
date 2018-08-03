@@ -25,8 +25,7 @@ public class Candidato implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="CANDIDATO_CNDID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CANDIDATO_CNDID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="CND_ID")
 	public long getCndId() {
 		return this.cndId;

@@ -26,8 +26,7 @@ public class CategoriaRango implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="CATEGORIA_RANGO_CTRNID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CATEGORIA_RANGO_CTRNID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="CTRN_ID")
 	public long getCtrnId() {
 		return this.ctrnId;

@@ -43,7 +43,7 @@ public class Proceso implements Serializable {
 
 
 	//bi-directional many-to-one association to Serie
-	@OneToMany(mappedBy="proceso", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="proceso", fetch=FetchType.LAZY)
 	public List<Serie> getSeries() {
 		return this.series;
 	}
@@ -52,18 +52,6 @@ public class Proceso implements Serializable {
 		this.series = series;
 	}
 
-	public Serie addSery(Serie sery) {
-		getSeries().add(sery);
-		sery.setProceso(this);
 
-		return sery;
-	}
-
-	public Serie removeSery(Serie sery) {
-		getSeries().remove(sery);
-		sery.setProceso(null);
-
-		return sery;
-	}
 
 }

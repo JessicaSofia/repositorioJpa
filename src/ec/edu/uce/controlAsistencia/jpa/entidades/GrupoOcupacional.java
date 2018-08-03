@@ -27,8 +27,6 @@ public class GrupoOcupacional implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="GRUPO_OCUPACIONAL_GROCID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="GRUPO_OCUPACIONAL_GROCID_GENERATOR")
 	@Column(name="GROC_ID")
 	public long getGrocId() {
 		return this.grocId;
@@ -92,7 +90,7 @@ public class GrupoOcupacional implements Serializable {
 
 
 	//bi-directional many-to-one association to Puesto
-	@OneToMany(mappedBy="grupoOcupacional", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="grupoOcupacional", fetch=FetchType.LAZY)
 	public List<Puesto> getPuestos() {
 		return this.puestos;
 	}
@@ -101,18 +99,5 @@ public class GrupoOcupacional implements Serializable {
 		this.puestos = puestos;
 	}
 
-	public Puesto addPuesto(Puesto puesto) {
-		getPuestos().add(puesto);
-		puesto.setGrupoOcupacional(this);
-
-		return puesto;
-	}
-
-	public Puesto removePuesto(Puesto puesto) {
-		getPuestos().remove(puesto);
-		puesto.setGrupoOcupacional(null);
-
-		return puesto;
-	}
 
 }

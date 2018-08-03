@@ -55,7 +55,7 @@ public class Rol implements Serializable {
 
 
 	//bi-directional many-to-one association to UsuarioRol
-	@OneToMany(mappedBy="rol", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="rol", fetch=FetchType.LAZY)
 	public List<UsuarioRol> getUsuarioRols() {
 		return this.usuarioRols;
 	}
@@ -64,18 +64,5 @@ public class Rol implements Serializable {
 		this.usuarioRols = usuarioRols;
 	}
 
-	public UsuarioRol addUsuarioRol(UsuarioRol usuarioRol) {
-		getUsuarioRols().add(usuarioRol);
-		usuarioRol.setRol(this);
-
-		return usuarioRol;
-	}
-
-	public UsuarioRol removeUsuarioRol(UsuarioRol usuarioRol) {
-		getUsuarioRols().remove(usuarioRol);
-		usuarioRol.setRol(null);
-
-		return usuarioRol;
-	}
 
 }

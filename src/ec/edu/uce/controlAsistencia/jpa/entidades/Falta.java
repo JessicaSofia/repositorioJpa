@@ -25,8 +25,6 @@ public class Falta implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="FALTA_FLID_GENERATOR", sequenceName="S_FALTA")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="FALTA_FLID_GENERATOR")
 	@Column(name="FL_ID")
 	public int getFlId() {
 		return this.flId;
@@ -68,7 +66,7 @@ public class Falta implements Serializable {
 
 
 	//bi-directional many-to-one association to CategoriaFalta
-	@OneToMany(mappedBy="falta", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="falta", fetch=FetchType.LAZY)
 	public List<CategoriaFalta> getCategoriaFaltas() {
 		return this.categoriaFaltas;
 	}
@@ -77,18 +75,5 @@ public class Falta implements Serializable {
 		this.categoriaFaltas = categoriaFaltas;
 	}
 
-	public CategoriaFalta addCategoriaFalta(CategoriaFalta categoriaFalta) {
-		getCategoriaFaltas().add(categoriaFalta);
-		categoriaFalta.setFalta(this);
-
-		return categoriaFalta;
-	}
-
-	public CategoriaFalta removeCategoriaFalta(CategoriaFalta categoriaFalta) {
-		getCategoriaFaltas().remove(categoriaFalta);
-		categoriaFalta.setFalta(null);
-
-		return categoriaFalta;
-	}
 
 }

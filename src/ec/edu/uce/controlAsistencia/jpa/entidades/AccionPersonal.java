@@ -46,8 +46,7 @@ public class AccionPersonal implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="ACCION_PERSONAL_ACPRID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ACCION_PERSONAL_ACPRID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ACPR_ID")
 	public long getAcprId() {
 		return this.acprId;

@@ -56,7 +56,7 @@ public class TipoEmpleado implements Serializable {
 
 
 	//bi-directional many-to-one association to FichaEmpleado
-	@OneToMany(mappedBy="tipoEmpleado", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="tipoEmpleado", fetch=FetchType.LAZY)
 	public List<FichaEmpleado> getFichaEmpleados() {
 		return this.fichaEmpleados;
 	}
@@ -65,18 +65,6 @@ public class TipoEmpleado implements Serializable {
 		this.fichaEmpleados = fichaEmpleados;
 	}
 
-	public FichaEmpleado addFichaEmpleado(FichaEmpleado fichaEmpleado) {
-		getFichaEmpleados().add(fichaEmpleado);
-		fichaEmpleado.setTipoEmpleado(this);
 
-		return fichaEmpleado;
-	}
-
-	public FichaEmpleado removeFichaEmpleado(FichaEmpleado fichaEmpleado) {
-		getFichaEmpleados().remove(fichaEmpleado);
-		fichaEmpleado.setTipoEmpleado(null);
-
-		return fichaEmpleado;
-	}
 
 }

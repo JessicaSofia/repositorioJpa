@@ -64,8 +64,7 @@ public class ArchivoRolPago implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="ARCHIVO_ROL_PAGO_ARROPAID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ARCHIVO_ROL_PAGO_ARROPAID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ARROPA_ID")
 	public long getArropaId() {
 		return this.arropaId;

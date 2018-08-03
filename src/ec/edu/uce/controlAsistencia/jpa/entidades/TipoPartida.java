@@ -55,7 +55,7 @@ public class TipoPartida implements Serializable {
 
 
 	//bi-directional many-to-one association to PartidaIndividual
-	@OneToMany(mappedBy="tipoPartida", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="tipoPartida", fetch=FetchType.LAZY)
 	public List<PartidaIndividual> getPartidaIndividuals() {
 		return this.partidaIndividuals;
 	}
@@ -64,18 +64,6 @@ public class TipoPartida implements Serializable {
 		this.partidaIndividuals = partidaIndividuals;
 	}
 
-	public PartidaIndividual addPartidaIndividual(PartidaIndividual partidaIndividual) {
-		getPartidaIndividuals().add(partidaIndividual);
-		partidaIndividual.setTipoPartida(this);
-
-		return partidaIndividual;
-	}
-
-	public PartidaIndividual removePartidaIndividual(PartidaIndividual partidaIndividual) {
-		getPartidaIndividuals().remove(partidaIndividual);
-		partidaIndividual.setTipoPartida(null);
-
-		return partidaIndividual;
-	}
+	
 
 }

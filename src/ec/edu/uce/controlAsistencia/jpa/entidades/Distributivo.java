@@ -23,8 +23,6 @@ public class Distributivo implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="DISTRIBUTIVO_DISTID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="DISTRIBUTIVO_DISTID_GENERATOR")
 	@Column(name="DIST_ID")
 	public long getDistId() {
 		return this.distId;

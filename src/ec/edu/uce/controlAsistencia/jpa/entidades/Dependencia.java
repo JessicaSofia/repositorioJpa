@@ -29,8 +29,7 @@ public class Dependencia implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="DEPENDENCIA_DPNID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="DEPENDENCIA_DPNID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="DPN_ID")
 	public long getDpnId() {
 		return this.dpnId;
@@ -94,7 +93,7 @@ public class Dependencia implements Serializable {
 
 
 	//bi-directional many-to-one association to Dependencia
-	@OneToMany(mappedBy="dependencia", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="dependencia", fetch=FetchType.LAZY)
 	public List<Dependencia> getDependencias() {
 		return this.dependencias;
 	}
@@ -103,19 +102,7 @@ public class Dependencia implements Serializable {
 		this.dependencias = dependencias;
 	}
 
-	public Dependencia addDependencia(Dependencia dependencia) {
-		getDependencias().add(dependencia);
-		dependencia.setDependencia(this);
 
-		return dependencia;
-	}
-
-	public Dependencia removeDependencia(Dependencia dependencia) {
-		getDependencias().remove(dependencia);
-		dependencia.setDependencia(null);
-
-		return dependencia;
-	}
 
 
 	//bi-directional many-to-one association to DetallePuesto

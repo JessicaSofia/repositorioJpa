@@ -23,8 +23,6 @@ public class Funcion implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="FUNCION_FNCID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="FUNCION_FNCID_GENERATOR")
 	@Column(name="FNC_ID")
 	public long getFncId() {
 		return this.fncId;
@@ -56,7 +54,7 @@ public class Funcion implements Serializable {
 
 
 	//bi-directional many-to-one association to FuncionPuesto
-	@OneToMany(mappedBy="funcion", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="funcion", fetch=FetchType.LAZY)
 	public List<FuncionPuesto> getFuncionPuestos() {
 		return this.funcionPuestos;
 	}
@@ -65,18 +63,5 @@ public class Funcion implements Serializable {
 		this.funcionPuestos = funcionPuestos;
 	}
 
-	public FuncionPuesto addFuncionPuesto(FuncionPuesto funcionPuesto) {
-		getFuncionPuestos().add(funcionPuesto);
-		funcionPuesto.setFuncion(this);
-
-		return funcionPuesto;
-	}
-
-	public FuncionPuesto removeFuncionPuesto(FuncionPuesto funcionPuesto) {
-		getFuncionPuestos().remove(funcionPuesto);
-		funcionPuesto.setFuncion(null);
-
-		return funcionPuesto;
-	}
-
+	
 }

@@ -139,7 +139,7 @@ public class PartidaIndividual implements Serializable {
 
 
 	//bi-directional many-to-one association to DetallePuesto
-	@OneToMany(mappedBy="partidaIndividual", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="partidaIndividual", fetch=FetchType.LAZY)
 	public List<DetallePuesto> getDetallePuestos() {
 		return this.detallePuestos;
 	}
@@ -148,19 +148,6 @@ public class PartidaIndividual implements Serializable {
 		this.detallePuestos = detallePuestos;
 	}
 
-	public DetallePuesto addDetallePuesto(DetallePuesto detallePuesto) {
-		getDetallePuestos().add(detallePuesto);
-		detallePuesto.setPartidaIndividual(this);
-
-		return detallePuesto;
-	}
-
-	public DetallePuesto removeDetallePuesto(DetallePuesto detallePuesto) {
-		getDetallePuestos().remove(detallePuesto);
-		detallePuesto.setPartidaIndividual(null);
-
-		return detallePuesto;
-	}
 
 
 	//bi-directional many-to-one association to Dependencia

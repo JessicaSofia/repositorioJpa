@@ -25,8 +25,6 @@ public class Grado implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="GRADO_GRDID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="GRADO_GRDID_GENERATOR")
 	@Column(name="GRD_ID")
 	public long getGrdId() {
 		return this.grdId;
@@ -68,7 +66,7 @@ public class Grado implements Serializable {
 
 
 	//bi-directional many-to-one association to Puesto
-	@OneToMany(mappedBy="grado", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="grado", fetch=FetchType.LAZY)
 	public List<Puesto> getPuestos() {
 		return this.puestos;
 	}
@@ -77,18 +75,6 @@ public class Grado implements Serializable {
 		this.puestos = puestos;
 	}
 
-	public Puesto addPuesto(Puesto puesto) {
-		getPuestos().add(puesto);
-		puesto.setGrado(this);
 
-		return puesto;
-	}
-
-	public Puesto removePuesto(Puesto puesto) {
-		getPuestos().remove(puesto);
-		puesto.setGrado(null);
-
-		return puesto;
-	}
 
 }

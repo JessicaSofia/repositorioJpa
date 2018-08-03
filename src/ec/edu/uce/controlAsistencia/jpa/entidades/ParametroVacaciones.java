@@ -80,7 +80,7 @@ public class ParametroVacaciones implements Serializable {
 
 
 	//bi-directional many-to-one association to ParametroVacacionRegimen
-	@OneToMany(mappedBy="parametroVacacione", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="parametroVacacione", fetch=FetchType.LAZY)
 	public List<ParametroVacacionRegimen> getParametroVacacionRegimens() {
 		return this.parametroVacacionRegimens;
 	}
@@ -89,18 +89,5 @@ public class ParametroVacaciones implements Serializable {
 		this.parametroVacacionRegimens = parametroVacacionRegimens;
 	}
 
-	public ParametroVacacionRegimen addParametroVacacionRegimen(ParametroVacacionRegimen parametroVacacionRegimen) {
-		getParametroVacacionRegimens().add(parametroVacacionRegimen);
-		parametroVacacionRegimen.setParametroVacacione(this);
-
-		return parametroVacacionRegimen;
-	}
-
-	public ParametroVacacionRegimen removeParametroVacacionRegimen(ParametroVacacionRegimen parametroVacacionRegimen) {
-		getParametroVacacionRegimens().remove(parametroVacacionRegimen);
-		parametroVacacionRegimen.setParametroVacacione(null);
-
-		return parametroVacacionRegimen;
-	}
 
 }

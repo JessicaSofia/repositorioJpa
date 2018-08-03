@@ -23,8 +23,7 @@ public class ActividadEsencial implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="ACTIVIDAD_ESENCIAL_ACESID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ACTIVIDAD_ESENCIAL_ACESID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ACES_ID")
 	public long getAcesId() {
 		return this.acesId;

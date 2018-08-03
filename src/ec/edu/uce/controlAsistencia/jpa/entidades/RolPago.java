@@ -2,7 +2,6 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.List;
 
 
@@ -16,49 +15,49 @@ import java.util.List;
 public class RolPago implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private long rolPagId;
-	private BigDecimal dtpsId;
-	private BigDecimal prsId;
-	private BigDecimal rolPagAlimentacion;
-	private BigDecimal rolPagAnio;
-	private BigDecimal rolPagAnticipos;
-	private BigDecimal rolPagAporteIess;
-	private BigDecimal rolPagAsocEmpleados;
-	private BigDecimal rolPagAsocFacultad;
-	private BigDecimal rolPagAsocProfesores;
-	private BigDecimal rolPagCargaFamiliar;
-	private BigDecimal rolPagCesantia;
-	private BigDecimal rolPagCesantiaAdicional;
-	private BigDecimal rolPagCoberturaSaludIess;
+	private int dtpsId;
+	private int prsId;
+	private int rolPagAlimentacion;
+	private int rolPagAnio;
+	private int rolPagAnticipos;
+	private int rolPagAporteIess;
+	private int rolPagAsocEmpleados;
+	private int rolPagAsocFacultad;
+	private int rolPagAsocProfesores;
+	private int rolPagCargaFamiliar;
+	private int rolPagCesantia;
+	private int rolPagCesantiaAdicional;
+	private int rolPagCoberturaSaludIess;
 	private String rolPagCodigoFuncionario;
-	private BigDecimal rolPagComisariato;
-	private BigDecimal rolPagCoopAhoCredDocent;
-	private BigDecimal rolPagDcmCuarto;
-	private BigDecimal rolPagDcmCuartoMensual;
-	private BigDecimal rolPagDcmTercero;
-	private BigDecimal rolPagDcmTerceroMensual;
-	private BigDecimal rolPagEstado;
+	private int rolPagComisariato;
+	private int rolPagCoopAhoCredDocent;
+	private int rolPagDcmCuarto;
+	private int rolPagDcmCuartoMensual;
+	private int rolPagDcmTercero;
+	private int rolPagDcmTerceroMensual;
+	private int rolPagEstado;
 	private String rolPagFacultad;
-	private BigDecimal rolPagFomentoDeporte;
-	private BigDecimal rolPagFondoJubIndexada;
-	private BigDecimal rolPagFondoMortuorio;
-	private BigDecimal rolPagFondoReserva;
-	private BigDecimal rolPagFondoReservaIess;
+	private int rolPagFomentoDeporte;
+	private int rolPagFondoJubIndexada;
+	private int rolPagFondoMortuorio;
+	private int rolPagFondoReserva;
+	private int rolPagFondoReservaIess;
 	private String rolPagFuncion;
-	private BigDecimal rolPagImpuestoRenta;
-	private BigDecimal rolPagMes;
-	private BigDecimal rolPagMultas;
+	private int rolPagImpuestoRenta;
+	private int rolPagMes;
+	private int rolPagMultas;
 	private String rolPagPago;
-	private BigDecimal rolPagPrestamoIess;
-	private BigDecimal rolPagPrestamoSindicato;
-	private BigDecimal rolPagRetencionJudicial;
-	private BigDecimal rolPagRmu;
-	private BigDecimal rolPagRmuFase;
-	private BigDecimal rolPagSeguros;
-	private BigDecimal rolPagTotalDescuento;
-	private BigDecimal rolPagTotalIngreso;
-	private BigDecimal rolPagTotalLiquido;
-	private BigDecimal rolPagTransporte;
-	private BigDecimal rolPagVarios;
+	private int rolPagPrestamoIess;
+	private int rolPagPrestamoSindicato;
+	private int rolPagRetencionJudicial;
+	private int rolPagRmu;
+	private int rolPagRmuFase;
+	private int rolPagSeguros;
+	private int rolPagTotalDescuento;
+	private int rolPagTotalIngreso;
+	private int rolPagTotalLiquido;
+	private int rolPagTransporte;
+	private int rolPagVarios;
 	private List<HistorialDescuento> historialDescuentos;
 	private ControlPago controlPago;
 
@@ -78,131 +77,131 @@ public class RolPago implements Serializable {
 
 
 	@Column(name="DTPS_ID")
-	public BigDecimal getDtpsId() {
+	public int getDtpsId() {
 		return this.dtpsId;
 	}
 
-	public void setDtpsId(BigDecimal dtpsId) {
+	public void setDtpsId(int dtpsId) {
 		this.dtpsId = dtpsId;
 	}
 
 
 	@Column(name="PRS_ID")
-	public BigDecimal getPrsId() {
+	public int getPrsId() {
 		return this.prsId;
 	}
 
-	public void setPrsId(BigDecimal prsId) {
+	public void setPrsId(int prsId) {
 		this.prsId = prsId;
 	}
 
 
 	@Column(name="ROL_PAG_ALIMENTACION")
-	public BigDecimal getRolPagAlimentacion() {
+	public int getRolPagAlimentacion() {
 		return this.rolPagAlimentacion;
 	}
 
-	public void setRolPagAlimentacion(BigDecimal rolPagAlimentacion) {
+	public void setRolPagAlimentacion(int rolPagAlimentacion) {
 		this.rolPagAlimentacion = rolPagAlimentacion;
 	}
 
 
 	@Column(name="ROL_PAG_ANIO")
-	public BigDecimal getRolPagAnio() {
+	public int getRolPagAnio() {
 		return this.rolPagAnio;
 	}
 
-	public void setRolPagAnio(BigDecimal rolPagAnio) {
+	public void setRolPagAnio(int rolPagAnio) {
 		this.rolPagAnio = rolPagAnio;
 	}
 
 
 	@Column(name="ROL_PAG_ANTICIPOS")
-	public BigDecimal getRolPagAnticipos() {
+	public int getRolPagAnticipos() {
 		return this.rolPagAnticipos;
 	}
 
-	public void setRolPagAnticipos(BigDecimal rolPagAnticipos) {
+	public void setRolPagAnticipos(int rolPagAnticipos) {
 		this.rolPagAnticipos = rolPagAnticipos;
 	}
 
 
 	@Column(name="ROL_PAG_APORTE_IESS")
-	public BigDecimal getRolPagAporteIess() {
+	public int getRolPagAporteIess() {
 		return this.rolPagAporteIess;
 	}
 
-	public void setRolPagAporteIess(BigDecimal rolPagAporteIess) {
+	public void setRolPagAporteIess(int rolPagAporteIess) {
 		this.rolPagAporteIess = rolPagAporteIess;
 	}
 
 
 	@Column(name="ROL_PAG_ASOC_EMPLEADOS")
-	public BigDecimal getRolPagAsocEmpleados() {
+	public int getRolPagAsocEmpleados() {
 		return this.rolPagAsocEmpleados;
 	}
 
-	public void setRolPagAsocEmpleados(BigDecimal rolPagAsocEmpleados) {
+	public void setRolPagAsocEmpleados(int rolPagAsocEmpleados) {
 		this.rolPagAsocEmpleados = rolPagAsocEmpleados;
 	}
 
 
 	@Column(name="ROL_PAG_ASOC_FACULTAD")
-	public BigDecimal getRolPagAsocFacultad() {
+	public int getRolPagAsocFacultad() {
 		return this.rolPagAsocFacultad;
 	}
 
-	public void setRolPagAsocFacultad(BigDecimal rolPagAsocFacultad) {
+	public void setRolPagAsocFacultad(int rolPagAsocFacultad) {
 		this.rolPagAsocFacultad = rolPagAsocFacultad;
 	}
 
 
 	@Column(name="ROL_PAG_ASOC_PROFESORES")
-	public BigDecimal getRolPagAsocProfesores() {
+	public int getRolPagAsocProfesores() {
 		return this.rolPagAsocProfesores;
 	}
 
-	public void setRolPagAsocProfesores(BigDecimal rolPagAsocProfesores) {
+	public void setRolPagAsocProfesores(int rolPagAsocProfesores) {
 		this.rolPagAsocProfesores = rolPagAsocProfesores;
 	}
 
 
 	@Column(name="ROL_PAG_CARGA_FAMILIAR")
-	public BigDecimal getRolPagCargaFamiliar() {
+	public int getRolPagCargaFamiliar() {
 		return this.rolPagCargaFamiliar;
 	}
 
-	public void setRolPagCargaFamiliar(BigDecimal rolPagCargaFamiliar) {
+	public void setRolPagCargaFamiliar(int rolPagCargaFamiliar) {
 		this.rolPagCargaFamiliar = rolPagCargaFamiliar;
 	}
 
 
 	@Column(name="ROL_PAG_CESANTIA")
-	public BigDecimal getRolPagCesantia() {
+	public int getRolPagCesantia() {
 		return this.rolPagCesantia;
 	}
 
-	public void setRolPagCesantia(BigDecimal rolPagCesantia) {
+	public void setRolPagCesantia(int rolPagCesantia) {
 		this.rolPagCesantia = rolPagCesantia;
 	}
 
 
 	@Column(name="ROL_PAG_CESANTIA_ADICIONAL")
-	public BigDecimal getRolPagCesantiaAdicional() {
+	public int getRolPagCesantiaAdicional() {
 		return this.rolPagCesantiaAdicional;
 	}
 
-	public void setRolPagCesantiaAdicional(BigDecimal rolPagCesantiaAdicional) {
+	public void setRolPagCesantiaAdicional(int rolPagCesantiaAdicional) {
 		this.rolPagCesantiaAdicional = rolPagCesantiaAdicional;
 	}
 
 
 	@Column(name="ROL_PAG_COBERTURA_SALUD_IESS")
-	public BigDecimal getRolPagCoberturaSaludIess() {
+	public int getRolPagCoberturaSaludIess() {
 		return this.rolPagCoberturaSaludIess;
 	}
 
-	public void setRolPagCoberturaSaludIess(BigDecimal rolPagCoberturaSaludIess) {
+	public void setRolPagCoberturaSaludIess(int rolPagCoberturaSaludIess) {
 		this.rolPagCoberturaSaludIess = rolPagCoberturaSaludIess;
 	}
 
@@ -218,71 +217,71 @@ public class RolPago implements Serializable {
 
 
 	@Column(name="ROL_PAG_COMISARIATO")
-	public BigDecimal getRolPagComisariato() {
+	public int getRolPagComisariato() {
 		return this.rolPagComisariato;
 	}
 
-	public void setRolPagComisariato(BigDecimal rolPagComisariato) {
+	public void setRolPagComisariato(int rolPagComisariato) {
 		this.rolPagComisariato = rolPagComisariato;
 	}
 
 
 	@Column(name="ROL_PAG_COOP_AHO_CRED_DOCENT")
-	public BigDecimal getRolPagCoopAhoCredDocent() {
+	public int getRolPagCoopAhoCredDocent() {
 		return this.rolPagCoopAhoCredDocent;
 	}
 
-	public void setRolPagCoopAhoCredDocent(BigDecimal rolPagCoopAhoCredDocent) {
+	public void setRolPagCoopAhoCredDocent(int rolPagCoopAhoCredDocent) {
 		this.rolPagCoopAhoCredDocent = rolPagCoopAhoCredDocent;
 	}
 
 
 	@Column(name="ROL_PAG_DCM_CUARTO")
-	public BigDecimal getRolPagDcmCuarto() {
+	public int getRolPagDcmCuarto() {
 		return this.rolPagDcmCuarto;
 	}
 
-	public void setRolPagDcmCuarto(BigDecimal rolPagDcmCuarto) {
+	public void setRolPagDcmCuarto(int rolPagDcmCuarto) {
 		this.rolPagDcmCuarto = rolPagDcmCuarto;
 	}
 
 
 	@Column(name="ROL_PAG_DCM_CUARTO_MENSUAL")
-	public BigDecimal getRolPagDcmCuartoMensual() {
+	public int getRolPagDcmCuartoMensual() {
 		return this.rolPagDcmCuartoMensual;
 	}
 
-	public void setRolPagDcmCuartoMensual(BigDecimal rolPagDcmCuartoMensual) {
+	public void setRolPagDcmCuartoMensual(int rolPagDcmCuartoMensual) {
 		this.rolPagDcmCuartoMensual = rolPagDcmCuartoMensual;
 	}
 
 
 	@Column(name="ROL_PAG_DCM_TERCERO")
-	public BigDecimal getRolPagDcmTercero() {
+	public int getRolPagDcmTercero() {
 		return this.rolPagDcmTercero;
 	}
 
-	public void setRolPagDcmTercero(BigDecimal rolPagDcmTercero) {
+	public void setRolPagDcmTercero(int rolPagDcmTercero) {
 		this.rolPagDcmTercero = rolPagDcmTercero;
 	}
 
 
 	@Column(name="ROL_PAG_DCM_TERCERO_MENSUAL")
-	public BigDecimal getRolPagDcmTerceroMensual() {
+	public int getRolPagDcmTerceroMensual() {
 		return this.rolPagDcmTerceroMensual;
 	}
 
-	public void setRolPagDcmTerceroMensual(BigDecimal rolPagDcmTerceroMensual) {
+	public void setRolPagDcmTerceroMensual(int rolPagDcmTerceroMensual) {
 		this.rolPagDcmTerceroMensual = rolPagDcmTerceroMensual;
 	}
 
 
 	@Column(name="ROL_PAG_ESTADO")
-	public BigDecimal getRolPagEstado() {
+	public int getRolPagEstado() {
 		return this.rolPagEstado;
 	}
 
-	public void setRolPagEstado(BigDecimal rolPagEstado) {
+	public void setRolPagEstado(int rolPagEstado) {
 		this.rolPagEstado = rolPagEstado;
 	}
 
@@ -298,51 +297,51 @@ public class RolPago implements Serializable {
 
 
 	@Column(name="ROL_PAG_FOMENTO_DEPORTE")
-	public BigDecimal getRolPagFomentoDeporte() {
+	public int getRolPagFomentoDeporte() {
 		return this.rolPagFomentoDeporte;
 	}
 
-	public void setRolPagFomentoDeporte(BigDecimal rolPagFomentoDeporte) {
+	public void setRolPagFomentoDeporte(int rolPagFomentoDeporte) {
 		this.rolPagFomentoDeporte = rolPagFomentoDeporte;
 	}
 
 
 	@Column(name="ROL_PAG_FONDO_JUB_INDEXADA")
-	public BigDecimal getRolPagFondoJubIndexada() {
+	public int getRolPagFondoJubIndexada() {
 		return this.rolPagFondoJubIndexada;
 	}
 
-	public void setRolPagFondoJubIndexada(BigDecimal rolPagFondoJubIndexada) {
+	public void setRolPagFondoJubIndexada(int rolPagFondoJubIndexada) {
 		this.rolPagFondoJubIndexada = rolPagFondoJubIndexada;
 	}
 
 
 	@Column(name="ROL_PAG_FONDO_MORTUORIO")
-	public BigDecimal getRolPagFondoMortuorio() {
+	public int getRolPagFondoMortuorio() {
 		return this.rolPagFondoMortuorio;
 	}
 
-	public void setRolPagFondoMortuorio(BigDecimal rolPagFondoMortuorio) {
+	public void setRolPagFondoMortuorio(int rolPagFondoMortuorio) {
 		this.rolPagFondoMortuorio = rolPagFondoMortuorio;
 	}
 
 
 	@Column(name="ROL_PAG_FONDO_RESERVA")
-	public BigDecimal getRolPagFondoReserva() {
+	public int getRolPagFondoReserva() {
 		return this.rolPagFondoReserva;
 	}
 
-	public void setRolPagFondoReserva(BigDecimal rolPagFondoReserva) {
+	public void setRolPagFondoReserva(int rolPagFondoReserva) {
 		this.rolPagFondoReserva = rolPagFondoReserva;
 	}
 
 
 	@Column(name="ROL_PAG_FONDO_RESERVA_IESS")
-	public BigDecimal getRolPagFondoReservaIess() {
+	public int getRolPagFondoReservaIess() {
 		return this.rolPagFondoReservaIess;
 	}
 
-	public void setRolPagFondoReservaIess(BigDecimal rolPagFondoReservaIess) {
+	public void setRolPagFondoReservaIess(int rolPagFondoReservaIess) {
 		this.rolPagFondoReservaIess = rolPagFondoReservaIess;
 	}
 
@@ -358,31 +357,31 @@ public class RolPago implements Serializable {
 
 
 	@Column(name="ROL_PAG_IMPUESTO_RENTA")
-	public BigDecimal getRolPagImpuestoRenta() {
+	public int getRolPagImpuestoRenta() {
 		return this.rolPagImpuestoRenta;
 	}
 
-	public void setRolPagImpuestoRenta(BigDecimal rolPagImpuestoRenta) {
+	public void setRolPagImpuestoRenta(int rolPagImpuestoRenta) {
 		this.rolPagImpuestoRenta = rolPagImpuestoRenta;
 	}
 
 
 	@Column(name="ROL_PAG_MES")
-	public BigDecimal getRolPagMes() {
+	public int getRolPagMes() {
 		return this.rolPagMes;
 	}
 
-	public void setRolPagMes(BigDecimal rolPagMes) {
+	public void setRolPagMes(int rolPagMes) {
 		this.rolPagMes = rolPagMes;
 	}
 
 
 	@Column(name="ROL_PAG_MULTAS")
-	public BigDecimal getRolPagMultas() {
+	public int getRolPagMultas() {
 		return this.rolPagMultas;
 	}
 
-	public void setRolPagMultas(BigDecimal rolPagMultas) {
+	public void setRolPagMultas(int rolPagMultas) {
 		this.rolPagMultas = rolPagMultas;
 	}
 
@@ -398,117 +397,117 @@ public class RolPago implements Serializable {
 
 
 	@Column(name="ROL_PAG_PRESTAMO_IESS")
-	public BigDecimal getRolPagPrestamoIess() {
+	public int getRolPagPrestamoIess() {
 		return this.rolPagPrestamoIess;
 	}
 
-	public void setRolPagPrestamoIess(BigDecimal rolPagPrestamoIess) {
+	public void setRolPagPrestamoIess(int rolPagPrestamoIess) {
 		this.rolPagPrestamoIess = rolPagPrestamoIess;
 	}
 
 
 	@Column(name="ROL_PAG_PRESTAMO_SINDICATO")
-	public BigDecimal getRolPagPrestamoSindicato() {
+	public int getRolPagPrestamoSindicato() {
 		return this.rolPagPrestamoSindicato;
 	}
 
-	public void setRolPagPrestamoSindicato(BigDecimal rolPagPrestamoSindicato) {
+	public void setRolPagPrestamoSindicato(int rolPagPrestamoSindicato) {
 		this.rolPagPrestamoSindicato = rolPagPrestamoSindicato;
 	}
 
 
 	@Column(name="ROL_PAG_RETENCION_JUDICIAL")
-	public BigDecimal getRolPagRetencionJudicial() {
+	public int getRolPagRetencionJudicial() {
 		return this.rolPagRetencionJudicial;
 	}
 
-	public void setRolPagRetencionJudicial(BigDecimal rolPagRetencionJudicial) {
+	public void setRolPagRetencionJudicial(int rolPagRetencionJudicial) {
 		this.rolPagRetencionJudicial = rolPagRetencionJudicial;
 	}
 
 
 	@Column(name="ROL_PAG_RMU")
-	public BigDecimal getRolPagRmu() {
+	public int getRolPagRmu() {
 		return this.rolPagRmu;
 	}
 
-	public void setRolPagRmu(BigDecimal rolPagRmu) {
+	public void setRolPagRmu(int rolPagRmu) {
 		this.rolPagRmu = rolPagRmu;
 	}
 
 
 	@Column(name="ROL_PAG_RMU_FASE")
-	public BigDecimal getRolPagRmuFase() {
+	public int getRolPagRmuFase() {
 		return this.rolPagRmuFase;
 	}
 
-	public void setRolPagRmuFase(BigDecimal rolPagRmuFase) {
+	public void setRolPagRmuFase(int rolPagRmuFase) {
 		this.rolPagRmuFase = rolPagRmuFase;
 	}
 
 
 	@Column(name="ROL_PAG_SEGUROS")
-	public BigDecimal getRolPagSeguros() {
+	public int getRolPagSeguros() {
 		return this.rolPagSeguros;
 	}
 
-	public void setRolPagSeguros(BigDecimal rolPagSeguros) {
+	public void setRolPagSeguros(int rolPagSeguros) {
 		this.rolPagSeguros = rolPagSeguros;
 	}
 
 
 	@Column(name="ROL_PAG_TOTAL_DESCUENTO")
-	public BigDecimal getRolPagTotalDescuento() {
+	public int getRolPagTotalDescuento() {
 		return this.rolPagTotalDescuento;
 	}
 
-	public void setRolPagTotalDescuento(BigDecimal rolPagTotalDescuento) {
+	public void setRolPagTotalDescuento(int rolPagTotalDescuento) {
 		this.rolPagTotalDescuento = rolPagTotalDescuento;
 	}
 
 
 	@Column(name="ROL_PAG_TOTAL_INGRESO")
-	public BigDecimal getRolPagTotalIngreso() {
+	public int getRolPagTotalIngreso() {
 		return this.rolPagTotalIngreso;
 	}
 
-	public void setRolPagTotalIngreso(BigDecimal rolPagTotalIngreso) {
+	public void setRolPagTotalIngreso(int rolPagTotalIngreso) {
 		this.rolPagTotalIngreso = rolPagTotalIngreso;
 	}
 
 
 	@Column(name="ROL_PAG_TOTAL_LIQUIDO")
-	public BigDecimal getRolPagTotalLiquido() {
+	public int getRolPagTotalLiquido() {
 		return this.rolPagTotalLiquido;
 	}
 
-	public void setRolPagTotalLiquido(BigDecimal rolPagTotalLiquido) {
+	public void setRolPagTotalLiquido(int rolPagTotalLiquido) {
 		this.rolPagTotalLiquido = rolPagTotalLiquido;
 	}
 
 
 	@Column(name="ROL_PAG_TRANSPORTE")
-	public BigDecimal getRolPagTransporte() {
+	public int getRolPagTransporte() {
 		return this.rolPagTransporte;
 	}
 
-	public void setRolPagTransporte(BigDecimal rolPagTransporte) {
+	public void setRolPagTransporte(int rolPagTransporte) {
 		this.rolPagTransporte = rolPagTransporte;
 	}
 
 
 	@Column(name="ROL_PAG_VARIOS")
-	public BigDecimal getRolPagVarios() {
+	public int getRolPagVarios() {
 		return this.rolPagVarios;
 	}
 
-	public void setRolPagVarios(BigDecimal rolPagVarios) {
+	public void setRolPagVarios(int rolPagVarios) {
 		this.rolPagVarios = rolPagVarios;
 	}
 
 
 	//bi-directional many-to-one association to HistorialDescuento
-	@OneToMany(mappedBy="rolPago", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="rolPago", fetch=FetchType.LAZY)
 	public List<HistorialDescuento> getHistorialDescuentos() {
 		return this.historialDescuentos;
 	}
@@ -517,19 +516,6 @@ public class RolPago implements Serializable {
 		this.historialDescuentos = historialDescuentos;
 	}
 
-	public HistorialDescuento addHistorialDescuento(HistorialDescuento historialDescuento) {
-		getHistorialDescuentos().add(historialDescuento);
-		historialDescuento.setRolPago(this);
-
-		return historialDescuento;
-	}
-
-	public HistorialDescuento removeHistorialDescuento(HistorialDescuento historialDescuento) {
-		getHistorialDescuentos().remove(historialDescuento);
-		historialDescuento.setRolPago(null);
-
-		return historialDescuento;
-	}
 
 
 	//bi-directional many-to-one association to ControlPago

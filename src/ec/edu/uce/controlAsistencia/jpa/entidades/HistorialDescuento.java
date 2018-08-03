@@ -32,8 +32,6 @@ public class HistorialDescuento implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="HISTORIAL_DESCUENTO_HSDSID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="HISTORIAL_DESCUENTO_HSDSID_GENERATOR")
 	@Column(name="HSDS_ID")
 	public long getHsdsId() {
 		return this.hsdsId;

@@ -22,8 +22,6 @@ public class FuncionPuesto implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="FUNCION_PUESTO_FNPSID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="FUNCION_PUESTO_FNPSID_GENERATOR")
 	@Column(name="FNPS_ID")
 	public long getFnpsId() {
 		return this.fnpsId;

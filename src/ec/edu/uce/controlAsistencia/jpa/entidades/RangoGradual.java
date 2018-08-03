@@ -56,7 +56,7 @@ public class RangoGradual implements Serializable {
 
 
 	//bi-directional many-to-one association to CategoriaRango
-	@OneToMany(mappedBy="rangoGradual", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="rangoGradual", fetch=FetchType.LAZY)
 	public List<CategoriaRango> getCategoriaRangos() {
 		return this.categoriaRangos;
 	}
@@ -65,18 +65,6 @@ public class RangoGradual implements Serializable {
 		this.categoriaRangos = categoriaRangos;
 	}
 
-	public CategoriaRango addCategoriaRango(CategoriaRango categoriaRango) {
-		getCategoriaRangos().add(categoriaRango);
-		categoriaRango.setRangoGradual(this);
-
-		return categoriaRango;
-	}
-
-	public CategoriaRango removeCategoriaRango(CategoriaRango categoriaRango) {
-		getCategoriaRangos().remove(categoriaRango);
-		categoriaRango.setRangoGradual(null);
-
-		return categoriaRango;
-	}
+	
 
 }

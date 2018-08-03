@@ -33,8 +33,7 @@ public class Descuento implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="DESCUENTO_DSCID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="DESCUENTO_DSCID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="DSC_ID")
 	public long getDscId() {
 		return this.dscId;
@@ -148,7 +147,7 @@ public class Descuento implements Serializable {
 
 
 	//bi-directional many-to-one association to AcreedorDescuento
-	@OneToMany(mappedBy="descuento", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="descuento", fetch=FetchType.LAZY)
 	public List<AcreedorDescuento> getAcreedorDescuentos() {
 		return this.acreedorDescuentos;
 	}
@@ -157,18 +156,5 @@ public class Descuento implements Serializable {
 		this.acreedorDescuentos = acreedorDescuentos;
 	}
 
-	public AcreedorDescuento addAcreedorDescuento(AcreedorDescuento acreedorDescuento) {
-		getAcreedorDescuentos().add(acreedorDescuento);
-		acreedorDescuento.setDescuento(this);
-
-		return acreedorDescuento;
-	}
-
-	public AcreedorDescuento removeAcreedorDescuento(AcreedorDescuento acreedorDescuento) {
-		getAcreedorDescuentos().remove(acreedorDescuento);
-		acreedorDescuento.setDescuento(null);
-
-		return acreedorDescuento;
-	}
 
 }

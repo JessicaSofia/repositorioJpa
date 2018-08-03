@@ -22,8 +22,7 @@ public class ActividadPuesto implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="ACTIVIDAD_PUESTO_ACPSID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ACTIVIDAD_PUESTO_ACPSID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ACPS_ID")
 	public long getAcpsId() {
 		return this.acpsId;

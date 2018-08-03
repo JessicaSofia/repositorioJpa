@@ -33,8 +33,7 @@ public class Acreedor implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="ACREEDOR_ACRID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ACREEDOR_ACRID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ACR_ID")
 	public long getAcrId() {
 		return this.acrId;

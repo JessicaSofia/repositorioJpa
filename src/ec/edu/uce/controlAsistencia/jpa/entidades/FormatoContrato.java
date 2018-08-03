@@ -24,8 +24,6 @@ public class FormatoContrato implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="FORMATO_CONTRATO_FRCNID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="FORMATO_CONTRATO_FRCNID_GENERATOR")
 	@Column(name="FRCN_ID")
 	public long getFrcnId() {
 		return this.frcnId;

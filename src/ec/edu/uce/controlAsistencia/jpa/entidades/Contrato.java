@@ -41,8 +41,7 @@ public class Contrato implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="CONTRATO_CNTID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CONTRATO_CNTID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="CNT_ID")
 	public long getCntId() {
 		return this.cntId;
@@ -242,7 +241,7 @@ public class Contrato implements Serializable {
 
 
 	//bi-directional many-to-one association to DetallePuesto
-	@OneToMany(mappedBy="contrato", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="contrato", fetch=FetchType.LAZY)
 	public List<DetallePuesto> getDetallePuestos() {
 		return this.detallePuestos;
 	}
@@ -251,18 +250,6 @@ public class Contrato implements Serializable {
 		this.detallePuestos = detallePuestos;
 	}
 
-	public DetallePuesto addDetallePuesto(DetallePuesto detallePuesto) {
-		getDetallePuestos().add(detallePuesto);
-		detallePuesto.setContrato(this);
 
-		return detallePuesto;
-	}
-
-	public DetallePuesto removeDetallePuesto(DetallePuesto detallePuesto) {
-		getDetallePuestos().remove(detallePuesto);
-		detallePuesto.setContrato(null);
-
-		return detallePuesto;
-	}
 
 }

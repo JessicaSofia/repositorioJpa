@@ -90,7 +90,7 @@ public class Tramite implements Serializable {
 
 
 	//bi-directional many-to-one association to Candidato
-	@OneToMany(mappedBy="tramite", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="tramite", fetch=FetchType.LAZY)
 	public List<Candidato> getCandidatos() {
 		return this.candidatos;
 	}
@@ -99,19 +99,7 @@ public class Tramite implements Serializable {
 		this.candidatos = candidatos;
 	}
 
-	public Candidato addCandidato(Candidato candidato) {
-		getCandidatos().add(candidato);
-		candidato.setTramite(this);
-
-		return candidato;
-	}
-
-	public Candidato removeCandidato(Candidato candidato) {
-		getCandidatos().remove(candidato);
-		candidato.setTramite(null);
-
-		return candidato;
-	}
+	
 
 
 	//bi-directional many-to-one association to Puesto

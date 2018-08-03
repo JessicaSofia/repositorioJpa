@@ -26,8 +26,6 @@ public class FichaEmpleado implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="FICHA_EMPLEADO_FCEMID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="FICHA_EMPLEADO_FCEMID_GENERATOR")
 	@Column(name="FCEM_ID")
 	public int getFcemId() {
 		return this.fcemId;
@@ -49,7 +47,7 @@ public class FichaEmpleado implements Serializable {
 
 
 	//bi-directional many-to-one association to DetallePuesto
-	@OneToMany(mappedBy="fichaEmpleado", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="fichaEmpleado", fetch=FetchType.LAZY)
 	public List<DetallePuesto> getDetallePuestos() {
 		return this.detallePuestos;
 	}
@@ -58,19 +56,6 @@ public class FichaEmpleado implements Serializable {
 		this.detallePuestos = detallePuestos;
 	}
 
-	public DetallePuesto addDetallePuesto(DetallePuesto detallePuesto) {
-		getDetallePuestos().add(detallePuesto);
-		detallePuesto.setFichaEmpleado(this);
-
-		return detallePuesto;
-	}
-
-	public DetallePuesto removeDetallePuesto(DetallePuesto detallePuesto) {
-		getDetallePuestos().remove(detallePuesto);
-		detallePuesto.setFichaEmpleado(null);
-
-		return detallePuesto;
-	}
 
 
 	//bi-directional many-to-one association to Categoria

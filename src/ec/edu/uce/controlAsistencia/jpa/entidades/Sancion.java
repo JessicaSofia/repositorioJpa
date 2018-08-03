@@ -127,7 +127,7 @@ public class Sancion implements Serializable {
 
 
 	//bi-directional many-to-one association to DetallePuestoSancion
-	@OneToMany(mappedBy="sancion", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="sancion", fetch=FetchType.LAZY)
 	public List<DetallePuestoSancion> getDetallePuestoSancions() {
 		return this.detallePuestoSancions;
 	}
@@ -136,19 +136,7 @@ public class Sancion implements Serializable {
 		this.detallePuestoSancions = detallePuestoSancions;
 	}
 
-	public DetallePuestoSancion addDetallePuestoSancion(DetallePuestoSancion detallePuestoSancion) {
-		getDetallePuestoSancions().add(detallePuestoSancion);
-		detallePuestoSancion.setSancion(this);
-
-		return detallePuestoSancion;
-	}
-
-	public DetallePuestoSancion removeDetallePuestoSancion(DetallePuestoSancion detallePuestoSancion) {
-		getDetallePuestoSancions().remove(detallePuestoSancion);
-		detallePuestoSancion.setSancion(null);
-
-		return detallePuestoSancion;
-	}
+	
 
 
 	//bi-directional many-to-one association to TipoSancion

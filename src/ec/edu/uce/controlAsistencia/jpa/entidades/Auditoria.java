@@ -25,8 +25,7 @@ public class Auditoria implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="AUDITORIA_ADTID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="AUDITORIA_ADTID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ADT_ID")
 	public long getAdtId() {
 		return this.adtId;

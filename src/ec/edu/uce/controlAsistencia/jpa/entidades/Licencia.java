@@ -32,8 +32,6 @@ public class Licencia implements Serializable {
 	}
 
 	@Id
-	@SequenceGenerator(name = "LICENCIA_LCNID_GENERATOR", sequenceName = "S_LICENCIA")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "LICENCIA_LCNID_GENERATOR")
 	@Column(name = "LCN_ID")
 	public int getLcnId() {
 		return this.lcnId;

@@ -102,19 +102,7 @@ public class TipoLicencia implements Serializable {
 		this.licencias = licencias;
 	}
 
-	public Licencia addLicencia(Licencia licencia) {
-		getLicencias().add(licencia);
-		licencia.setTipoLicencia(this);
 
-		return licencia;
-	}
-
-	public Licencia removeLicencia(Licencia licencia) {
-		getLicencias().remove(licencia);
-		licencia.setTipoLicencia(null);
-
-		return licencia;
-	}
 
 
 	//bi-directional many-to-one association to Regimen

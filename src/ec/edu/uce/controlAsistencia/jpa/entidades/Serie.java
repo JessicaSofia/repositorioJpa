@@ -55,7 +55,7 @@ public class Serie implements Serializable {
 
 
 	//bi-directional many-to-one association to Puesto
-	@OneToMany(mappedBy="serie", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="serie", fetch=FetchType.LAZY)
 	public List<Puesto> getPuestos() {
 		return this.puestos;
 	}
@@ -64,19 +64,6 @@ public class Serie implements Serializable {
 		this.puestos = puestos;
 	}
 
-	public Puesto addPuesto(Puesto puesto) {
-		getPuestos().add(puesto);
-		puesto.setSerie(this);
-
-		return puesto;
-	}
-
-	public Puesto removePuesto(Puesto puesto) {
-		getPuestos().remove(puesto);
-		puesto.setSerie(null);
-
-		return puesto;
-	}
 
 
 	//bi-directional many-to-one association to Proceso

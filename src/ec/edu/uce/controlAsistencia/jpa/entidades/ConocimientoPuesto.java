@@ -22,8 +22,7 @@ public class ConocimientoPuesto implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="CONOCIMIENTO_PUESTO_CNPSID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CONOCIMIENTO_PUESTO_CNPSID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="CNPS_ID")
 	public long getCnpsId() {
 		return this.cnpsId;

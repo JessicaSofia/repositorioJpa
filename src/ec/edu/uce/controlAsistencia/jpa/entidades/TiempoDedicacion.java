@@ -56,7 +56,7 @@ public class TiempoDedicacion implements Serializable {
 
 
 	//bi-directional many-to-one association to CategoriaTiempo
-	@OneToMany(mappedBy="tiempoDedicacion", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="tiempoDedicacion", fetch=FetchType.LAZY)
 	public List<CategoriaTiempo> getCategoriaTiempos() {
 		return this.categoriaTiempos;
 	}
@@ -65,18 +65,6 @@ public class TiempoDedicacion implements Serializable {
 		this.categoriaTiempos = categoriaTiempos;
 	}
 
-	public CategoriaTiempo addCategoriaTiempo(CategoriaTiempo categoriaTiempo) {
-		getCategoriaTiempos().add(categoriaTiempo);
-		categoriaTiempo.setTiempoDedicacion(this);
-
-		return categoriaTiempo;
-	}
-
-	public CategoriaTiempo removeCategoriaTiempo(CategoriaTiempo categoriaTiempo) {
-		getCategoriaTiempos().remove(categoriaTiempo);
-		categoriaTiempo.setTiempoDedicacion(null);
-
-		return categoriaTiempo;
-	}
+	
 
 }

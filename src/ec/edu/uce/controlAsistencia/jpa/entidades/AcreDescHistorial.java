@@ -29,8 +29,7 @@ public class AcreDescHistorial implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="ACRE_DESC_HISTORIAL_ACDSHSID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ACRE_DESC_HISTORIAL_ACDSHSID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ACDSHS_ID")
 	public long getAcdshsId() {
 		return this.acdshsId;

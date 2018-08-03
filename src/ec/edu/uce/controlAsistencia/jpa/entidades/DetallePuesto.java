@@ -39,8 +39,6 @@ public class DetallePuesto implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="DETALLE_PUESTO_DTPSID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="DETALLE_PUESTO_DTPSID_GENERATOR")
 	@Column(name="DTPS_ID")
 	public long getDtpsId() {
 		return this.dtpsId;
@@ -82,7 +80,7 @@ public class DetallePuesto implements Serializable {
 
 
 	//bi-directional many-to-one association to AccionPersonal
-	@OneToMany(mappedBy="detallePuesto", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="detallePuesto", fetch=FetchType.LAZY)
 	public List<AccionPersonal> getAccionPersonals() {
 		return this.accionPersonals;
 	}
@@ -91,19 +89,7 @@ public class DetallePuesto implements Serializable {
 		this.accionPersonals = accionPersonals;
 	}
 
-	public AccionPersonal addAccionPersonal(AccionPersonal accionPersonal) {
-		getAccionPersonals().add(accionPersonal);
-		accionPersonal.setDetallePuesto(this);
 
-		return accionPersonal;
-	}
-
-	public AccionPersonal removeAccionPersonal(AccionPersonal accionPersonal) {
-		getAccionPersonals().remove(accionPersonal);
-		accionPersonal.setDetallePuesto(null);
-
-		return accionPersonal;
-	}
 
 
 	//bi-directional many-to-one association to Contrato
@@ -203,7 +189,7 @@ public class DetallePuesto implements Serializable {
 
 
 	//bi-directional many-to-one association to DetallePuestoSancion
-	@OneToMany(mappedBy="detallePuesto", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="detallePuesto", fetch=FetchType.LAZY)
 	public List<DetallePuestoSancion> getDetallePuestoSancions() {
 		return this.detallePuestoSancions;
 	}
@@ -212,23 +198,10 @@ public class DetallePuesto implements Serializable {
 		this.detallePuestoSancions = detallePuestoSancions;
 	}
 
-	public DetallePuestoSancion addDetallePuestoSancion(DetallePuestoSancion detallePuestoSancion) {
-		getDetallePuestoSancions().add(detallePuestoSancion);
-		detallePuestoSancion.setDetallePuesto(this);
-
-		return detallePuestoSancion;
-	}
-
-	public DetallePuestoSancion removeDetallePuestoSancion(DetallePuestoSancion detallePuestoSancion) {
-		getDetallePuestoSancions().remove(detallePuestoSancion);
-		detallePuestoSancion.setDetallePuesto(null);
-
-		return detallePuestoSancion;
-	}
 
 
 	//bi-directional many-to-one association to Distributivo
-	@OneToMany(mappedBy="detallePuesto", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="detallePuesto", fetch=FetchType.LAZY)
 	public List<Distributivo> getDistributivos() {
 		return this.distributivos;
 	}
@@ -237,23 +210,8 @@ public class DetallePuesto implements Serializable {
 		this.distributivos = distributivos;
 	}
 
-	public Distributivo addDistributivo(Distributivo distributivo) {
-		getDistributivos().add(distributivo);
-		distributivo.setDetallePuesto(this);
-
-		return distributivo;
-	}
-
-	public Distributivo removeDistributivo(Distributivo distributivo) {
-		getDistributivos().remove(distributivo);
-		distributivo.setDetallePuesto(null);
-
-		return distributivo;
-	}
-
-
 	//bi-directional many-to-one association to SaldoVacacion
-	@OneToMany(mappedBy="detallePuesto", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="detallePuesto", fetch=FetchType.LAZY)
 	public List<SaldoVacacion> getSaldoVacacions() {
 		return this.saldoVacacions;
 	}
@@ -262,23 +220,9 @@ public class DetallePuesto implements Serializable {
 		this.saldoVacacions = saldoVacacions;
 	}
 
-	public SaldoVacacion addSaldoVacacion(SaldoVacacion saldoVacacion) {
-		getSaldoVacacions().add(saldoVacacion);
-		saldoVacacion.setDetallePuesto(this);
-
-		return saldoVacacion;
-	}
-
-	public SaldoVacacion removeSaldoVacacion(SaldoVacacion saldoVacacion) {
-		getSaldoVacacions().remove(saldoVacacion);
-		saldoVacacion.setDetallePuesto(null);
-
-		return saldoVacacion;
-	}
-
 
 	//bi-directional many-to-one association to Vacacion
-	@OneToMany(mappedBy="detallePuesto", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="detallePuesto", fetch=FetchType.LAZY)
 	public List<Vacacion> getVacacions() {
 		return this.vacacions;
 	}
@@ -287,23 +231,9 @@ public class DetallePuesto implements Serializable {
 		this.vacacions = vacacions;
 	}
 
-	public Vacacion addVacacion(Vacacion vacacion) {
-		getVacacions().add(vacacion);
-		vacacion.setDetallePuesto(this);
-
-		return vacacion;
-	}
-
-	public Vacacion removeVacacion(Vacacion vacacion) {
-		getVacacions().remove(vacacion);
-		vacacion.setDetallePuesto(null);
-
-		return vacacion;
-	}
-
 
 	//bi-directional many-to-one association to Permiso
-	@OneToMany(mappedBy="detallePuesto", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="detallePuesto", fetch=FetchType.LAZY)
 	public List<Permiso> getPermisos() {
 		return this.permisos;
 	}
@@ -312,18 +242,6 @@ public class DetallePuesto implements Serializable {
 		this.permisos = permisos;
 	}
 
-	public Permiso addPermiso(Permiso permiso) {
-		getPermisos().add(permiso);
-		permiso.setDetallePuesto(this);
 
-		return permiso;
-	}
-
-	public Permiso removePermiso(Permiso permiso) {
-		getPermisos().remove(permiso);
-		permiso.setDetallePuesto(null);
-
-		return permiso;
-	}
 
 }

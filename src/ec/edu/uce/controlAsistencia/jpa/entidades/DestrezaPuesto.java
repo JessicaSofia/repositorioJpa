@@ -22,8 +22,7 @@ public class DestrezaPuesto implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="DESTREZA_PUESTO_DSPSID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="DESTREZA_PUESTO_DSPSID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="DSPS_ID")
 	public long getDspsId() {
 		return this.dspsId;

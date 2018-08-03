@@ -56,7 +56,7 @@ public class NivelOcupacional implements Serializable {
 
 
 	//bi-directional many-to-one association to DetallePuesto
-	@OneToMany(mappedBy="nivelOcupacional", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="nivelOcupacional", fetch=FetchType.LAZY)
 	public List<DetallePuesto> getDetallePuestos() {
 		return this.detallePuestos;
 	}
@@ -65,18 +65,6 @@ public class NivelOcupacional implements Serializable {
 		this.detallePuestos = detallePuestos;
 	}
 
-	public DetallePuesto addDetallePuesto(DetallePuesto detallePuesto) {
-		getDetallePuestos().add(detallePuesto);
-		detallePuesto.setNivelOcupacional(this);
 
-		return detallePuesto;
-	}
-
-	public DetallePuesto removeDetallePuesto(DetallePuesto detallePuesto) {
-		getDetallePuestos().remove(detallePuesto);
-		detallePuesto.setNivelOcupacional(null);
-
-		return detallePuesto;
-	}
 
 }

@@ -49,8 +49,6 @@ public class HistorialEmpleado implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="HISTORIAL_EMPLEADO_HSEMID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="HISTORIAL_EMPLEADO_HSEMID_GENERATOR")
 	@Column(name="HSEM_ID")
 	public long getHsemId() {
 		return this.hsemId;

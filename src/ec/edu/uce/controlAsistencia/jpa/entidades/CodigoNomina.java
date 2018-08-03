@@ -1,4 +1,4 @@
-package ec.edu.uce.controlAsistencia.jpa.entidades;
+ package ec.edu.uce.controlAsistencia.jpa.entidades;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -34,8 +34,7 @@ public class CodigoNomina implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="CODIGO_NOMINA_CDNMID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CODIGO_NOMINA_CDNMID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="CDNM_ID")
 	public long getCdnmId() {
 		return this.cdnmId;

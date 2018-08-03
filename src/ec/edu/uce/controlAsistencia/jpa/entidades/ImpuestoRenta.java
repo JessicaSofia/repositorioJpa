@@ -40,8 +40,6 @@ public class ImpuestoRenta implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="IMPUESTO_RENTA_IMRNID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="IMPUESTO_RENTA_IMRNID_GENERATOR")
 	@Column(name="IMRN_ID")
 	public long getImrnId() {
 		return this.imrnId;

@@ -78,19 +78,6 @@ public class Regimen implements Serializable {
 		this.grupoOcupacionals = grupoOcupacionals;
 	}
 
-	public GrupoOcupacional addGrupoOcupacional(GrupoOcupacional grupoOcupacional) {
-		getGrupoOcupacionals().add(grupoOcupacional);
-		grupoOcupacional.setRegimen(this);
-
-		return grupoOcupacional;
-	}
-
-	public GrupoOcupacional removeGrupoOcupacional(GrupoOcupacional grupoOcupacional) {
-		getGrupoOcupacionals().remove(grupoOcupacional);
-		grupoOcupacional.setRegimen(null);
-
-		return grupoOcupacional;
-	}
 
 
 	//bi-directional many-to-one association to ParametroVacacionRegimen

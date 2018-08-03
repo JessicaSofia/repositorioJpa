@@ -56,7 +56,7 @@ public class ModalidadLaboral implements Serializable {
 
 
 	//bi-directional many-to-one association to DetallePuesto
-	@OneToMany(mappedBy="modalidadLaboral", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="modalidadLaboral", fetch=FetchType.LAZY)
 	public List<DetallePuesto> getDetallePuestos() {
 		return this.detallePuestos;
 	}
@@ -65,18 +65,5 @@ public class ModalidadLaboral implements Serializable {
 		this.detallePuestos = detallePuestos;
 	}
 
-	public DetallePuesto addDetallePuesto(DetallePuesto detallePuesto) {
-		getDetallePuestos().add(detallePuesto);
-		detallePuesto.setModalidadLaboral(this);
-
-		return detallePuesto;
-	}
-
-	public DetallePuesto removeDetallePuesto(DetallePuesto detallePuesto) {
-		getDetallePuestos().remove(detallePuesto);
-		detallePuesto.setModalidadLaboral(null);
-
-		return detallePuesto;
-	}
 
 }

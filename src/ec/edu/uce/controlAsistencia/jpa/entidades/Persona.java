@@ -238,7 +238,7 @@ public class Persona implements Serializable {
 
 
 	//bi-directional many-to-one association to CodigoNomina
-	@OneToMany(mappedBy="persona", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="persona", fetch=FetchType.LAZY)
 	public List<CodigoNomina> getCodigoNominas() {
 		return this.codigoNominas;
 	}
@@ -247,23 +247,10 @@ public class Persona implements Serializable {
 		this.codigoNominas = codigoNominas;
 	}
 
-	public CodigoNomina addCodigoNomina(CodigoNomina codigoNomina) {
-		getCodigoNominas().add(codigoNomina);
-		codigoNomina.setPersona(this);
-
-		return codigoNomina;
-	}
-
-	public CodigoNomina removeCodigoNomina(CodigoNomina codigoNomina) {
-		getCodigoNominas().remove(codigoNomina);
-		codigoNomina.setPersona(null);
-
-		return codigoNomina;
-	}
 
 
 	//bi-directional many-to-one association to FichaEmpleado
-	@OneToMany(mappedBy="persona", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="persona", fetch=FetchType.LAZY)
 	public List<FichaEmpleado> getFichaEmpleados() {
 		return this.fichaEmpleados;
 	}
@@ -272,23 +259,9 @@ public class Persona implements Serializable {
 		this.fichaEmpleados = fichaEmpleados;
 	}
 
-	public FichaEmpleado addFichaEmpleado(FichaEmpleado fichaEmpleado) {
-		getFichaEmpleados().add(fichaEmpleado);
-		fichaEmpleado.setPersona(this);
-
-		return fichaEmpleado;
-	}
-
-	public FichaEmpleado removeFichaEmpleado(FichaEmpleado fichaEmpleado) {
-		getFichaEmpleados().remove(fichaEmpleado);
-		fichaEmpleado.setPersona(null);
-
-		return fichaEmpleado;
-	}
-
 
 	//bi-directional many-to-one association to HistorialEmpleado
-	@OneToMany(mappedBy="persona", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="persona", fetch=FetchType.LAZY)
 	public List<HistorialEmpleado> getHistorialEmpleados() {
 		return this.historialEmpleados;
 	}
@@ -297,43 +270,15 @@ public class Persona implements Serializable {
 		this.historialEmpleados = historialEmpleados;
 	}
 
-	public HistorialEmpleado addHistorialEmpleado(HistorialEmpleado historialEmpleado) {
-		getHistorialEmpleados().add(historialEmpleado);
-		historialEmpleado.setPersona(this);
-
-		return historialEmpleado;
-	}
-
-	public HistorialEmpleado removeHistorialEmpleado(HistorialEmpleado historialEmpleado) {
-		getHistorialEmpleados().remove(historialEmpleado);
-		historialEmpleado.setPersona(null);
-
-		return historialEmpleado;
-	}
-
 
 	//bi-directional many-to-one association to ImpuestoRenta
-	@OneToMany(mappedBy="persona", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="persona", fetch=FetchType.LAZY)
 	public List<ImpuestoRenta> getImpuestoRentas() {
 		return this.impuestoRentas;
 	}
 
 	public void setImpuestoRentas(List<ImpuestoRenta> impuestoRentas) {
 		this.impuestoRentas = impuestoRentas;
-	}
-
-	public ImpuestoRenta addImpuestoRenta(ImpuestoRenta impuestoRenta) {
-		getImpuestoRentas().add(impuestoRenta);
-		impuestoRenta.setPersona(this);
-
-		return impuestoRenta;
-	}
-
-	public ImpuestoRenta removeImpuestoRenta(ImpuestoRenta impuestoRenta) {
-		getImpuestoRentas().remove(impuestoRenta);
-		impuestoRenta.setPersona(null);
-
-		return impuestoRenta;
 	}
 
 

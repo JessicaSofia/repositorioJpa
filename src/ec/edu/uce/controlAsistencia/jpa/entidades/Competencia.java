@@ -25,8 +25,7 @@ public class Competencia implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="COMPETENCIA_CMPID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="COMPETENCIA_CMPID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="CMP_ID")
 	public long getCmpId() {
 		return this.cmpId;

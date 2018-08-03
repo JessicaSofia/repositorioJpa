@@ -33,8 +33,7 @@ public class CategoriaFalta implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="CATEGORIA_FALTA_CTGFLID_GENERATOR", sequenceName="S_CATEGORIA_FALTA")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CATEGORIA_FALTA_CTGFLID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="CTGFL_ID")
 	public int getCtgflId() {
 		return this.ctgflId;

@@ -26,8 +26,7 @@ public class CategoriaTiempo implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="CATEGORIA_TIEMPO_CTTMID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CATEGORIA_TIEMPO_CTTMID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="CTTM_ID")
 	public long getCttmId() {
 		return this.cttmId;

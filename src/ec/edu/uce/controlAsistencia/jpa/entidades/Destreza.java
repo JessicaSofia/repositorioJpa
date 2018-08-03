@@ -23,7 +23,7 @@ public class Destreza implements Serializable {
 
 	@Id
 	@SequenceGenerator(name="DESTREZA_DSTID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="DESTREZA_DSTID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="DST_ID")
 	public long getDstId() {
 		return this.dstId;
@@ -45,7 +45,7 @@ public class Destreza implements Serializable {
 
 
 	//bi-directional many-to-one association to DestrezaPuesto
-	@OneToMany(mappedBy="destreza", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="destreza", fetch=FetchType.LAZY)
 	public List<DestrezaPuesto> getDestrezaPuestos() {
 		return this.destrezaPuestos;
 	}
@@ -54,18 +54,6 @@ public class Destreza implements Serializable {
 		this.destrezaPuestos = destrezaPuestos;
 	}
 
-	public DestrezaPuesto addDestrezaPuesto(DestrezaPuesto destrezaPuesto) {
-		getDestrezaPuestos().add(destrezaPuesto);
-		destrezaPuesto.setDestreza(this);
 
-		return destrezaPuesto;
-	}
-
-	public DestrezaPuesto removeDestrezaPuesto(DestrezaPuesto destrezaPuesto) {
-		getDestrezaPuestos().remove(destrezaPuesto);
-		destrezaPuesto.setDestreza(null);
-
-		return destrezaPuesto;
-	}
 
 }

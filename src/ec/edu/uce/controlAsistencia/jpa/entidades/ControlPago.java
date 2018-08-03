@@ -29,8 +29,7 @@ public class ControlPago implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="CONTROL_PAGO_CNTPAGID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CONTROL_PAGO_CNTPAGID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="CNT_PAG_ID")
 	public long getCntPagId() {
 		return this.cntPagId;
@@ -94,7 +93,7 @@ public class ControlPago implements Serializable {
 
 
 	//bi-directional many-to-one association to RolPago
-	@OneToMany(mappedBy="controlPago", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="controlPago", fetch=FetchType.LAZY)
 	public List<RolPago> getRolPagos() {
 		return this.rolPagos;
 	}
@@ -103,18 +102,5 @@ public class ControlPago implements Serializable {
 		this.rolPagos = rolPagos;
 	}
 
-	public RolPago addRolPago(RolPago rolPago) {
-		getRolPagos().add(rolPago);
-		rolPago.setControlPago(this);
-
-		return rolPago;
-	}
-
-	public RolPago removeRolPago(RolPago rolPago) {
-		getRolPagos().remove(rolPago);
-		rolPago.setControlPago(null);
-
-		return rolPago;
-	}
 
 }

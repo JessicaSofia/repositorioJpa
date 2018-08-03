@@ -138,7 +138,7 @@ public class Usuario implements Serializable {
 
 
 	//bi-directional many-to-one association to ControlPago
-	@OneToMany(mappedBy="usuario", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="usuario", fetch=FetchType.LAZY)
 	public List<ControlPago> getControlPagos() {
 		return this.controlPagos;
 	}
@@ -147,19 +147,7 @@ public class Usuario implements Serializable {
 		this.controlPagos = controlPagos;
 	}
 
-	public ControlPago addControlPago(ControlPago controlPago) {
-		getControlPagos().add(controlPago);
-		controlPago.setUsuario(this);
 
-		return controlPago;
-	}
-
-	public ControlPago removeControlPago(ControlPago controlPago) {
-		getControlPagos().remove(controlPago);
-		controlPago.setUsuario(null);
-
-		return controlPago;
-	}
 
 
 	//bi-directional many-to-one association to Persona
@@ -175,7 +163,7 @@ public class Usuario implements Serializable {
 
 
 	//bi-directional many-to-one association to UsuarioRol
-	@OneToMany(mappedBy="usuario", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="usuario", fetch=FetchType.LAZY)
 	public List<UsuarioRol> getUsuarioRols() {
 		return this.usuarioRols;
 	}
@@ -184,18 +172,5 @@ public class Usuario implements Serializable {
 		this.usuarioRols = usuarioRols;
 	}
 
-	public UsuarioRol addUsuarioRol(UsuarioRol usuarioRol) {
-		getUsuarioRols().add(usuarioRol);
-		usuarioRol.setUsuario(this);
-
-		return usuarioRol;
-	}
-
-	public UsuarioRol removeUsuarioRol(UsuarioRol usuarioRol) {
-		getUsuarioRols().remove(usuarioRol);
-		usuarioRol.setUsuario(null);
-
-		return usuarioRol;
-	}
-
+	
 }

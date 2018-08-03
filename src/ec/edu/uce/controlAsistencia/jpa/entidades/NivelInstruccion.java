@@ -44,7 +44,7 @@ public class NivelInstruccion implements Serializable {
 
 
 	//bi-directional many-to-one association to InstruccionPuesto
-	@OneToMany(mappedBy="nivelInstruccion", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="nivelInstruccion", fetch=FetchType.LAZY)
 	public List<InstruccionPuesto> getInstruccionPuestos() {
 		return this.instruccionPuestos;
 	}
@@ -53,18 +53,5 @@ public class NivelInstruccion implements Serializable {
 		this.instruccionPuestos = instruccionPuestos;
 	}
 
-	public InstruccionPuesto addInstruccionPuesto(InstruccionPuesto instruccionPuesto) {
-		getInstruccionPuestos().add(instruccionPuesto);
-		instruccionPuesto.setNivelInstruccion(this);
-
-		return instruccionPuesto;
-	}
-
-	public InstruccionPuesto removeInstruccionPuesto(InstruccionPuesto instruccionPuesto) {
-		getInstruccionPuestos().remove(instruccionPuesto);
-		instruccionPuesto.setNivelInstruccion(null);
-
-		return instruccionPuesto;
-	}
 
 }

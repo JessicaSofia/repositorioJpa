@@ -25,8 +25,7 @@ public class CategoriaDocente implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="CATEGORIA_DOCENTE_CTDCID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CATEGORIA_DOCENTE_CTDCID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="CTDC_ID")
 	public long getCtdcId() {
 		return this.ctdcId;

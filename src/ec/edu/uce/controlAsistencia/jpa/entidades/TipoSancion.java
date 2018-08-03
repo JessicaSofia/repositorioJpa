@@ -68,7 +68,7 @@ public class TipoSancion implements Serializable {
 
 
 	//bi-directional many-to-one association to Sancion
-	@OneToMany(mappedBy="tipoSancion", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="tipoSancion", fetch=FetchType.LAZY)
 	public List<Sancion> getSancions() {
 		return this.sancions;
 	}
@@ -77,18 +77,6 @@ public class TipoSancion implements Serializable {
 		this.sancions = sancions;
 	}
 
-	public Sancion addSancion(Sancion sancion) {
-		getSancions().add(sancion);
-		sancion.setTipoSancion(this);
 
-		return sancion;
-	}
-
-	public Sancion removeSancion(Sancion sancion) {
-		getSancions().remove(sancion);
-		sancion.setTipoSancion(null);
-
-		return sancion;
-	}
 
 }

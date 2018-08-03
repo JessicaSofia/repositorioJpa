@@ -56,7 +56,7 @@ public class TipoAccion implements Serializable {
 
 
 	//bi-directional many-to-one association to AccionPersonal
-	@OneToMany(mappedBy="tipoAccion", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="tipoAccion", fetch=FetchType.LAZY)
 	public List<AccionPersonal> getAccionPersonals() {
 		return this.accionPersonals;
 	}
@@ -65,18 +65,5 @@ public class TipoAccion implements Serializable {
 		this.accionPersonals = accionPersonals;
 	}
 
-	public AccionPersonal addAccionPersonal(AccionPersonal accionPersonal) {
-		getAccionPersonals().add(accionPersonal);
-		accionPersonal.setTipoAccion(this);
-
-		return accionPersonal;
-	}
-
-	public AccionPersonal removeAccionPersonal(AccionPersonal accionPersonal) {
-		getAccionPersonals().remove(accionPersonal);
-		accionPersonal.setTipoAccion(null);
-
-		return accionPersonal;
-	}
 
 }

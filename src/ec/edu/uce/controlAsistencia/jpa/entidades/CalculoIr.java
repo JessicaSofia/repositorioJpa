@@ -27,8 +27,7 @@ public class CalculoIr implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="CALCULO_IR_CLIRID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CALCULO_IR_CLIRID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="CLIR_ID")
 	public long getClirId() {
 		return this.clirId;

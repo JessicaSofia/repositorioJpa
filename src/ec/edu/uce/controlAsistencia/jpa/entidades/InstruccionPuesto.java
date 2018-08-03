@@ -25,8 +25,6 @@ public class InstruccionPuesto implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="INSTRUCCION_PUESTO_INPSID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="INSTRUCCION_PUESTO_INPSID_GENERATOR")
 	@Column(name="INPS_ID")
 	public long getInpsId() {
 		return this.inpsId;

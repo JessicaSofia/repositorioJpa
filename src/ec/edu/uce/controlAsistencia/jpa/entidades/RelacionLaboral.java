@@ -56,7 +56,7 @@ public class RelacionLaboral implements Serializable {
 
 
 	//bi-directional many-to-one association to DetallePuesto
-	@OneToMany(mappedBy="relacionLaboral", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="relacionLaboral", fetch=FetchType.LAZY)
 	public List<DetallePuesto> getDetallePuestos() {
 		return this.detallePuestos;
 	}
@@ -65,18 +65,5 @@ public class RelacionLaboral implements Serializable {
 		this.detallePuestos = detallePuestos;
 	}
 
-	public DetallePuesto addDetallePuesto(DetallePuesto detallePuesto) {
-		getDetallePuestos().add(detallePuesto);
-		detallePuesto.setRelacionLaboral(this);
-
-		return detallePuesto;
-	}
-
-	public DetallePuesto removeDetallePuesto(DetallePuesto detallePuesto) {
-		getDetallePuestos().remove(detallePuesto);
-		detallePuesto.setRelacionLaboral(null);
-
-		return detallePuesto;
-	}
 
 }

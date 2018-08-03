@@ -28,8 +28,7 @@ public class AcreedorDescuento implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="ACREEDOR_DESCUENTO_ACDSID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ACREEDOR_DESCUENTO_ACDSID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ACDS_ID")
 	public long getAcdsId() {
 		return this.acdsId;

@@ -24,8 +24,7 @@ public class Categoria implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="CATEGORIA_CTGID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CATEGORIA_CTGID_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="CTG_ID")
 	public int getCtgId() {
 		return this.ctgId;
@@ -57,7 +56,7 @@ public class Categoria implements Serializable {
 
 
 	//bi-directional many-to-one association to CategoriaFalta
-	@OneToMany(mappedBy="categoria", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="categoria", fetch=FetchType.LAZY)
 	public List<CategoriaFalta> getCategoriaFaltas() {
 		return this.categoriaFaltas;
 	}
@@ -66,19 +65,6 @@ public class Categoria implements Serializable {
 		this.categoriaFaltas = categoriaFaltas;
 	}
 
-	public CategoriaFalta addCategoriaFalta(CategoriaFalta categoriaFalta) {
-		getCategoriaFaltas().add(categoriaFalta);
-		categoriaFalta.setCategoria(this);
-
-		return categoriaFalta;
-	}
-
-	public CategoriaFalta removeCategoriaFalta(CategoriaFalta categoriaFalta) {
-		getCategoriaFaltas().remove(categoriaFalta);
-		categoriaFalta.setCategoria(null);
-
-		return categoriaFalta;
-	}
 
 
 	//bi-directional many-to-one association to FichaEmpleado
