@@ -14,7 +14,7 @@ import java.util.List;
 @NamedQuery(name="Dependencia.findAll", query="SELECT d FROM Dependencia d")
 public class Dependencia implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private long dpnId;
+	private int dpnId;
 	private String dpnCodigoNomina;
 	private String dpnDescripcion;
 	private BigDecimal dpnEstado;
@@ -31,11 +31,11 @@ public class Dependencia implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="DPN_ID")
-	public long getDpnId() {
+	public int getDpnId() {
 		return this.dpnId;
 	}
 
-	public void setDpnId(long dpnId) {
+	public void setDpnId(int dpnId) {
 		this.dpnId = dpnId;
 	}
 

@@ -15,7 +15,7 @@ import java.util.List;
 @NamedQuery(name="DetallePuesto.findAll", query="SELECT d FROM DetallePuesto d")
 public class DetallePuesto implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private long dtpsId;
+	private int dtpsId;
 	private String dtpsDenominacion;
 	private BigDecimal dtpsEstado;
 	private BigDecimal dtpsRmu;
@@ -40,11 +40,11 @@ public class DetallePuesto implements Serializable {
 
 	@Id
 	@Column(name="DTPS_ID")
-	public long getDtpsId() {
+	public int getDtpsId() {
 		return this.dtpsId;
 	}
 
-	public void setDtpsId(long dtpsId) {
+	public void setDtpsId(int dtpsId) {
 		this.dtpsId = dtpsId;
 	}
 

@@ -15,7 +15,7 @@ import java.util.List;
 @NamedQuery(name="Persona.findAll", query="SELECT p FROM Persona p")
 public class Persona implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private long prsId;
+	private int prsId;
 	private String prsCarnetConadis;
 	private BigDecimal prsDiscapacidad;
 	private BigDecimal prsEstado;
@@ -45,12 +45,12 @@ public class Persona implements Serializable {
 	}
 
 	@Id
-	@Column(name="PRS_ID")
-	public long getPrsId() {
+	@Column(name="PRS_ID", nullable=false)
+	public int getPrsId() {
 		return this.prsId;
 	}
 
-	public void setPrsId(long prsId) {
+	public void setPrsId(int prsId) {
 		this.prsId = prsId;
 	}
 
@@ -107,7 +107,7 @@ public class Persona implements Serializable {
 	}
 
 
-	@Column(name="PRS_IDENTIFICACION")
+	@Column(name="PRS_IDENTIFICACION", nullable=false, length=13 )
 	public String getPrsIdentificacion() {
 		return this.prsIdentificacion;
 	}

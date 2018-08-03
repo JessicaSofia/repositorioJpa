@@ -14,7 +14,7 @@ import java.util.List;
 @NamedQuery(name="Regimen.findAll", query="SELECT r FROM Regimen r")
 public class Regimen implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private long rgmId;
+	private int rgmId;
 	private String rgmCodigo;
 	private String rgmDescripcion;
 	private BigDecimal rgmJerarquia;
@@ -29,11 +29,11 @@ public class Regimen implements Serializable {
 
 	@Id
 	@Column(name="RGM_ID")
-	public long getRgmId() {
+	public int getRgmId() {
 		return this.rgmId;
 	}
 
-	public void setRgmId(long rgmId) {
+	public void setRgmId(int rgmId) {
 		this.rgmId = rgmId;
 	}
 

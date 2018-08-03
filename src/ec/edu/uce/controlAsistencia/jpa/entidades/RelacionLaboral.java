@@ -15,7 +15,7 @@ import java.util.List;
 @NamedQuery(name="RelacionLaboral.findAll", query="SELECT r FROM RelacionLaboral r")
 public class RelacionLaboral implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private long rllbId;
+	private int rllbId;
 	private String rllbDescripcion;
 	private BigDecimal rllbEstado;
 	private List<DetallePuesto> detallePuestos;
@@ -25,12 +25,12 @@ public class RelacionLaboral implements Serializable {
 
 
 	@Id
-	@Column(name="RLLB_ID")
-	public long getRllbId() {
+	@Column(name="RLLB_ID", nullable=false)
+	public int getRllbId() {
 		return this.rllbId;
 	}
 
-	public void setRllbId(long rllbId) {
+	public void setRllbId(int  rllbId) {
 		this.rllbId = rllbId;
 	}
 

@@ -14,7 +14,7 @@ import java.util.List;
 @NamedQuery(name="Puesto.findAll", query="SELECT p FROM Puesto p")
 public class Puesto implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private long pstId;
+	private int pstId;
 	private int nvjrId;
 	private int pstAmbito;
 	private String pstCodigo;
@@ -52,16 +52,16 @@ public class Puesto implements Serializable {
 
 	@Id
 	@Column(name="PST_ID")
-	public long getPstId() {
+	public int getPstId() {
 		return this.pstId;
 	}
 
-	public void setPstId(long pstId) {
+	public void setPstId(int pstId) {
 		this.pstId = pstId;
 	}
 
 
-	@Column(name="NVJR_ID")
+	@Column(name="NVJR_ID" , nullable=false)
 	public int getNvjrId() {
 		return this.nvjrId;
 	}
