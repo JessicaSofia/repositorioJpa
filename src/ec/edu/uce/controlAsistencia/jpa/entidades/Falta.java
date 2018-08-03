@@ -25,7 +25,7 @@ public class Falta implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="FALTA_FLID_GENERATOR", sequenceName="S_GENERATOR")
+	@SequenceGenerator(name="FALTA_FLID_GENERATOR", sequenceName="S_FALTA")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="FALTA_FLID_GENERATOR")
 	@Column(name="FL_ID")
 	public int getFlId() {

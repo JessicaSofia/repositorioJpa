@@ -14,7 +14,7 @@ import java.util.List;
 @NamedQuery(name="TipoLicencia.findAll", query="SELECT t FROM TipoLicencia t")
 public class TipoLicencia implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private long tplcId;
+	private int tplcId;
 	private String tplcDescripcion;
 	private int tplcEstado;
 	private int tplcMaxDias;
@@ -30,14 +30,14 @@ public class TipoLicencia implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="TIPO_LICENCIA_TPLCID_GENERATOR", sequenceName="S_GENERATOR")
+	@SequenceGenerator(name="TIPO_LICENCIA_TPLCID_GENERATOR", sequenceName="S_TIPO_LICENCIA")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TIPO_LICENCIA_TPLCID_GENERATOR")
 	@Column(name="TPLC_ID")
-	public long getTplcId() {
+	public int getTplcId() {
 		return this.tplcId;
 	}
 
-	public void setTplcId(long tplcId) {
+	public void setTplcId(int tplcId) {
 		this.tplcId = tplcId;
 	}
 
@@ -93,7 +93,7 @@ public class TipoLicencia implements Serializable {
 
 
 	//bi-directional many-to-one association to Licencia
-	@OneToMany(mappedBy="tipoLicencia", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="tipoLicencia", fetch=FetchType.LAZY)
 	public List<Licencia> getLicencias() {
 		return this.licencias;
 	}
@@ -142,7 +142,7 @@ public class TipoLicencia implements Serializable {
 
 
 	//bi-directional many-to-one association to TipoLicencia
-	@OneToMany(mappedBy="tipoLicencia", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="tipoLicencia", fetch=FetchType.LAZY)
 	public List<TipoLicencia> getTipoLicencias() {
 		return this.tipoLicencias;
 	}

@@ -27,7 +27,7 @@ public class ParametroVacaciones implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="PARAMETRO_VACACIONES_PRVCID_GENERATOR", sequenceName="S_GENERATOR")
+	@SequenceGenerator(name="PARAMETRO_VACACIONES_PRVCID_GENERATOR", sequenceName="S_PARAMETRO_VACACIONES")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PARAMETRO_VACACIONES_PRVCID_GENERATOR")
 	@Column(name="PRVC_ID")
 	public long getPrvcId() {

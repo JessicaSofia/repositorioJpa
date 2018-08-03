@@ -27,7 +27,7 @@ public class DetallePuestoSancion implements Serializable {
 	private String dtpssnMotivoInsub;
 	private int dtpssnNumaccion;
 	private String dtpssnObservacion;
-	private double dtpssnValor;
+	private float dtpssnValor;
 	private CategoriaFalta categoriaFalta;
 	private DetallePuesto detallePuesto;
 	private Sancion sancion;
@@ -160,11 +160,11 @@ public class DetallePuestoSancion implements Serializable {
 
 
 	@Column(name="DTPSSN_VALOR")
-	public double getDtpssnValor() {
+	public float getDtpssnValor() {
 		return this.dtpssnValor;
 	}
 
-	public void setDtpssnValor(double dtpssnValor) {
+	public void setDtpssnValor(float dtpssnValor) {
 		this.dtpssnValor = dtpssnValor;
 	}
 

@@ -22,7 +22,7 @@ public class CategoriaFalta implements Serializable {
 	private int ctgflMinuntosMin;
 	private int ctgflMinutosMax;
 	private String ctgflObservacion;
-	private double ctgflPorcentajeBase;
+	private float ctgflPorcentajeBase;
 	private Categoria categoria;
 	private Falta falta;
 	private Sancion sancion;
@@ -33,7 +33,7 @@ public class CategoriaFalta implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="CATEGORIA_FALTA_CTGFLID_GENERATOR", sequenceName="S_GENERATOR")
+	@SequenceGenerator(name="CATEGORIA_FALTA_CTGFLID_GENERATOR", sequenceName="S_CATEGORIA_FALTA")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CATEGORIA_FALTA_CTGFLID_GENERATOR")
 	@Column(name="CTGFL_ID")
 	public int getCtgflId() {
@@ -109,11 +109,11 @@ public class CategoriaFalta implements Serializable {
 
 
 	@Column(name="CTGFL_PORCENTAJE__BASE")
-	public double getCtgflPorcentajeBase() {
+	public float getCtgflPorcentajeBase() {
 		return this.ctgflPorcentajeBase;
 	}
 
-	public void setCtgflPorcentajeBase(double ctgflPorcentajeBase) {
+	public void setCtgflPorcentajeBase(float ctgflPorcentajeBase) {
 		this.ctgflPorcentajeBase = ctgflPorcentajeBase;
 	}
 

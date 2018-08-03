@@ -5,17 +5,16 @@ import javax.persistence.*;
 import java.util.Date;
 import java.sql.Timestamp;
 
-
 /**
  * The persistent class for the LICENCIA database table.
  * 
  */
 @Entity
-@NamedQuery(name="Licencia.findAll", query="SELECT l FROM Licencia l")
+@NamedQuery(name = "Licencia.findAll", query = "SELECT l FROM Licencia l")
 public class Licencia implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private long lcnId;
-	private int dtpsId;
+	private int lcnId;
+	// private int dtpsId;
 	private String lcnCopia;
 	private int lcnEstado;
 	private String lcnExplicacion;
@@ -27,35 +26,33 @@ public class Licencia implements Serializable {
 	private String lcnObservacion;
 	private String lcnObservacionEstado;
 	private TipoLicencia tipoLicencia;
+	private DetallePuesto detallePuesto;
 
 	public Licencia() {
 	}
 
-
 	@Id
-	@SequenceGenerator(name="LICENCIA_LCNID_GENERATOR", sequenceName="S_LICENCIA")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="LICENCIA_LCNID_GENERATOR")
-	@Column(name="LCN_ID")
-	public long getLcnId() {
+	@SequenceGenerator(name = "LICENCIA_LCNID_GENERATOR", sequenceName = "S_LICENCIA")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "LICENCIA_LCNID_GENERATOR")
+	@Column(name = "LCN_ID")
+	public int getLcnId() {
 		return this.lcnId;
 	}
 
-	public void setLcnId(long lcnId) {
+	public void setLcnId(int lcnId) {
 		this.lcnId = lcnId;
 	}
 
-
-	@Column(name="DTPS_ID")
+	/*@Column(name = "DTPS_ID")
 	public int getDtpsId() {
 		return this.dtpsId;
 	}
 
 	public void setDtpsId(int dtpsId) {
 		this.dtpsId = dtpsId;
-	}
+	}*/
 
-
-	@Column(name="LCN_COPIA")
+	@Column(name = "LCN_COPIA")
 	public String getLcnCopia() {
 		return this.lcnCopia;
 	}
@@ -64,8 +61,7 @@ public class Licencia implements Serializable {
 		this.lcnCopia = lcnCopia;
 	}
 
-
-	@Column(name="LCN_ESTADO")
+	@Column(name = "LCN_ESTADO")
 	public int getLcnEstado() {
 		return this.lcnEstado;
 	}
@@ -74,8 +70,7 @@ public class Licencia implements Serializable {
 		this.lcnEstado = lcnEstado;
 	}
 
-
-	@Column(name="LCN_EXPLICACION")
+	@Column(name = "LCN_EXPLICACION")
 	public String getLcnExplicacion() {
 		return this.lcnExplicacion;
 	}
@@ -84,8 +79,7 @@ public class Licencia implements Serializable {
 		this.lcnExplicacion = lcnExplicacion;
 	}
 
-
-	@Column(name="LCN_FECHA_EMISION")
+	@Column(name = "LCN_FECHA_EMISION")
 	public Timestamp getLcnFechaEmision() {
 		return this.lcnFechaEmision;
 	}
@@ -94,9 +88,8 @@ public class Licencia implements Serializable {
 		this.lcnFechaEmision = lcnFechaEmision;
 	}
 
-
 	@Temporal(TemporalType.DATE)
-	@Column(name="LCN_FECHA_FIN")
+	@Column(name = "LCN_FECHA_FIN")
 	public Date getLcnFechaFin() {
 		return this.lcnFechaFin;
 	}
@@ -105,9 +98,8 @@ public class Licencia implements Serializable {
 		this.lcnFechaFin = lcnFechaFin;
 	}
 
-
 	@Temporal(TemporalType.DATE)
-	@Column(name="LCN_FECHA_INICIO")
+	@Column(name = "LCN_FECHA_INICIO")
 	public Date getLcnFechaInicio() {
 		return this.lcnFechaInicio;
 	}
@@ -116,8 +108,7 @@ public class Licencia implements Serializable {
 		this.lcnFechaInicio = lcnFechaInicio;
 	}
 
-
-	@Column(name="LCN_NUM_DIAS")
+	@Column(name = "LCN_NUM_DIAS")
 	public int getLcnNumDias() {
 		return this.lcnNumDias;
 	}
@@ -126,8 +117,7 @@ public class Licencia implements Serializable {
 		this.lcnNumDias = lcnNumDias;
 	}
 
-
-	@Column(name="LCN_NUM_LICENCIA")
+	@Column(name = "LCN_NUM_LICENCIA")
 	public int getLcnNumLicencia() {
 		return this.lcnNumLicencia;
 	}
@@ -136,8 +126,7 @@ public class Licencia implements Serializable {
 		this.lcnNumLicencia = lcnNumLicencia;
 	}
 
-
-	@Column(name="LCN_OBSERVACION")
+	@Column(name = "LCN_OBSERVACION")
 	public String getLcnObservacion() {
 		return this.lcnObservacion;
 	}
@@ -146,8 +135,7 @@ public class Licencia implements Serializable {
 		this.lcnObservacion = lcnObservacion;
 	}
 
-
-	@Column(name="LCN_OBSERVACION_ESTADO")
+	@Column(name = "LCN_OBSERVACION_ESTADO")
 	public String getLcnObservacionEstado() {
 		return this.lcnObservacionEstado;
 	}
@@ -156,16 +144,26 @@ public class Licencia implements Serializable {
 		this.lcnObservacionEstado = lcnObservacionEstado;
 	}
 
-
-	//bi-directional many-to-one association to TipoLicencia
+	// bi-directional many-to-one association to TipoLicencia
 	@ManyToOne
-	@JoinColumn(name="TPLC_ID")
+	@JoinColumn(name = "TPLC_ID")
 	public TipoLicencia getTipoLicencia() {
 		return this.tipoLicencia;
 	}
 
 	public void setTipoLicencia(TipoLicencia tipoLicencia) {
 		this.tipoLicencia = tipoLicencia;
+	}
+
+	// bi-directional many-to-one association to TipoLicencia
+	@ManyToOne
+	@JoinColumn(name = "DTPS_ID")
+	public DetallePuesto getDetallePuesto() {
+		return detallePuesto;
+	}
+
+	public void setDetallePuesto(DetallePuesto detallePuesto) {
+		this.detallePuesto = detallePuesto;
 	}
 
 }

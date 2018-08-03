@@ -15,13 +15,13 @@ import java.sql.Timestamp;
 @NamedQuery(name="Permiso.findAll", query="SELECT p FROM Permiso p")
 public class Permiso implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private long prmId;
-	private BigDecimal prmCargoVacacion;
+	private int prmId;
+	private int prmCargoVacacion;
 	private String prmDescripcionMotivo;
 	private Date prmFechaPermiso;
 	private Timestamp prmFechaRegistro;
 	private String prmHoraInicio;
-	private BigDecimal prmJustificacion;
+	private int prmJustificacion;
 	private String prmNumHoras;
 	private DetallePuesto detallePuesto;
 
@@ -37,17 +37,17 @@ public class Permiso implements Serializable {
 		return this.prmId;
 	}
 
-	public void setPrmId(long prmId) {
+	public void setPrmId(int prmId) {
 		this.prmId = prmId;
 	}
 
 
 	@Column(name="PRM_CARGO_VACACION")
-	public BigDecimal getPrmCargoVacacion() {
+	public int getPrmCargoVacacion() {
 		return this.prmCargoVacacion;
 	}
 
-	public void setPrmCargoVacacion(BigDecimal prmCargoVacacion) {
+	public void setPrmCargoVacacion(int prmCargoVacacion) {
 		this.prmCargoVacacion = prmCargoVacacion;
 	}
 
@@ -94,11 +94,11 @@ public class Permiso implements Serializable {
 
 
 	@Column(name="PRM_JUSTIFICACION")
-	public BigDecimal getPrmJustificacion() {
+	public int getPrmJustificacion() {
 		return this.prmJustificacion;
 	}
 
-	public void setPrmJustificacion(BigDecimal prmJustificacion) {
+	public void setPrmJustificacion(int prmJustificacion) {
 		this.prmJustificacion = prmJustificacion;
 	}
 

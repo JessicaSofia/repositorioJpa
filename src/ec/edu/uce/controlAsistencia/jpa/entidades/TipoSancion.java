@@ -25,7 +25,7 @@ public class TipoSancion implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="TIPO_SANCION_TPSNID_GENERATOR", sequenceName="S_GENERATOR")
+	@SequenceGenerator(name="TIPO_SANCION_TPSNID_GENERATOR", sequenceName="S_TIPO_SANCION")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TIPO_SANCION_TPSNID_GENERATOR")
 	@Column(name="TPSN_ID")
 	public int getTpsnId() {
