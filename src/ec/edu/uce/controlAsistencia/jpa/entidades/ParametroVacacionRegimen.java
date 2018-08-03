@@ -15,7 +15,7 @@ public class ParametroVacacionRegimen implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private long prvcrgId;
 	private String prvcrgValor;
-	private ParametroVacacione parametroVacacione;
+	private ParametroVacaciones parametroVacacione;
 	private Regimen regimen;
 
 	public ParametroVacacionRegimen() {
@@ -48,11 +48,11 @@ public class ParametroVacacionRegimen implements Serializable {
 	//bi-directional many-to-one association to ParametroVacacione
 	@ManyToOne
 	@JoinColumn(name="PRVC_ID")
-	public ParametroVacacione getParametroVacacione() {
+	public ParametroVacaciones getParametroVacacione() {
 		return this.parametroVacacione;
 	}
 
-	public void setParametroVacacione(ParametroVacacione parametroVacacione) {
+	public void setParametroVacacione(ParametroVacaciones parametroVacacione) {
 		this.parametroVacacione = parametroVacacione;
 	}
 

@@ -12,8 +12,8 @@ import java.util.List;
  */
 @Entity
 @Table(name="PARAMETRO_VACACIONES")
-@NamedQuery(name="ParametroVacacione.findAll", query="SELECT p FROM ParametroVacacione p")
-public class ParametroVacacione implements Serializable {
+@NamedQuery(name="ParametroVacaciones.findAll", query="SELECT p FROM ParametroVacaciones p")
+public class ParametroVacaciones implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private long prvcId;
 	private BigDecimal prvCEstado;
@@ -22,7 +22,7 @@ public class ParametroVacacione implements Serializable {
 	private String prvcValor;
 	private List<ParametroVacacionRegimen> parametroVacacionRegimens;
 
-	public ParametroVacacione() {
+	public ParametroVacaciones() {
 	}
 
 
