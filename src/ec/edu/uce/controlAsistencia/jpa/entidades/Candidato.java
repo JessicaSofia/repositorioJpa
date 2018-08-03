@@ -70,7 +70,7 @@ public class Candidato implements Serializable {
 
 
 	//bi-directional many-to-one association to Contrato
-	@OneToMany(mappedBy="candidato", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="candidato", fetch=FetchType.LAZY)
 	public List<Contrato> getContratos() {
 		return this.contratos;
 	}
@@ -79,18 +79,6 @@ public class Candidato implements Serializable {
 		this.contratos = contratos;
 	}
 
-	public Contrato addContrato(Contrato contrato) {
-		getContratos().add(contrato);
-		contrato.setCandidato(this);
 
-		return contrato;
-	}
-
-	public Contrato removeContrato(Contrato contrato) {
-		getContratos().remove(contrato);
-		contrato.setCandidato(null);
-
-		return contrato;
-	}
 
 }

@@ -46,7 +46,7 @@ public class ActividadEsencial implements Serializable {
 
 
 	//bi-directional many-to-one association to ActividadPuesto
-	@OneToMany(mappedBy="actividadEsencial", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="actividadEsencial", fetch=FetchType.LAZY)
 	public List<ActividadPuesto> getActividadPuestos() {
 		return this.actividadPuestos;
 	}
@@ -55,18 +55,5 @@ public class ActividadEsencial implements Serializable {
 		this.actividadPuestos = actividadPuestos;
 	}
 
-	public ActividadPuesto addActividadPuesto(ActividadPuesto actividadPuesto) {
-		getActividadPuestos().add(actividadPuesto);
-		actividadPuesto.setActividadEsencial(this);
-
-		return actividadPuesto;
-	}
-
-	public ActividadPuesto removeActividadPuesto(ActividadPuesto actividadPuesto) {
-		getActividadPuestos().remove(actividadPuesto);
-		actividadPuesto.setActividadEsencial(null);
-
-		return actividadPuesto;
-	}
 
 }

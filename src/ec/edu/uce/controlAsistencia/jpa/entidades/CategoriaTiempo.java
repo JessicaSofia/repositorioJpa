@@ -49,7 +49,7 @@ public class CategoriaTiempo implements Serializable {
 
 
 	//bi-directional many-to-one association to CategoriaRango
-	@OneToMany(mappedBy="categoriaTiempo", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="categoriaTiempo", fetch=FetchType.LAZY)
 	public List<CategoriaRango> getCategoriaRangos() {
 		return this.categoriaRangos;
 	}
@@ -58,19 +58,6 @@ public class CategoriaTiempo implements Serializable {
 		this.categoriaRangos = categoriaRangos;
 	}
 
-	public CategoriaRango addCategoriaRango(CategoriaRango categoriaRango) {
-		getCategoriaRangos().add(categoriaRango);
-		categoriaRango.setCategoriaTiempo(this);
-
-		return categoriaRango;
-	}
-
-	public CategoriaRango removeCategoriaRango(CategoriaRango categoriaRango) {
-		getCategoriaRangos().remove(categoriaRango);
-		categoriaRango.setCategoriaTiempo(null);
-
-		return categoriaRango;
-	}
 
 
 	//bi-directional many-to-one association to CategoriaDocente

@@ -215,7 +215,7 @@ public class Puesto implements Serializable {
 
 
 	//bi-directional many-to-one association to ActividadPuesto
-	@OneToMany(mappedBy="puesto", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="puesto", fetch=FetchType.LAZY)
 	public List<ActividadPuesto> getActividadPuestos() {
 		return this.actividadPuestos;
 	}
@@ -224,23 +224,9 @@ public class Puesto implements Serializable {
 		this.actividadPuestos = actividadPuestos;
 	}
 
-	public ActividadPuesto addActividadPuesto(ActividadPuesto actividadPuesto) {
-		getActividadPuestos().add(actividadPuesto);
-		actividadPuesto.setPuesto(this);
-
-		return actividadPuesto;
-	}
-
-	public ActividadPuesto removeActividadPuesto(ActividadPuesto actividadPuesto) {
-		getActividadPuestos().remove(actividadPuesto);
-		actividadPuesto.setPuesto(null);
-
-		return actividadPuesto;
-	}
-
 
 	//bi-directional many-to-one association to CompetenciaPuesto
-	@OneToMany(mappedBy="puesto", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="puesto", fetch=FetchType.LAZY)
 	public List<CompetenciaPuesto> getCompetenciaPuestos() {
 		return this.competenciaPuestos;
 	}
@@ -249,23 +235,11 @@ public class Puesto implements Serializable {
 		this.competenciaPuestos = competenciaPuestos;
 	}
 
-	public CompetenciaPuesto addCompetenciaPuesto(CompetenciaPuesto competenciaPuesto) {
-		getCompetenciaPuestos().add(competenciaPuesto);
-		competenciaPuesto.setPuesto(this);
 
-		return competenciaPuesto;
-	}
-
-	public CompetenciaPuesto removeCompetenciaPuesto(CompetenciaPuesto competenciaPuesto) {
-		getCompetenciaPuestos().remove(competenciaPuesto);
-		competenciaPuesto.setPuesto(null);
-
-		return competenciaPuesto;
-	}
 
 
 	//bi-directional many-to-one association to ConocimientoPuesto
-	@OneToMany(mappedBy="puesto", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="puesto", fetch=FetchType.LAZY)
 	public List<ConocimientoPuesto> getConocimientoPuestos() {
 		return this.conocimientoPuestos;
 	}
@@ -274,23 +248,10 @@ public class Puesto implements Serializable {
 		this.conocimientoPuestos = conocimientoPuestos;
 	}
 
-	public ConocimientoPuesto addConocimientoPuesto(ConocimientoPuesto conocimientoPuesto) {
-		getConocimientoPuestos().add(conocimientoPuesto);
-		conocimientoPuesto.setPuesto(this);
-
-		return conocimientoPuesto;
-	}
-
-	public ConocimientoPuesto removeConocimientoPuesto(ConocimientoPuesto conocimientoPuesto) {
-		getConocimientoPuestos().remove(conocimientoPuesto);
-		conocimientoPuesto.setPuesto(null);
-
-		return conocimientoPuesto;
-	}
 
 
 	//bi-directional many-to-one association to DestrezaPuesto
-	@OneToMany(mappedBy="puesto", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="puesto", fetch=FetchType.LAZY)
 	public List<DestrezaPuesto> getDestrezaPuestos() {
 		return this.destrezaPuestos;
 	}
@@ -299,23 +260,10 @@ public class Puesto implements Serializable {
 		this.destrezaPuestos = destrezaPuestos;
 	}
 
-	public DestrezaPuesto addDestrezaPuesto(DestrezaPuesto destrezaPuesto) {
-		getDestrezaPuestos().add(destrezaPuesto);
-		destrezaPuesto.setPuesto(this);
-
-		return destrezaPuesto;
-	}
-
-	public DestrezaPuesto removeDestrezaPuesto(DestrezaPuesto destrezaPuesto) {
-		getDestrezaPuestos().remove(destrezaPuesto);
-		destrezaPuesto.setPuesto(null);
-
-		return destrezaPuesto;
-	}
 
 
 	//bi-directional many-to-one association to DetallePuesto
-	@OneToMany(mappedBy="puesto", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="puesto", fetch=FetchType.LAZY)
 	public List<DetallePuesto> getDetallePuestos() {
 		return this.detallePuestos;
 	}
@@ -324,23 +272,10 @@ public class Puesto implements Serializable {
 		this.detallePuestos = detallePuestos;
 	}
 
-	public DetallePuesto addDetallePuesto(DetallePuesto detallePuesto) {
-		getDetallePuestos().add(detallePuesto);
-		detallePuesto.setPuesto(this);
-
-		return detallePuesto;
-	}
-
-	public DetallePuesto removeDetallePuesto(DetallePuesto detallePuesto) {
-		getDetallePuestos().remove(detallePuesto);
-		detallePuesto.setPuesto(null);
-
-		return detallePuesto;
-	}
 
 
 	//bi-directional many-to-one association to FuncionPuesto
-	@OneToMany(mappedBy="puesto", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="puesto", fetch=FetchType.LAZY)
 	public List<FuncionPuesto> getFuncionPuestos() {
 		return this.funcionPuestos;
 	}
@@ -349,23 +284,9 @@ public class Puesto implements Serializable {
 		this.funcionPuestos = funcionPuestos;
 	}
 
-	public FuncionPuesto addFuncionPuesto(FuncionPuesto funcionPuesto) {
-		getFuncionPuestos().add(funcionPuesto);
-		funcionPuesto.setPuesto(this);
-
-		return funcionPuesto;
-	}
-
-	public FuncionPuesto removeFuncionPuesto(FuncionPuesto funcionPuesto) {
-		getFuncionPuestos().remove(funcionPuesto);
-		funcionPuesto.setPuesto(null);
-
-		return funcionPuesto;
-	}
-
 
 	//bi-directional many-to-one association to InstruccionPuesto
-	@OneToMany(mappedBy="puesto", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="puesto", fetch=FetchType.LAZY)
 	public List<InstruccionPuesto> getInstruccionPuestos() {
 		return this.instruccionPuestos;
 	}
@@ -374,43 +295,16 @@ public class Puesto implements Serializable {
 		this.instruccionPuestos = instruccionPuestos;
 	}
 
-	public InstruccionPuesto addInstruccionPuesto(InstruccionPuesto instruccionPuesto) {
-		getInstruccionPuestos().add(instruccionPuesto);
-		instruccionPuesto.setPuesto(this);
-
-		return instruccionPuesto;
-	}
-
-	public InstruccionPuesto removeInstruccionPuesto(InstruccionPuesto instruccionPuesto) {
-		getInstruccionPuestos().remove(instruccionPuesto);
-		instruccionPuesto.setPuesto(null);
-
-		return instruccionPuesto;
-	}
 
 
 	//bi-directional many-to-one association to PartidaIndividual
-	@OneToMany(mappedBy="puesto", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="puesto", fetch=FetchType.LAZY)
 	public List<PartidaIndividual> getPartidaIndividuals() {
 		return this.partidaIndividuals;
 	}
 
 	public void setPartidaIndividuals(List<PartidaIndividual> partidaIndividuals) {
 		this.partidaIndividuals = partidaIndividuals;
-	}
-
-	public PartidaIndividual addPartidaIndividual(PartidaIndividual partidaIndividual) {
-		getPartidaIndividuals().add(partidaIndividual);
-		partidaIndividual.setPuesto(this);
-
-		return partidaIndividual;
-	}
-
-	public PartidaIndividual removePartidaIndividual(PartidaIndividual partidaIndividual) {
-		getPartidaIndividuals().remove(partidaIndividual);
-		partidaIndividual.setPuesto(null);
-
-		return partidaIndividual;
 	}
 
 
@@ -475,7 +369,7 @@ public class Puesto implements Serializable {
 
 
 	//bi-directional many-to-one association to PuestoAreaConocimiento
-	@OneToMany(mappedBy="puesto", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="puesto", fetch=FetchType.LAZY)
 	public List<PuestoAreaConocimiento> getPuestoAreaConocimientos() {
 		return this.puestoAreaConocimientos;
 	}
@@ -484,23 +378,9 @@ public class Puesto implements Serializable {
 		this.puestoAreaConocimientos = puestoAreaConocimientos;
 	}
 
-	public PuestoAreaConocimiento addPuestoAreaConocimiento(PuestoAreaConocimiento puestoAreaConocimiento) {
-		getPuestoAreaConocimientos().add(puestoAreaConocimiento);
-		puestoAreaConocimiento.setPuesto(this);
-
-		return puestoAreaConocimiento;
-	}
-
-	public PuestoAreaConocimiento removePuestoAreaConocimiento(PuestoAreaConocimiento puestoAreaConocimiento) {
-		getPuestoAreaConocimientos().remove(puestoAreaConocimiento);
-		puestoAreaConocimiento.setPuesto(null);
-
-		return puestoAreaConocimiento;
-	}
-
 
 	//bi-directional many-to-one association to Tramite
-	@OneToMany(mappedBy="puesto", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="puesto", fetch=FetchType.LAZY)
 	public List<Tramite> getTramites() {
 		return this.tramites;
 	}
@@ -509,18 +389,6 @@ public class Puesto implements Serializable {
 		this.tramites = tramites;
 	}
 
-	public Tramite addTramite(Tramite tramite) {
-		getTramites().add(tramite);
-		tramite.setPuesto(this);
-
-		return tramite;
-	}
-
-	public Tramite removeTramite(Tramite tramite) {
-		getTramites().remove(tramite);
-		tramite.setPuesto(null);
-
-		return tramite;
-	}
+	
 
 }

@@ -83,7 +83,7 @@ public class AreaConocimiento implements Serializable {
 
 
 	//bi-directional many-to-one association to AreaConocimiento
-	@OneToMany(mappedBy="areaConocimiento", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="areaConocimiento", fetch=FetchType.LAZY)
 	public List<AreaConocimiento> getAreaConocimientos() {
 		return this.areaConocimientos;
 	}
@@ -92,23 +92,10 @@ public class AreaConocimiento implements Serializable {
 		this.areaConocimientos = areaConocimientos;
 	}
 
-	public AreaConocimiento addAreaConocimiento(AreaConocimiento areaConocimiento) {
-		getAreaConocimientos().add(areaConocimiento);
-		areaConocimiento.setAreaConocimiento(this);
-
-		return areaConocimiento;
-	}
-
-	public AreaConocimiento removeAreaConocimiento(AreaConocimiento areaConocimiento) {
-		getAreaConocimientos().remove(areaConocimiento);
-		areaConocimiento.setAreaConocimiento(null);
-
-		return areaConocimiento;
-	}
-
+	
 
 	//bi-directional many-to-one association to PuestoAreaConocimiento
-	@OneToMany(mappedBy="areaConocimiento", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="areaConocimiento", fetch=FetchType.LAZY)
 	public List<PuestoAreaConocimiento> getPuestoAreaConocimientos() {
 		return this.puestoAreaConocimientos;
 	}
@@ -117,18 +104,6 @@ public class AreaConocimiento implements Serializable {
 		this.puestoAreaConocimientos = puestoAreaConocimientos;
 	}
 
-	public PuestoAreaConocimiento addPuestoAreaConocimiento(PuestoAreaConocimiento puestoAreaConocimiento) {
-		getPuestoAreaConocimientos().add(puestoAreaConocimiento);
-		puestoAreaConocimiento.setAreaConocimiento(this);
 
-		return puestoAreaConocimiento;
-	}
-
-	public PuestoAreaConocimiento removePuestoAreaConocimiento(PuestoAreaConocimiento puestoAreaConocimiento) {
-		getPuestoAreaConocimientos().remove(puestoAreaConocimiento);
-		puestoAreaConocimiento.setAreaConocimiento(null);
-
-		return puestoAreaConocimiento;
-	}
 
 }

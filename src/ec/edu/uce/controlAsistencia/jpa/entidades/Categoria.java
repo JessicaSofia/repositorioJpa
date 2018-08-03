@@ -82,7 +82,7 @@ public class Categoria implements Serializable {
 
 
 	//bi-directional many-to-one association to FichaEmpleado
-	@OneToMany(mappedBy="categoria", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="categoria", fetch=FetchType.LAZY)
 	public List<FichaEmpleado> getFichaEmpleados() {
 		return this.fichaEmpleados;
 	}

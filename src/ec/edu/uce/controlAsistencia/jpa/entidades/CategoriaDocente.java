@@ -58,7 +58,7 @@ public class CategoriaDocente implements Serializable {
 
 
 	//bi-directional many-to-one association to CategoriaTiempo
-	@OneToMany(mappedBy="categoriaDocente", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="categoriaDocente", fetch=FetchType.LAZY)
 	public List<CategoriaTiempo> getCategoriaTiempos() {
 		return this.categoriaTiempos;
 	}

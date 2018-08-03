@@ -30,7 +30,7 @@ public class Permiso implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="PERMISO_PRMID_GENERATOR", sequenceName="S_GENERATOR")
+	@SequenceGenerator(name="PERMISO_PRMID_GENERATOR", sequenceName="S_PERMISO")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PERMISO_PRMID_GENERATOR")
 	@Column(name="PRM_ID")
 	public long getPrmId() {

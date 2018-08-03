@@ -45,7 +45,7 @@ public class Conocimiento implements Serializable {
 
 
 	//bi-directional many-to-one association to ConocimientoPuesto
-	@OneToMany(mappedBy="conocimiento", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="conocimiento", fetch=FetchType.LAZY)
 	public List<ConocimientoPuesto> getConocimientoPuestos() {
 		return this.conocimientoPuestos;
 	}
@@ -54,18 +54,6 @@ public class Conocimiento implements Serializable {
 		this.conocimientoPuestos = conocimientoPuestos;
 	}
 
-	public ConocimientoPuesto addConocimientoPuesto(ConocimientoPuesto conocimientoPuesto) {
-		getConocimientoPuestos().add(conocimientoPuesto);
-		conocimientoPuesto.setConocimiento(this);
 
-		return conocimientoPuesto;
-	}
-
-	public ConocimientoPuesto removeConocimientoPuesto(ConocimientoPuesto conocimientoPuesto) {
-		getConocimientoPuestos().remove(conocimientoPuesto);
-		conocimientoPuesto.setConocimiento(null);
-
-		return conocimientoPuesto;
-	}
 
 }

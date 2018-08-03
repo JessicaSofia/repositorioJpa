@@ -73,7 +73,7 @@ public class CategoriaRango implements Serializable {
 
 
 	//bi-directional many-to-one association to Puesto
-	@OneToMany(mappedBy="categoriaRango", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="categoriaRango", fetch=FetchType.LAZY)
 	public List<Puesto> getPuestos() {
 		return this.puestos;
 	}
@@ -82,18 +82,6 @@ public class CategoriaRango implements Serializable {
 		this.puestos = puestos;
 	}
 
-	public Puesto addPuesto(Puesto puesto) {
-		getPuestos().add(puesto);
-		puesto.setCategoriaRango(this);
-
-		return puesto;
-	}
-
-	public Puesto removePuesto(Puesto puesto) {
-		getPuestos().remove(puesto);
-		puesto.setCategoriaRango(null);
-
-		return puesto;
-	}
+	
 
 }

@@ -44,7 +44,6 @@ public class Persona implements Serializable {
 	public Persona() {
 	}
 
-
 	@Id
 	@SequenceGenerator(name="PERSONA_PRSID_GENERATOR", sequenceName="S_GENERATOR")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PERSONA_PRSID_GENERATOR")
@@ -353,7 +352,7 @@ public class Persona implements Serializable {
 
 
 	//bi-directional many-to-one association to Usuario
-	@OneToMany(mappedBy="persona", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="persona", fetch=FetchType.LAZY)
 	public List<Usuario> getUsuarios() {
 		return this.usuarios;
 	}
@@ -362,20 +361,6 @@ public class Persona implements Serializable {
 		this.usuarios = usuarios;
 	}
 
-	public Usuario addUsuario(Usuario usuario) {
-		getUsuarios().add(usuario);
-		usuario.setPersona(this);
-
-		return usuario;
-	}
-
-	public Usuario removeUsuario(Usuario usuario) {
-		getUsuarios().remove(usuario);
-		usuario.setPersona(null);
-
-		return usuario;
-	}
-	
 	@Override
 	public String toString() {
 		return "" + prsPrimerApellido + " " + prsSegundoApellido+ "";

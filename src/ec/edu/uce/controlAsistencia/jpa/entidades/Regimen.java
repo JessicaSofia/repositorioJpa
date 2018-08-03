@@ -71,7 +71,7 @@ public class Regimen implements Serializable {
 
 
 	//bi-directional many-to-one association to GrupoOcupacional
-	@OneToMany(mappedBy="regimen", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="regimen", fetch=FetchType.LAZY)
 	public List<GrupoOcupacional> getGrupoOcupacionals() {
 		return this.grupoOcupacionals;
 	}
@@ -96,7 +96,7 @@ public class Regimen implements Serializable {
 
 
 	//bi-directional many-to-one association to ParametroVacacionRegimen
-	@OneToMany(mappedBy="regimen", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="regimen", fetch=FetchType.LAZY)
 	public List<ParametroVacacionRegimen> getParametroVacacionRegimens() {
 		return this.parametroVacacionRegimens;
 	}
@@ -105,23 +105,9 @@ public class Regimen implements Serializable {
 		this.parametroVacacionRegimens = parametroVacacionRegimens;
 	}
 
-	public ParametroVacacionRegimen addParametroVacacionRegimen(ParametroVacacionRegimen parametroVacacionRegimen) {
-		getParametroVacacionRegimens().add(parametroVacacionRegimen);
-		parametroVacacionRegimen.setRegimen(this);
-
-		return parametroVacacionRegimen;
-	}
-
-	public ParametroVacacionRegimen removeParametroVacacionRegimen(ParametroVacacionRegimen parametroVacacionRegimen) {
-		getParametroVacacionRegimens().remove(parametroVacacionRegimen);
-		parametroVacacionRegimen.setRegimen(null);
-
-		return parametroVacacionRegimen;
-	}
-
 
 	//bi-directional many-to-one association to Puesto
-	@OneToMany(mappedBy="regimen", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="regimen", fetch=FetchType.LAZY)
 	public List<Puesto> getPuestos() {
 		return this.puestos;
 	}
@@ -130,23 +116,9 @@ public class Regimen implements Serializable {
 		this.puestos = puestos;
 	}
 
-	public Puesto addPuesto(Puesto puesto) {
-		getPuestos().add(puesto);
-		puesto.setRegimen(this);
-
-		return puesto;
-	}
-
-	public Puesto removePuesto(Puesto puesto) {
-		getPuestos().remove(puesto);
-		puesto.setRegimen(null);
-
-		return puesto;
-	}
-
 
 	//bi-directional many-to-one association to TipoLicencia
-	@OneToMany(mappedBy="regimen", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="regimen", fetch=FetchType.LAZY)
 	public List<TipoLicencia> getTipoLicencias() {
 		return this.tipoLicencias;
 	}
@@ -155,18 +127,6 @@ public class Regimen implements Serializable {
 		this.tipoLicencias = tipoLicencias;
 	}
 
-	public TipoLicencia addTipoLicencia(TipoLicencia tipoLicencia) {
-		getTipoLicencias().add(tipoLicencia);
-		tipoLicencia.setRegimen(this);
 
-		return tipoLicencia;
-	}
-
-	public TipoLicencia removeTipoLicencia(TipoLicencia tipoLicencia) {
-		getTipoLicencias().remove(tipoLicencia);
-		tipoLicencia.setRegimen(null);
-
-		return tipoLicencia;
-	}
 
 }

@@ -31,7 +31,7 @@ public class Vacacion implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="VACACION_VCCID_GENERATOR", sequenceName="S_GENERATOR")
+	@SequenceGenerator(name="VACACION_VCCID_GENERATOR", sequenceName="S_VACACION")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="VACACION_VCCID_GENERATOR")
 	@Column(name="VCC_ID")
 	public long getVccId() {

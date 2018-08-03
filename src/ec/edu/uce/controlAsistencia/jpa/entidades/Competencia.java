@@ -68,7 +68,7 @@ public class Competencia implements Serializable {
 
 
 	//bi-directional many-to-one association to NivelCompetencia
-	@OneToMany(mappedBy="competencia", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="competencia", fetch=FetchType.LAZY)
 	public List<NivelCompetencia> getNivelCompetencias() {
 		return this.nivelCompetencias;
 	}
@@ -77,18 +77,6 @@ public class Competencia implements Serializable {
 		this.nivelCompetencias = nivelCompetencias;
 	}
 
-	public NivelCompetencia addNivelCompetencia(NivelCompetencia nivelCompetencia) {
-		getNivelCompetencias().add(nivelCompetencia);
-		nivelCompetencia.setCompetencia(this);
-
-		return nivelCompetencia;
-	}
-
-	public NivelCompetencia removeNivelCompetencia(NivelCompetencia nivelCompetencia) {
-		getNivelCompetencias().remove(nivelCompetencia);
-		nivelCompetencia.setCompetencia(null);
-
-		return nivelCompetencia;
-	}
+	
 
 }

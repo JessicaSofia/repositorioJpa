@@ -85,7 +85,7 @@ public class AcreedorDescuento implements Serializable {
 
 
 	//bi-directional many-to-one association to AcreDescHistorial
-	@OneToMany(mappedBy="acreedorDescuento", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="acreedorDescuento", fetch=FetchType.LAZY)
 	public List<AcreDescHistorial> getAcreDescHistorials() {
 		return this.acreDescHistorials;
 	}
@@ -94,23 +94,9 @@ public class AcreedorDescuento implements Serializable {
 		this.acreDescHistorials = acreDescHistorials;
 	}
 
-	public AcreDescHistorial addAcreDescHistorial(AcreDescHistorial acreDescHistorial) {
-		getAcreDescHistorials().add(acreDescHistorial);
-		acreDescHistorial.setAcreedorDescuento(this);
-
-		return acreDescHistorial;
-	}
-
-	public AcreDescHistorial removeAcreDescHistorial(AcreDescHistorial acreDescHistorial) {
-		getAcreDescHistorials().remove(acreDescHistorial);
-		acreDescHistorial.setAcreedorDescuento(null);
-
-		return acreDescHistorial;
-	}
-
 
 	//bi-directional many-to-one association to HistorialDescuento
-	@OneToMany(mappedBy="acreedorDescuento", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="acreedorDescuento", fetch=FetchType.LAZY)
 	public List<HistorialDescuento> getHistorialDescuentos() {
 		return this.historialDescuentos;
 	}
@@ -119,18 +105,6 @@ public class AcreedorDescuento implements Serializable {
 		this.historialDescuentos = historialDescuentos;
 	}
 
-	public HistorialDescuento addHistorialDescuento(HistorialDescuento historialDescuento) {
-		getHistorialDescuentos().add(historialDescuento);
-		historialDescuento.setAcreedorDescuento(this);
 
-		return historialDescuento;
-	}
-
-	public HistorialDescuento removeHistorialDescuento(HistorialDescuento historialDescuento) {
-		getHistorialDescuentos().remove(historialDescuento);
-		historialDescuento.setAcreedorDescuento(null);
-
-		return historialDescuento;
-	}
 
 }
