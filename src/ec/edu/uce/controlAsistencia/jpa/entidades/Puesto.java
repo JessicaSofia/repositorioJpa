@@ -51,8 +51,6 @@ public class Puesto implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="PUESTO_PSTID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PUESTO_PSTID_GENERATOR")
 	@Column(name="PST_ID")
 	public long getPstId() {
 		return this.pstId;

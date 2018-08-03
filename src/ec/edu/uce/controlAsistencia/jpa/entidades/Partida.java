@@ -22,8 +22,6 @@ public class Partida implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="PARTIDA_PRTID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PARTIDA_PRTID_GENERATOR")
 	@Column(name="PRT_ID")
 	public long getPrtId() {
 		return this.prtId;

@@ -45,8 +45,6 @@ public class Persona implements Serializable {
 	}
 
 	@Id
-	@SequenceGenerator(name="PERSONA_PRSID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PERSONA_PRSID_GENERATOR")
 	@Column(name="PRS_ID")
 	public long getPrsId() {
 		return this.prsId;

@@ -22,8 +22,6 @@ public class Proceso implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="PROCESO_PRCID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PROCESO_PRCID_GENERATOR")
 	@Column(name="PRC_ID")
 	public long getPrcId() {
 		return this.prcId;

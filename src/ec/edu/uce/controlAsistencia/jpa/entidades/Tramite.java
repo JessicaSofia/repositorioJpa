@@ -29,8 +29,6 @@ public class Tramite implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="TRAMITE_TRMID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TRAMITE_TRMID_GENERATOR")
 	@Column(name="TRM_ID")
 	public long getTrmId() {
 		return this.trmId;

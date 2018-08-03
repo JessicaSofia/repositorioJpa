@@ -67,8 +67,6 @@ public class RolPago implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="ROL_PAGO_ROLPAGID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ROL_PAGO_ROLPAGID_GENERATOR")
 	@Column(name="ROL_PAG_ID")
 	public long getRolPagId() {
 		return this.rolPagId;

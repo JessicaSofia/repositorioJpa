@@ -23,8 +23,6 @@ public class TipoJerarquico implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="TIPO_JERARQUICO_TPJRID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TIPO_JERARQUICO_TPJRID_GENERATOR")
 	@Column(name="TPJR_ID")
 	public long getTpjrId() {
 		return this.tpjrId;

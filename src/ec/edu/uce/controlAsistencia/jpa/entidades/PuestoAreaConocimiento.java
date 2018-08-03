@@ -22,8 +22,6 @@ public class PuestoAreaConocimiento implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="PUESTO_AREA_CONOCIMIENTO_PSARCNID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PUESTO_AREA_CONOCIMIENTO_PSARCNID_GENERATOR")
 	@Column(name="PSARCN_ID")
 	public long getPsarcnId() {
 		return this.psarcnId;

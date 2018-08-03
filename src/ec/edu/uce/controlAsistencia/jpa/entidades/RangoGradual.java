@@ -25,8 +25,6 @@ public class RangoGradual implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="RANGO_GRADUAL_RNGRID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="RANGO_GRADUAL_RNGRID_GENERATOR")
 	@Column(name="RNGR_ID")
 	public long getRngrId() {
 		return this.rngrId;

@@ -25,8 +25,6 @@ public class RelacionLaboral implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="RELACION_LABORAL_RLLBID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="RELACION_LABORAL_RLLBID_GENERATOR")
 	@Column(name="RLLB_ID")
 	public long getRllbId() {
 		return this.rllbId;

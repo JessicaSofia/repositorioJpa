@@ -26,8 +26,6 @@ public class NivelCompetencia implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="NIVEL_COMPETENCIA_NVCMID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="NIVEL_COMPETENCIA_NVCMID_GENERATOR")
 	@Column(name="NVCM_ID")
 	public long getNvcmId() {
 		return this.nvcmId;

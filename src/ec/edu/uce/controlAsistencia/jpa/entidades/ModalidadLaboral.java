@@ -25,8 +25,6 @@ public class ModalidadLaboral implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="MODALIDAD_LABORAL_MDLBID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="MODALIDAD_LABORAL_MDLBID_GENERATOR")
 	@Column(name="MDLB_ID")
 	public long getMdlbId() {
 		return this.mdlbId;

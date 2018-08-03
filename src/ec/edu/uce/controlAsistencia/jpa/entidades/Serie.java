@@ -24,8 +24,6 @@ public class Serie implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="SERIE_SERID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SERIE_SERID_GENERATOR")
 	@Column(name="SER_ID")
 	public long getSerId() {
 		return this.serId;

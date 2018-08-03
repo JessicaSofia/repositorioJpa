@@ -25,8 +25,6 @@ public class TiempoDedicacion implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="TIEMPO_DEDICACION_TMDDID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TIEMPO_DEDICACION_TMDDID_GENERATOR")
 	@Column(name="TMDD_ID")
 	public long getTmddId() {
 		return this.tmddId;

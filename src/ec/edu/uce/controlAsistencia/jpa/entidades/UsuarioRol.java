@@ -1,4 +1,4 @@
-package ec.edu.uce.controlAsistencia.jpa.entidades;
+	package ec.edu.uce.controlAsistencia.jpa.entidades;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -24,8 +24,6 @@ public class UsuarioRol implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="USUARIO_ROL_USROID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="USUARIO_ROL_USROID_GENERATOR")
 	@Column(name="USRO_ID")
 	public long getUsroId() {
 		return this.usroId;

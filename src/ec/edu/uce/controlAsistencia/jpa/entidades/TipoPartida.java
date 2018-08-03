@@ -24,8 +24,6 @@ public class TipoPartida implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="TIPO_PARTIDA_TPPID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TIPO_PARTIDA_TPPID_GENERATOR")
 	@Column(name="TPP_ID")
 	public long getTppId() {
 		return this.tppId;

@@ -24,8 +24,6 @@ public class Rol implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="ROL_ROLID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ROL_ROLID_GENERATOR")
 	@Column(name="ROL_ID")
 	public long getRolId() {
 		return this.rolId;

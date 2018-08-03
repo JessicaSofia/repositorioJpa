@@ -36,8 +36,6 @@ public class PartidaIndividual implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="PARTIDA_INDIVIDUAL_PRIDID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PARTIDA_INDIVIDUAL_PRIDID_GENERATOR")
 	@Column(name="PRID_ID")
 	public long getPridId() {
 		return this.pridId;

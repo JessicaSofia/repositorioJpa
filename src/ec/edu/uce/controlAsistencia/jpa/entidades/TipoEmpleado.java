@@ -25,8 +25,6 @@ public class TipoEmpleado implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="TIPO_EMPLEADO_TPEMID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TIPO_EMPLEADO_TPEMID_GENERATOR")
 	@Column(name="TPEM_ID")
 	public long getTpemId() {
 		return this.tpemId;

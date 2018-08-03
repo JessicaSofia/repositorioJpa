@@ -24,8 +24,6 @@ public class NivelJerarquico implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="NIVEL_JERARQUICO_NVJRID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="NIVEL_JERARQUICO_NVJRID_GENERATOR")
 	@Column(name="NVJR_ID")
 	public long getNvjrId() {
 		return this.nvjrId;

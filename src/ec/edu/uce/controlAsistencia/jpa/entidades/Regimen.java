@@ -28,8 +28,6 @@ public class Regimen implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="REGIMEN_RGMID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="REGIMEN_RGMID_GENERATOR")
 	@Column(name="RGM_ID")
 	public long getRgmId() {
 		return this.rgmId;

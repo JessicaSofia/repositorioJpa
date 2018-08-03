@@ -25,8 +25,6 @@ public class NivelOcupacional implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="NIVEL_OCUPACIONAL_NVOCID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="NIVEL_OCUPACIONAL_NVOCID_GENERATOR")
 	@Column(name="NVOC_ID")
 	public long getNvocId() {
 		return this.nvocId;

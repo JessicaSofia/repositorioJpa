@@ -23,8 +23,6 @@ public class NivelInstruccion implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="NIVEL_INSTRUCCION_NVINID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="NIVEL_INSTRUCCION_NVINID_GENERATOR")
 	@Column(name="NVIN_ID")
 	public long getNvinId() {
 		return this.nvinId;

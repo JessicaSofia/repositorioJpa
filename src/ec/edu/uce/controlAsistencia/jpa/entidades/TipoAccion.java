@@ -25,8 +25,6 @@ public class TipoAccion implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="TIPO_ACCION_TPACID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TIPO_ACCION_TPACID_GENERATOR")
 	@Column(name="TPAC_ID")
 	public long getTpacId() {
 		return this.tpacId;

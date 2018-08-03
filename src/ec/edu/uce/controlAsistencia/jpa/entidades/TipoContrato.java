@@ -26,8 +26,6 @@ public class TipoContrato implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="TIPO_CONTRATO_TPCNID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TIPO_CONTRATO_TPCNID_GENERATOR")
 	@Column(name="TPCN_ID")
 	public long getTpcnId() {
 		return this.tpcnId;

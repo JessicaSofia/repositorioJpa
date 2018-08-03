@@ -35,8 +35,6 @@ public class Usuario implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="USUARIO_USRID_GENERATOR", sequenceName="S_GENERATOR")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="USUARIO_USRID_GENERATOR")
 	@Column(name="USR_ID")
 	public long getUsrId() {
 		return this.usrId;
