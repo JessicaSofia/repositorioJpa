@@ -28,11 +28,8 @@ public class DetallePuesto implements Serializable {
 	private PartidaIndividual partidaIndividual;
 	private Puesto puesto;
 	private RelacionLaboral relacionLaboral;
-	private List<DetallePuestoSancion> detallePuestoSancions;
 	private List<Distributivo> distributivos;
-	private List<SaldoVacacion> saldoVacacions;
-	private List<Vacacion> vacacions;
-	private List<Permiso> permisos;
+
 
 	public DetallePuesto() {
 	}
@@ -175,6 +172,7 @@ public class DetallePuesto implements Serializable {
 		this.puesto = puesto;
 	}
 
+	
 
 	//bi-directional many-to-one association to RelacionLaboral
 	@ManyToOne
@@ -188,16 +186,7 @@ public class DetallePuesto implements Serializable {
 	}
 
 
-	//bi-directional many-to-one association to DetallePuestoSancion
-	@OneToMany(mappedBy="detallePuesto", fetch=FetchType.LAZY)
-	public List<DetallePuestoSancion> getDetallePuestoSancions() {
-		return this.detallePuestoSancions;
-	}
-
-	public void setDetallePuestoSancions(List<DetallePuestoSancion> detallePuestoSancions) {
-		this.detallePuestoSancions = detallePuestoSancions;
-	}
-
+	
 
 
 	//bi-directional many-to-one association to Distributivo
@@ -209,38 +198,6 @@ public class DetallePuesto implements Serializable {
 	public void setDistributivos(List<Distributivo> distributivos) {
 		this.distributivos = distributivos;
 	}
-
-	//bi-directional many-to-one association to SaldoVacacion
-	/*@OneToMany(mappedBy="detallePuesto", fetch=FetchType.LAZY)
-	public List<SaldoVacacion> getSaldoVacacions() {
-		return this.saldoVacacions;
-	}
-
-	public void setSaldoVacacions(List<SaldoVacacion> saldoVacacions) {
-		this.saldoVacacions = saldoVacacions;
-	}*/
-
-
-	//bi-directional many-to-one association to Vacacion
-	/*@OneToMany(mappedBy="detallePuesto", fetch=FetchType.LAZY)
-	public List<Vacacion> getVacacions() {
-		return this.vacacions;
-	}
-
-	public void setVacacions(List<Vacacion> vacacions) {
-		this.vacacions = vacacions;
-	}*/
-
-
-	//bi-directional many-to-one association to Permiso
-	/*@OneToMany(mappedBy="detallePuesto", fetch=FetchType.LAZY)
-	public List<Permiso> getPermisos() {
-		return this.permisos;
-	}
-
-	public void setPermisos(List<Permiso> permisos) {
-		this.permisos = permisos;
-	}*/
 
 
 
