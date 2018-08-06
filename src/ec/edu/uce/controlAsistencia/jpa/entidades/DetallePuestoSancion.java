@@ -29,7 +29,7 @@ public class DetallePuestoSancion implements Serializable {
 	private String dtpssnObservacion;
 	private float dtpssnValor;
 	private CategoriaFalta categoriaFalta;
-	private DetallePuesto detallePuesto;
+	private int dtpsId;
 	private Sancion sancion;
 
 	public DetallePuestoSancion() {
@@ -37,6 +37,8 @@ public class DetallePuestoSancion implements Serializable {
 
 
 	@Id
+	@SequenceGenerator(name="DETALLE_PUESTO_SANCION_DTPSSNID_GENERATOR", sequenceName="S_DETALLE_PUESTO_SANCION")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="DETALLE_PUESTO_SANCION_DTPSSNID_GENERATOR")
 	@Column(name="DTPSSN_ID")
 	public long getDtpssnId() {
 		return this.dtpssnId;
@@ -179,15 +181,13 @@ public class DetallePuestoSancion implements Serializable {
 	}
 
 
-	//bi-directional many-to-one association to DetallePuesto
-	@ManyToOne
-	@JoinColumn(name="DTPS_ID")
-	public DetallePuesto getDetallePuesto() {
-		return this.detallePuesto;
+	@Column(name="DTPS_ID")
+	public int getDtpsId() {
+		return this.dtpsId;
 	}
 
-	public void setDetallePuesto(DetallePuesto detallePuesto) {
-		this.detallePuesto = detallePuesto;
+	public void setDtpsId(int dtpsId) {
+		this.dtpsId = dtpsId;
 	}
 
 
