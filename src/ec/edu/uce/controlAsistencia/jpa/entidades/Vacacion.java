@@ -25,6 +25,7 @@ public class Vacacion implements Serializable {
 	private String vccObservacion;
 	private String vccObservacionEstado;
 	private DetallePuesto detallePuesto;
+	private int dtpsId;
 
 	public Vacacion() {
 	}
@@ -134,9 +135,18 @@ public class Vacacion implements Serializable {
 		this.vccObservacionEstado = vccObservacionEstado;
 	}
 
+	
+	@Column(name = "DTPS_ID")
+	public int getDtpsId() {
+		return this.dtpsId;
+	}
 
+	public void setDtpsId(int dtpsId) {
+		this.dtpsId = dtpsId;
+	}
+	
 	//bi-directional many-to-one association to DetallePuesto
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name="DTPS_ID")
 	public DetallePuesto getDetallePuesto() {
 		return this.detallePuesto;
@@ -144,6 +154,6 @@ public class Vacacion implements Serializable {
 
 	public void setDetallePuesto(DetallePuesto detallePuesto) {
 		this.detallePuesto = detallePuesto;
-	}
+	}*/
 
 }

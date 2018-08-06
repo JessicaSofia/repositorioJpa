@@ -211,36 +211,36 @@ public class DetallePuesto implements Serializable {
 	}
 
 	//bi-directional many-to-one association to SaldoVacacion
-	@OneToMany(mappedBy="detallePuesto", fetch=FetchType.LAZY)
+	/*@OneToMany(mappedBy="detallePuesto", fetch=FetchType.LAZY)
 	public List<SaldoVacacion> getSaldoVacacions() {
 		return this.saldoVacacions;
 	}
 
 	public void setSaldoVacacions(List<SaldoVacacion> saldoVacacions) {
 		this.saldoVacacions = saldoVacacions;
-	}
+	}*/
 
 
 	//bi-directional many-to-one association to Vacacion
-	@OneToMany(mappedBy="detallePuesto", fetch=FetchType.LAZY)
+	/*@OneToMany(mappedBy="detallePuesto", fetch=FetchType.LAZY)
 	public List<Vacacion> getVacacions() {
 		return this.vacacions;
 	}
 
 	public void setVacacions(List<Vacacion> vacacions) {
 		this.vacacions = vacacions;
-	}
+	}*/
 
 
 	//bi-directional many-to-one association to Permiso
-	@OneToMany(mappedBy="detallePuesto", fetch=FetchType.LAZY)
+	/*@OneToMany(mappedBy="detallePuesto", fetch=FetchType.LAZY)
 	public List<Permiso> getPermisos() {
 		return this.permisos;
 	}
 
 	public void setPermisos(List<Permiso> permisos) {
 		this.permisos = permisos;
-	}
+	}*/
 
 
 

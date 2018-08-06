@@ -14,7 +14,7 @@ import javax.persistence.*;
 @NamedQuery(name="SaldoVacacion.findAll", query="SELECT s FROM SaldoVacacion s")
 public class SaldoVacacion implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private long slvcId;
+	private int slvcId;
 	private int slvcPeriodo;
 	private int slvcDiasAnticipados;
 	private int slvcDiasRegistrados;
@@ -24,6 +24,7 @@ public class SaldoVacacion implements Serializable {
 	private int slvcTotalDias;
 	private String slvcTotalHoras;
 	private DetallePuesto detallePuesto;
+	private int dtpsId;
 
 	public SaldoVacacion() {
 	}
@@ -33,11 +34,11 @@ public class SaldoVacacion implements Serializable {
 	@SequenceGenerator(name="SALDO_VACACION_SLVCID_GENERATOR", sequenceName="S_SALDO_VACACION")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SALDO_VACACION_SLVCID_GENERATOR")
 	@Column(name="SLVC_ID")
-	public long getSlvcId() {
+	public int getSlvcId() {
 		return this.slvcId;
 	}
 
-	public void setSlvcId(long slvcId) {
+	public void setSlvcId(int slvcId) {
 		this.slvcId = slvcId;
 	}
 
@@ -123,7 +124,7 @@ public class SaldoVacacion implements Serializable {
 
 
 	//bi-directional many-to-one association to DetallePuesto
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name="DTPS_ID")
 	public DetallePuesto getDetallePuesto() {
 		return this.detallePuesto;
@@ -131,6 +132,23 @@ public class SaldoVacacion implements Serializable {
 
 	public void setDetallePuesto(DetallePuesto detallePuesto) {
 		this.detallePuesto = detallePuesto;
+	}*/
+	
+	@Column(name = "DTPS_ID")
+	public int getDtpsId() {
+		return this.dtpsId;
 	}
+
+	public void setDtpsId(int dtpsId) {
+		this.dtpsId = dtpsId;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Nº días: " + slvcDiasRestantes + ", Nº horas: " + slvcTotalHoras;
+	}
+	
+	
 
 }

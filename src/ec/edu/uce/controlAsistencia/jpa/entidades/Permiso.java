@@ -24,6 +24,7 @@ public class Permiso implements Serializable {
 	private int prmJustificacion;
 	private String prmNumHoras;
 	private DetallePuesto detallePuesto;
+	private int dtpsId;
 
 	public Permiso() {
 	}
@@ -33,7 +34,7 @@ public class Permiso implements Serializable {
 	@SequenceGenerator(name="PERMISO_PRMID_GENERATOR", sequenceName="S_PERMISO")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PERMISO_PRMID_GENERATOR")
 	@Column(name="PRM_ID")
-	public long getPrmId() {
+	public int getPrmId() {
 		return this.prmId;
 	}
 
@@ -114,7 +115,7 @@ public class Permiso implements Serializable {
 
 
 	//bi-directional many-to-one association to DetallePuesto
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name="DTPS_ID")
 	public DetallePuesto getDetallePuesto() {
 		return this.detallePuesto;
@@ -122,6 +123,15 @@ public class Permiso implements Serializable {
 
 	public void setDetallePuesto(DetallePuesto detallePuesto) {
 		this.detallePuesto = detallePuesto;
+	}*/
+	
+	@Column(name = "DTPS_ID")
+	public int getDtpsId() {
+		return this.dtpsId;
+	}
+
+	public void setDtpsId(int dtpsId) {
+		this.dtpsId = dtpsId;
 	}
 
 }

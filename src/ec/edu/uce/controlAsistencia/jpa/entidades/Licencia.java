@@ -14,7 +14,7 @@ import java.sql.Timestamp;
 public class Licencia implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int lcnId;
-	// private int dtpsId;
+	private int dtpsId;
 	private String lcnCopia;
 	private int lcnEstado;
 	private String lcnExplicacion;
@@ -32,6 +32,8 @@ public class Licencia implements Serializable {
 	}
 
 	@Id
+	@SequenceGenerator(name="LICENCIA_LCN_GENERATOR", sequenceName="S_LICENCIA")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="LICENCIA_LCN_GENERATOR")
 	@Column(name = "LCN_ID")
 	public int getLcnId() {
 		return this.lcnId;
@@ -41,14 +43,14 @@ public class Licencia implements Serializable {
 		this.lcnId = lcnId;
 	}
 
-	/*@Column(name = "DTPS_ID")
+	@Column(name = "DTPS_ID")
 	public int getDtpsId() {
 		return this.dtpsId;
 	}
 
 	public void setDtpsId(int dtpsId) {
 		this.dtpsId = dtpsId;
-	}*/
+	}
 
 	@Column(name = "LCN_COPIA")
 	public String getLcnCopia() {
@@ -154,7 +156,7 @@ public class Licencia implements Serializable {
 	}
 
 	// bi-directional many-to-one association to TipoLicencia
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name = "DTPS_ID")
 	public DetallePuesto getDetallePuesto() {
 		return detallePuesto;
@@ -162,6 +164,6 @@ public class Licencia implements Serializable {
 
 	public void setDetallePuesto(DetallePuesto detallePuesto) {
 		this.detallePuesto = detallePuesto;
-	}
+	}*/
 
 }
