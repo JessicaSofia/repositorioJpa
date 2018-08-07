@@ -175,7 +175,9 @@ public class DetallePuestoSancion implements Serializable {
 	public CategoriaFalta getCategoriaFalta() {
 		return this.categoriaFalta;
 	}
+	
 
+	
 	public void setCategoriaFalta(CategoriaFalta categoriaFalta) {
 		this.categoriaFalta = categoriaFalta;
 	}
