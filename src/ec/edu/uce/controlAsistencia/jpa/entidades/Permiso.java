@@ -16,7 +16,7 @@ import java.sql.Timestamp;
 public class Permiso implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int prmId;
-	private int prmCargoVacacion;
+	private String prmHorasJustificadas;
 	private String prmDescripcionMotivo;
 	private Date prmFechaPermiso;
 	private Timestamp prmFechaRegistro;
@@ -42,14 +42,15 @@ public class Permiso implements Serializable {
 		this.prmId = prmId;
 	}
 
-
-	@Column(name="PRM_CARGO_VACACION")
-	public int getPrmCargoVacacion() {
-		return this.prmCargoVacacion;
+	
+	@Column(name="PRM_HORAS_JUSTIFICADAS")
+	public String getPrmHorasJustificadas() {
+		return prmHorasJustificadas;
 	}
 
-	public void setPrmCargoVacacion(int prmCargoVacacion) {
-		this.prmCargoVacacion = prmCargoVacacion;
+
+	public void setPrmHorasJustificadas(String prmHorasJustificadas) {
+		this.prmHorasJustificadas = prmHorasJustificadas;
 	}
 
 

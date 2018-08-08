@@ -146,7 +146,7 @@ public class SaldoVacacion implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Nº días: " + slvcDiasRestantes + ", Nº horas: " + slvcTotalHoras;
+		return "Nº días: " + slvcDiasRestantes;
 	}
 	
 	
