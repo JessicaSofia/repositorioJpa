@@ -43,6 +43,7 @@ public class Permiso implements Serializable {
 	}
 
 	
+	
 	@Column(name="PRM_HORAS_JUSTIFICADAS")
 	public String getPrmHorasJustificadas() {
 		return prmHorasJustificadas;
