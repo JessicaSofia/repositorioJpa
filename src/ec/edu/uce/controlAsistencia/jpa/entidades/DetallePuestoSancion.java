@@ -37,7 +37,7 @@ public class DetallePuestoSancion implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="DETALLE_PUESTO_SANCION_DTPSSNID_GENERATOR", sequenceName="S_DETALLE_PUESTO_SANCION")
+	@SequenceGenerator(name="DETALLE_PUESTO_SANCION_DTPSSNID_GENERATOR", sequenceName="S_DETALLE_PUESTO_SANCION",  initialValue=1, allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="DETALLE_PUESTO_SANCION_DTPSSNID_GENERATOR")
 	@Column(name="DTPSSN_ID")
 	public long getDtpssnId() {

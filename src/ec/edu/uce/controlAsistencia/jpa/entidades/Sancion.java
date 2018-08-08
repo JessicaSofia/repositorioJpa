@@ -13,7 +13,8 @@ import java.util.List;
 @NamedQuery(name="Sancion.findAll", query="SELECT s FROM Sancion s")
 public class Sancion implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private long snId;
+	
+	private int snId;
 	private String snNombre;
 	private String snDescripcion;
 	private int snDescuento;
@@ -32,11 +33,11 @@ public class Sancion implements Serializable {
 	@SequenceGenerator(name="SANCION_SNID_GENERATOR", sequenceName="S_SANCION")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SANCION_SNID_GENERATOR")
 	@Column(name="SN_ID")
-	public long getSnId() {
+	public int getSnId() {
 		return this.snId;
 	}
 
-	public void setSnId(long snId) {
+	public void setSnId(int snId) {
 		this.snId = snId;
 	}
 
