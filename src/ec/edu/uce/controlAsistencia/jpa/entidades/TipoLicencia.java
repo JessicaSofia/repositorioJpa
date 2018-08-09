@@ -30,7 +30,7 @@ public class TipoLicencia implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="TIPO_LICENCIA_TPLCID_GENERATOR", sequenceName="S_TIPO_LICENCIA")
+	@SequenceGenerator(name="TIPO_LICENCIA_TPLCID_GENERATOR", sequenceName="S_TIPO_LICENCIA", initialValue=1, allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TIPO_LICENCIA_TPLCID_GENERATOR")
 	@Column(name="TPLC_ID")
 	public int getTplcId() {
