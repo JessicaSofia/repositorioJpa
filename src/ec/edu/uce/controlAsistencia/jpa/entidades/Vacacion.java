@@ -26,7 +26,6 @@ public class Vacacion implements Serializable {
 	private String vccObservacionEstado;
 	private DetallePuesto detallePuesto;
 	private int dtpsId;
-	private int vccNumDiasDescon;
 	
 
 	public Vacacion() {
@@ -147,16 +146,7 @@ public class Vacacion implements Serializable {
 		this.dtpsId = dtpsId;
 	}
 
-	@Column(name="VCC_NUMDIASDESCON")
-	public int getVccNumDiasDescon() {
-		return vccNumDiasDescon;
-	}
-
-
-	public void setVccNumDiasDescon(int vccNumDiasDescon) {
-		this.vccNumDiasDescon = vccNumDiasDescon;
-	}
-	
+		
 	//bi-directional many-to-one association to DetallePuesto
 	/*@ManyToOne
 	@JoinColumn(name="DTPS_ID")
