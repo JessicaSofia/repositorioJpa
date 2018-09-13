@@ -2,7 +2,6 @@ package ec.edu.uce.controlAsistencia.jpa.entidades;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -17,21 +16,21 @@ public class Contrato implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private long cntId;
 	private String cntActividad;
-	private BigDecimal cntAutoridadResponsable;
+	private int cntAutoridadResponsable;
 	private String cntCatedras;
-	private BigDecimal cntCategoria;
-	private BigDecimal cntEstado;
+	private int cntCategoria;
+	private int cntEstado;
 	private Date cntFechaElaboracion;
 	private Date cntFechaFin;
 	private Date cntFechaInicio;
 	private Date cntFechaPedido;
-	private BigDecimal cntHorasMes;
+	private int cntHorasMes;
 	private String cntMotivoSalida;
 	private String cntNumeroContrato;
 	private String cntObservacion;
 	private String cntOficioPedido;
-	private BigDecimal cntRmu;
-	private BigDecimal cntValorHora;
+	private int cntRmu;
+	private int cntValorHora;
 	private Candidato candidato;
 	private TipoContrato tipoContrato;
 	private List<DetallePuesto> detallePuestos;
@@ -63,11 +62,11 @@ public class Contrato implements Serializable {
 
 
 	@Column(name="CNT_AUTORIDAD_RESPONSABLE")
-	public BigDecimal getCntAutoridadResponsable() {
+	public int getCntAutoridadResponsable() {
 		return this.cntAutoridadResponsable;
 	}
 
-	public void setCntAutoridadResponsable(BigDecimal cntAutoridadResponsable) {
+	public void setCntAutoridadResponsable(int cntAutoridadResponsable) {
 		this.cntAutoridadResponsable = cntAutoridadResponsable;
 	}
 
@@ -83,21 +82,21 @@ public class Contrato implements Serializable {
 
 
 	@Column(name="CNT_CATEGORIA")
-	public BigDecimal getCntCategoria() {
+	public int getCntCategoria() {
 		return this.cntCategoria;
 	}
 
-	public void setCntCategoria(BigDecimal cntCategoria) {
+	public void setCntCategoria(int cntCategoria) {
 		this.cntCategoria = cntCategoria;
 	}
 
 
 	@Column(name="CNT_ESTADO")
-	public BigDecimal getCntEstado() {
+	public int getCntEstado() {
 		return this.cntEstado;
 	}
 
-	public void setCntEstado(BigDecimal cntEstado) {
+	public void setCntEstado(int cntEstado) {
 		this.cntEstado = cntEstado;
 	}
 
@@ -147,11 +146,11 @@ public class Contrato implements Serializable {
 
 
 	@Column(name="CNT_HORAS_MES")
-	public BigDecimal getCntHorasMes() {
+	public int getCntHorasMes() {
 		return this.cntHorasMes;
 	}
 
-	public void setCntHorasMes(BigDecimal cntHorasMes) {
+	public void setCntHorasMes(int cntHorasMes) {
 		this.cntHorasMes = cntHorasMes;
 	}
 
@@ -197,21 +196,21 @@ public class Contrato implements Serializable {
 
 
 	@Column(name="CNT_RMU")
-	public BigDecimal getCntRmu() {
+	public int getCntRmu() {
 		return this.cntRmu;
 	}
 
-	public void setCntRmu(BigDecimal cntRmu) {
+	public void setCntRmu(int cntRmu) {
 		this.cntRmu = cntRmu;
 	}
 
 
 	@Column(name="CNT_VALOR_HORA")
-	public BigDecimal getCntValorHora() {
+	public int getCntValorHora() {
 		return this.cntValorHora;
 	}
 
-	public void setCntValorHora(BigDecimal cntValorHora) {
+	public void setCntValorHora(int cntValorHora) {
 		this.cntValorHora = cntValorHora;
 	}
 
