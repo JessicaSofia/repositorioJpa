@@ -31,7 +31,7 @@ public class SaldoVacacion implements Serializable {
 
 
 	@Id
-	@SequenceGenerator(name="SALDO_VACACION_SLVCID_GENERATOR", sequenceName="S_SALDO_VACACION")
+	@SequenceGenerator(name="SALDO_VACACION_SLVCID_GENERATOR", sequenceName="S_SALDO_VACACION", initialValue=1, allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SALDO_VACACION_SLVCID_GENERATOR")
 	@Column(name="SLVC_ID")
 	public int getSlvcId() {
