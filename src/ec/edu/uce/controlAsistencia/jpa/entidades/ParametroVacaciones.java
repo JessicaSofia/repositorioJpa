@@ -15,7 +15,7 @@ import java.util.List;
 @NamedQuery(name="ParametroVacaciones.findAll", query="SELECT p FROM ParametroVacaciones p")
 public class ParametroVacaciones implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private long prvcId;
+	private int prvcId;
 	private BigDecimal prvCEstado;
 	private String prvcDescripcion;
 	private String prvcNombre;
@@ -30,11 +30,11 @@ public class ParametroVacaciones implements Serializable {
 	@SequenceGenerator(name="PARAMETRO_VACACIONES_PRVCID_GENERATOR", sequenceName="S_PARAMETRO_VACACIONES")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="PARAMETRO_VACACIONES_PRVCID_GENERATOR")
 	@Column(name="PRVC_ID")
-	public long getPrvcId() {
+	public int getPrvcId() {
 		return this.prvcId;
 	}
 
-	public void setPrvcId(long prvcId) {
+	public void setPrvcId(int prvcId) {
 		this.prvcId = prvcId;
 	}
 

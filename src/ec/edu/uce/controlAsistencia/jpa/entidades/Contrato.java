@@ -14,7 +14,7 @@ import java.util.List;
 @NamedQuery(name="Contrato.findAll", query="SELECT c FROM Contrato c")
 public class Contrato implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private long cntId;
+	private int cntId;
 	private String cntActividad;
 	private int cntAutoridadResponsable;
 	private String cntCatedras;
@@ -42,11 +42,11 @@ public class Contrato implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="CNT_ID")
-	public long getCntId() {
+	public int getCntId() {
 		return this.cntId;
 	}
 
-	public void setCntId(long cntId) {
+	public void setCntId(int cntId) {
 		this.cntId = cntId;
 	}
 
