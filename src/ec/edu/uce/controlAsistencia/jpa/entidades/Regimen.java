@@ -22,6 +22,7 @@ public class Regimen implements Serializable {
 	private List<ParametroVacacionRegimen> parametroVacacionRegimens;
 	private List<Puesto> puestos;
 	private List<TipoLicencia> tipoLicencias;
+	private List<CategoriaFalta> categoriaFaltas;
 
 	public Regimen() {
 	}
@@ -112,6 +113,15 @@ public class Regimen implements Serializable {
 		this.tipoLicencias = tipoLicencias;
 	}
 
+	//bi-directional many-to-one association to CategoriaFalta
+		@OneToMany(mappedBy="regimen", fetch=FetchType.LAZY)
+		public List<CategoriaFalta> getCategoriaFaltas() {
+			return this.categoriaFaltas;
+		}
+
+		public void setCategoriaFaltas(List<CategoriaFalta> categoriaFaltas) {
+			this.categoriaFaltas = categoriaFaltas;
+		}
 
 
 }

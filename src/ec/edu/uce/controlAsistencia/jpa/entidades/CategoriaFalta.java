@@ -24,6 +24,7 @@ public class CategoriaFalta implements Serializable {
 	private String ctgflObservacion;
 	private float ctgflPorcentajeBase;
 	private Categoria categoria;
+	private Regimen regimen;
 	private Falta falta;
 	private Sancion sancion;
 	private List<DetallePuestoSancion> detallePuestoSancions;
@@ -126,6 +127,19 @@ public class CategoriaFalta implements Serializable {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+	
+	
+
+	@ManyToOne
+	@JoinColumn(name="RGM_ID")
+	public Regimen getRegimen() {
+		return regimen;
+	}
+
+
+	public void setRegimen(Regimen regimen) {
+		this.regimen = regimen;
 	}
 
 
